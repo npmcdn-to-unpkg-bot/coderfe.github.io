@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>SimonCorner</title>
+  <subtitle>Reading Coding Thinking</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://chen-dong.github.io/"/>
+  <updated>2016-04-04T06:31:02.202Z</updated>
+  <id>http://chen-dong.github.io/</id>
+  
+  <author>
+    <name>ChenDong</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端性能优化</title>
+    <link href="http://chen-dong.github.io/2016/04/04/performance/"/>
+    <id>http://chen-dong.github.io/2016/04/04/performance/</id>
+    <published>2016-04-04T05:38:37.000Z</published>
+    <updated>2016-04-04T06:31:02.202Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;时间黄金法则:&lt;/strong&gt;只有10%-20%的时间花在下载HTML文档上,其余80%-90%都花在下载页面组件上&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&quot;减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&quot;&gt;&lt;a href=&quot;#减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&quot; class=&quot;headerlink&quot; title=&quot;减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&quot;&gt;&lt;/a&gt;减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;图片&lt;code&gt;css sprite&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;图片地图,在一张图片上关联多个URL,URL最终指向取决于用户点击的位置&lt;br&gt;&lt;code&gt;script&lt;/code&gt;合并、&lt;code&gt;css&lt;/code&gt;合并&lt;/li&gt;
+&lt;li&gt;内联图片,通过使用&lt;code&gt;data:URL&lt;/code&gt;模式可以使页面包含图片但无需额外的HTTP请求&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&quot;使用CDN内容分发网络（Content-Delivery-Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&quot;&gt;&lt;a href=&quot;#使用CDN内容分发网络（Content-Delivery-Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&quot; class=&quot;headerlink&quot; title=&quot;使用CDN内容分发网络（Content Delivery Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&quot;&gt;&lt;/a&gt;使用&lt;code&gt;CDN&lt;/code&gt;内容分发网络（&lt;code&gt;Content Delivery Network&lt;/code&gt;其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&lt;/h5&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h5 id=&quot;压缩javascript和css-gzip&quot;&gt;&lt;a href=&quot;#压缩javascript和css-gzip&quot; class=&quot;headerlink&quot; title=&quot;压缩javascript和css(gzip)&quot;&gt;&lt;/a&gt;压缩&lt;code&gt;javascript&lt;/code&gt;和&lt;code&gt;css&lt;/code&gt;(gzip)&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;去除空格、空白符、注释符&lt;/li&gt;
+&lt;li&gt;简写方法名、参数名,精简&lt;code&gt;javascript&lt;/code&gt;脚本&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;css&lt;/code&gt;重用类,删除空的声明&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&quot;css放在顶部head中-css-at-the-top&quot;&gt;&lt;a href=&quot;#css放在顶部head中-css-at-the-top&quot; class=&quot;headerlink&quot; title=&quot;css放在顶部head中(css at the top)&quot;&gt;&lt;/a&gt;&lt;code&gt;css&lt;/code&gt;放在顶部&lt;code&gt;head&lt;/code&gt;中(css at the top)&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;避免页面出现空白或闪烁&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&quot;script放在页面底部-script-at-the-bottom&quot;&gt;&lt;a href=&quot;#script放在页面底部-script-at-the-bottom&quot; class=&quot;headerlink&quot; title=&quot;script放在页面底部(script at the bottom)&quot;&gt;&lt;/a&gt;&lt;code&gt;script&lt;/code&gt;放在页面底部(script at the bottom)&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;先呈现出内容，避免浏览器因脚本出错而停止加载内容&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&quot;避免在css中使用表达式，影响浏览器的性能&quot;&gt;&lt;a href=&quot;#避免在css中使用表达式，影响浏览器的性能&quot; class=&quot;headerlink&quot; title=&quot;避免在css中使用表达式，影响浏览器的性能&quot;&gt;&lt;/a&gt;避免在&lt;code&gt;css&lt;/code&gt;中使用表达式，影响浏览器的性能&lt;/h5&gt;&lt;h5 id=&quot;将javascript和css放在外部文件&quot;&gt;&lt;a href=&quot;#将javascript和css放在外部文件&quot; class=&quot;headerlink&quot; title=&quot;将javascript和css放在外部文件&quot;&gt;&lt;/a&gt;将&lt;code&gt;javascript&lt;/code&gt;和&lt;code&gt;css&lt;/code&gt;放在外部文件&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;单独提取&lt;ul&gt;
+&lt;li&gt;提高复用性&lt;/li&gt;
+&lt;li&gt;减小页面体积&lt;/li&gt;
+&lt;li&gt;提高&lt;code&gt;js&lt;/code&gt;和&lt;code&gt;css&lt;/code&gt;的可维护性&lt;/li&gt;
+&lt;li&gt;可单独缓存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;写在页面内（样式只应用于一个页面，不被经常访问，脚本和样式很少&amp;lt;20）&lt;ul&gt;
+&lt;li&gt;减少页面请求&lt;/li&gt;
+&lt;li&gt;提升页面渲染速度&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&quot;减少DNS查询（DNS查找可以缓存起来以提升性能）&quot;&gt;&lt;a href=&quot;#减少DNS查询（DNS查找可以缓存起来以提升性能）&quot; class=&quot;headerlink&quot; title=&quot;减少DNS查询（DNS查找可以缓存起来以提升性能）&quot;&gt;&lt;/a&gt;减少DNS查询（DNS查找可以缓存起来以提升性能）&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;IE 30m&lt;/li&gt;
+&lt;li&gt;Chrome 60s&lt;/li&gt;
+&lt;li&gt;Firefox 60s&lt;/li&gt;
+&lt;li&gt;缓存时间长：减少DNS重复查找，节省时间&lt;/li&gt;
+&lt;li&gt;缓存时间短：及时检测网站服务器的变化，保证访问的正确性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&quot;避免重定向（用户的请求被重新转向其他请求）&quot;&gt;&lt;a href=&quot;#避免重定向（用户的请求被重新转向其他请求）&quot; class=&quot;headerlink&quot; title=&quot;避免重定向（用户的请求被重新转向其他请求）&quot;&gt;&lt;/a&gt;避免重定向（用户的请求被重新转向其他请求）&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;301：用户请求的页面被移动到其他位置，永久重定向，对搜索引擎更智能&lt;/li&gt;
+&lt;li&gt;302：用户请求的的页面被找到了，但不在原始地址，临时重定向&lt;/li&gt;
+&lt;li&gt;增加了服务器的往返次数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&quot;移除重复脚本&quot;&gt;&lt;a href=&quot;#移除重复脚本&quot; class=&quot;headerlink&quot; title=&quot;移除重复脚本&quot;&gt;&lt;/a&gt;移除重复脚本&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;重复脚本会增加不必要的HTTP请求和执行javascript所浪费的时间&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&quot;配置实体标签（Enity-Tag-Web服务器和浏览器用于确认缓存组件有效的一种机制&quot;&gt;&lt;a href=&quot;#配置实体标签（Enity-Tag-Web服务器和浏览器用于确认缓存组件有效的一种机制&quot; class=&quot;headerlink&quot; title=&quot;配置实体标签（Enity Tag,Web服务器和浏览器用于确认缓存组件有效的一种机制)&quot;&gt;&lt;/a&gt;配置实体标签（&lt;code&gt;Enity Tag&lt;/code&gt;,Web服务器和浏览器用于确认缓存组件有效的一种机制)&lt;/h5&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;时间黄金法则:&lt;/strong&gt;只有10%-20%的时间花在下载HTML文档上,其余80%-90%都花在下载页面组件上&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h5 id=&quot;减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&quot;&gt;&lt;a href=&quot;#减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&quot; class=&quot;headerlink&quot; title=&quot;减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&quot;&gt;&lt;/a&gt;减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&lt;/h5&gt;&lt;ul&gt;
+&lt;li&gt;图片&lt;code&gt;css sprite&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;图片地图,在一张图片上关联多个URL,URL最终指向取决于用户点击的位置&lt;br&gt;&lt;code&gt;script&lt;/code&gt;合并、&lt;code&gt;css&lt;/code&gt;合并&lt;/li&gt;
+&lt;li&gt;内联图片,通过使用&lt;code&gt;data:URL&lt;/code&gt;模式可以使页面包含图片但无需额外的HTTP请求&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h5 id=&quot;使用CDN内容分发网络（Content-Delivery-Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&quot;&gt;&lt;a href=&quot;#使用CDN内容分发网络（Content-Delivery-Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&quot; class=&quot;headerlink&quot; title=&quot;使用CDN内容分发网络（Content Delivery Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&quot;&gt;&lt;/a&gt;使用&lt;code&gt;CDN&lt;/code&gt;内容分发网络（&lt;code&gt;Content Delivery Network&lt;/code&gt;其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&lt;/h5&gt;
+    
+    </summary>
+    
+    
+      <category term="性能优化" scheme="http://chen-dong.github.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+</feed>
