@@ -4,9 +4,9 @@
   <subtitle>Reading Coding Thinking</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://chen-dong.github.io/"/>
-  <updated>2016-04-04T06:31:02.202Z</updated>
-  <id>http://chen-dong.github.io/</id>
+  <link href="http://coderfe.github.io/"/>
+  <updated>2016-04-07T13:01:33.239Z</updated>
+  <id>http://coderfe.github.io/</id>
   
   <author>
     <name>ChenDong</name>
@@ -16,9 +16,65 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>搭建个人博客Hexo &amp; Github Pages</title>
+    <link href="http://coderfe.github.io/2016/04/07/hexo-github-blog/"/>
+    <id>http://coderfe.github.io/2016/04/07/hexo-github-blog/</id>
+    <published>2016-04-07T12:00:00.000Z</published>
+    <updated>2016-04-07T13:01:33.239Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;工欲善其事，必先利其器。在开发过程中用到的软件有&lt;strong&gt;Nodejs / Sublime Text3 / Git&lt;/strong&gt;等，参考资料主要是&lt;a href=&quot;https://hexo.io/zh-cn/docs/configuration.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;安装配置&quot;&gt;&lt;a href=&quot;#安装配置&quot; class=&quot;headerlink&quot; title=&quot;安装配置&quot;&gt;&lt;/a&gt;安装配置&lt;/h2&gt;&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;p&gt;安装很简单，只需要几分钟的时间，前提是已经安装了&lt;strong&gt;Nodejs&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install -g hexo-cli&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ hexo -v&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;建立博客目录&quot;&gt;&lt;a href=&quot;#建立博客目录&quot; class=&quot;headerlink&quot; title=&quot;建立博客目录&quot;&gt;&lt;/a&gt;建立博客目录&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo init &amp;lt;folder&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ cd &amp;lt;folder&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ npm install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;上面的几行命令会把你指定的文件夹初始化为博客目录，目录如下：&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;folder&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  _config.yml&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  package.json&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  scaffolds&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  source&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  	_drafts&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  	_posts&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  themes&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h3&gt;&lt;p&gt;有关站点的配置都在&lt;code&gt;&amp;lt;folder&amp;gt;/_config.yml&lt;/code&gt; &amp;amp; &lt;code&gt;&amp;lt;folder&amp;gt;/themes/_config.yml&lt;/code&gt;文件中修改，具体参数参见&lt;a href=&quot;https://hexo.io/zh-cn/docs/configuration.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;命令&quot;&gt;&lt;a href=&quot;#命令&quot; class=&quot;headerlink&quot; title=&quot;命令&quot;&gt;&lt;/a&gt;命令&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;hexo init &amp;lt;folder&amp;gt;&lt;/code&gt;初始化&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hexo new &amp;lt;title&amp;gt;&lt;/code&gt;新建文章&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hexo generate&lt;/code&gt;生成静态文件&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;选项&lt;/th&gt;&lt;th&gt;描述&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;-d&lt;/code&gt;, &lt;code&gt;–deploy&lt;/code&gt;&lt;/td&gt;&lt;td&gt;文件生成后立即部署网站&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;-w&lt;/code&gt;, &lt;code&gt;–watch&lt;/code&gt;&lt;/td&gt;&lt;td&gt;监视文件变动&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hexo publish &amp;lt;title&amp;gt;&lt;/code&gt;发表草稿&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;heox server&lt;/code&gt;启动服务器&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;选项&lt;/th&gt;&lt;th&gt;描述&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;-p&lt;/code&gt;, &lt;code&gt;–port&lt;/code&gt;&lt;/td&gt;&lt;td&gt;重设端口&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;-s&lt;/code&gt;, &lt;code&gt;–static&lt;/code&gt;&lt;/td&gt;&lt;td&gt;只使用静态文件&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;-l&lt;/code&gt;, &lt;code&gt;–log&lt;/code&gt;&lt;/td&gt;&lt;td&gt;启动日记记录，使用覆盖记录格式&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hexo deploy&lt;/code&gt;部署网站&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;参数&lt;/th&gt;&lt;th&gt;描述&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;-g&lt;/code&gt;, &lt;code&gt;–generate&lt;/code&gt;&lt;/td&gt;&lt;td&gt;部署之前预先生成静态文件&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hexo clean&lt;/code&gt;清除缓存文件&lt;code&gt;db.json&lt;/code&gt;和静态文件&lt;code&gt;public&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;hexo list&lt;/code&gt;列出网站资料&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;生成RSS&quot;&gt;&lt;a href=&quot;#生成RSS&quot; class=&quot;headerlink&quot; title=&quot;生成RSS&quot;&gt;&lt;/a&gt;生成RSS&lt;/h3&gt;&lt;p&gt;安装RSS插件&lt;code&gt;hexo-generator-feed&lt;/code&gt;插件&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install hexo-generator-feed --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;编辑站点配置文件&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;feed:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  type: atom&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  path: atom.xml&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  limit: 20&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;通过Git方式部署&quot;&gt;&lt;a href=&quot;#通过Git方式部署&quot; class=&quot;headerlink&quot; title=&quot;通过Git方式部署&quot;&gt;&lt;/a&gt;通过Git方式部署&lt;/h3&gt;&lt;p&gt;编辑站点配置文件，如果部署在GitHub上会自动检测&lt;code&gt;branch&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;deploy:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  type: git&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  repo: &amp;lt;repo URL&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  branch: &lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  message:&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h2 id=&quot;绑定域名&quot;&gt;&lt;a href=&quot;#绑定域名&quot; class=&quot;headerlink&quot; title=&quot;绑定域名&quot;&gt;&lt;/a&gt;绑定域名&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;首先得有个域名，申请域名的网站国外的有&lt;a href=&quot;https://sg.godaddy.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GoDaddy&lt;/a&gt;等，国内的&lt;a href=&quot;https://wanwang.aliyun.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;万网&lt;/a&gt;等&lt;/li&gt;
+&lt;li&gt;在&lt;code&gt;/source&lt;/code&gt;目录下新建&lt;code&gt;CNAME&lt;/code&gt;文件，输入自己的域名&lt;code&gt;coderfe.cn&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;登陆&lt;a href=&quot;https://www.dnspod.cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DnsPod&lt;/a&gt;，添加域名解析，只需添加&lt;strong&gt;第一项&lt;/strong&gt;和&lt;strong&gt;第四项&lt;/strong&gt;就OK&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xphzj.com1.z0.glb.clouddn.com/dnspod.png&quot; alt=&quot;解析记录&quot;&gt;&lt;/p&gt;
+&lt;h2 id=&quot;未完待续&quot;&gt;&lt;a href=&quot;#未完待续&quot; class=&quot;headerlink&quot; title=&quot;未完待续&quot;&gt;&lt;/a&gt;未完待续&lt;/h2&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;工欲善其事，必先利其器。在开发过程中用到的软件有&lt;strong&gt;Nodejs / Sublime Text3 / Git&lt;/strong&gt;等，参考资料主要是&lt;a href=&quot;https://hexo.io/zh-cn/docs/configuration.html&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;安装配置&quot;&gt;&lt;a href=&quot;#安装配置&quot; class=&quot;headerlink&quot; title=&quot;安装配置&quot;&gt;&lt;/a&gt;安装配置&lt;/h2&gt;&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;p&gt;安装很简单，只需要几分钟的时间，前提是已经安装了&lt;strong&gt;Nodejs&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install -g hexo-cli&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ hexo -v&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;h3 id=&quot;建立博客目录&quot;&gt;&lt;a href=&quot;#建立博客目录&quot; class=&quot;headerlink&quot; title=&quot;建立博客目录&quot;&gt;&lt;/a&gt;建立博客目录&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo init &amp;lt;folder&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ cd &amp;lt;folder&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ npm install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;上面的几行命令会把你指定的文件夹初始化为博客目录，目录如下：&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="blog" scheme="http://coderfe.github.io/tags/blog/"/>
+    
+      <category term="GitHub Pages" scheme="http://coderfe.github.io/tags/GitHub-Pages/"/>
+    
+  </entry>
+  
+  <entry>
     <title>前端性能优化</title>
-    <link href="http://chen-dong.github.io/2016/04/04/performance/"/>
-    <id>http://chen-dong.github.io/2016/04/04/performance/</id>
+    <link href="http://coderfe.github.io/2016/04/04/front-end-performance/"/>
+    <id>http://coderfe.github.io/2016/04/04/front-end-performance/</id>
     <published>2016-04-04T05:38:37.000Z</published>
     <updated>2016-04-04T06:31:02.202Z</updated>
     
@@ -88,7 +144,7 @@
     </summary>
     
     
-      <category term="性能优化" scheme="http://chen-dong.github.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+      <category term="性能优化" scheme="http://coderfe.github.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
