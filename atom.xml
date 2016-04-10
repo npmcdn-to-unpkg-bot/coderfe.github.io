@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coderfe.github.io/"/>
-  <updated>2016-04-07T13:01:33.239Z</updated>
+  <updated>2016-04-10T01:41:16.546Z</updated>
   <id>http://coderfe.github.io/</id>
   
   <author>
@@ -14,6 +14,65 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Ajax学习笔记</title>
+    <link href="http://coderfe.github.io/2016/04/08/Ajax-note/"/>
+    <id>http://coderfe.github.io/2016/04/08/Ajax-note/</id>
+    <published>2016-04-08T09:26:39.000Z</published>
+    <updated>2016-04-10T01:41:16.546Z</updated>
+    
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;Ajax即&lt;strong&gt;Asynchronous Javascript and XML&lt;/strong&gt;（异步的Javascript与XML技术），简单来说就是无需刷新整个页面就能更新用户界面，从而更快地响应用户行为的一套技术。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Step1—创建实例化对象&quot;&gt;&lt;a href=&quot;#Step1—创建实例化对象&quot; class=&quot;headerlink&quot; title=&quot;Step1—创建实例化对象&quot;&gt;&lt;/a&gt;Step1—创建实例化对象&lt;/h2&gt;&lt;p&gt;由于各浏览器间的差异，创建实例的方法也不同，下面的代码创建了一个跨浏览器的类实例。&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; xhr;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.XMLHttpRequest) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  xhr = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; XMLHttpRequest();	&lt;span class=&quot;comment&quot;&gt;// sarifi/firefox/chrome/IE7+&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  xhr = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ActiveXObject(&lt;span class=&quot;string&quot;&gt;&quot;Microsoft.HTTPXML&quot;&lt;/span&gt;);	&lt;span class=&quot;comment&quot;&gt;// IE5/6&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果不考虑IE5/6，其实只需下面的代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; xhr = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; XMLHttpRequest();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;h2 id=&quot;Step2—发送请求&quot;&gt;&lt;a href=&quot;#Step2—发送请求&quot; class=&quot;headerlink&quot; title=&quot;Step2—发送请求&quot;&gt;&lt;/a&gt;Step2—发送请求&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;open()方法&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;参数&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;th&gt;取值&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;method&lt;/td&gt;&lt;td&gt;请求类型，参数大写&lt;/td&gt;&lt;td&gt;&lt;code&gt;POST&lt;/code&gt;, &lt;code&gt;GET&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;URL&lt;/td&gt;&lt;td&gt;请求的URL地址&lt;/td&gt;&lt;td&gt;&lt;code&gt;url&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;async&lt;/td&gt;&lt;td&gt;请求是否为异步模式，默认为&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;send()方法&lt;/code&gt;&lt;/p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;请求类型&lt;/th&gt;&lt;th&gt;参数&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;POST&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;GET&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;null&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;Step3—取得响应&quot;&gt;&lt;a href=&quot;#Step3—取得响应&quot; class=&quot;headerlink&quot; title=&quot;Step3—取得响应&quot;&gt;&lt;/a&gt;Step3—取得响应&lt;/h2&gt;&lt;p&gt;检查请求状态，监听&lt;code&gt;readyState&lt;/code&gt;和&lt;code&gt;status&lt;/code&gt;的变化&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;xhr.onreadystatechange = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (xhr.readystate === &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (xhr.status === &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;comment&quot;&gt;// perfect, do something&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;      &lt;span class=&quot;comment&quot;&gt;// something was wrong&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;	&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;code&gt;readyState&lt;/code&gt;取值如下&lt;/p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;readyState&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;0&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;请求未初始化，open方法未调用&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;1&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;服务器连接已建立，open方法已调用&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;2&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;请求已接受，收到头信息&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;3&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;请求处理中，收到响应体&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;4&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;请求已完成，响应完成&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;code&gt;status&lt;/code&gt;取值如下&lt;/p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;status&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;1XX&lt;/td&gt;&lt;td&gt;信息类，收到请求，表示正在处理&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;2XX&lt;/td&gt;&lt;td&gt;成功，表示用户请求被正确接收处理&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;3XX&lt;/td&gt;&lt;td&gt;重定向，表示请求没有成功&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4XX&lt;/td&gt;&lt;td&gt;客户端错误&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5XX&lt;/td&gt;&lt;td&gt;服务器错误&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://help.aliyun.com/knowledge_detail/6555009.html?spm=0.0.0.0.hIQaqR&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http状态码详解&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Step4—jQuery实现Ajax&quot;&gt;&lt;a href=&quot;#Step4—jQuery实现Ajax&quot; class=&quot;headerlink&quot; title=&quot;Step4—jQuery实现Ajax&quot;&gt;&lt;/a&gt;Step4—jQuery实现Ajax&lt;/h2&gt;&lt;p&gt;jQuery中提供了一个实现Ajax的方法即&lt;code&gt;jQuery.ajax([settings])&lt;/code&gt;，参数如下：&lt;/p&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;参数&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;type&lt;/td&gt;&lt;td&gt;请求类型&lt;code&gt;POST&lt;/code&gt; &lt;code&gt;GET&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;url&lt;/td&gt;&lt;td&gt;发送请求地址&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;data&lt;/td&gt;&lt;td&gt;一个对象，发送到服务器的数据&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;dataType&lt;/td&gt;&lt;td&gt;预期服务器返回的数据类型，一般采用&lt;code&gt;json&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;success&lt;/td&gt;&lt;td&gt;请求成功后的回调函数&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;error&lt;/td&gt;&lt;td&gt;请求失败后的回调函数&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+
+&lt;p&gt;示例：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;11&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;12&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$.ajax(&amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  type: &lt;span class=&quot;string&quot;&gt;&quot;POST&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  url: &amp;lt;url&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  data: &amp;lt;data&amp;gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  dataType: &quot;josn&quot;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  success: function() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    // do something&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  error: function() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    // do something&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  &amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;);&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Ajax即&lt;strong&gt;Asynchronous Javascript and XML&lt;/strong&gt;（异步的Javascript与XML技术），简单来说就是无需刷新整个页面就能更新用户界面，从而更快地响应用户行为的一套技术。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Step1—创建实例化对象&quot;&gt;&lt;a href=&quot;#Step1—创建实例化对象&quot; class=&quot;headerlink&quot; title=&quot;Step1—创建实例化对象&quot;&gt;&lt;/a&gt;Step1—创建实例化对象&lt;/h2&gt;&lt;p&gt;由于各浏览器间的差异，创建实例的方法也不同，下面的代码创建了一个跨浏览器的类实例。&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; xhr;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.XMLHttpRequest) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  xhr = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; XMLHttpRequest();	&lt;span class=&quot;comment&quot;&gt;// sarifi/firefox/chrome/IE7+&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  xhr = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ActiveXObject(&lt;span class=&quot;string&quot;&gt;&quot;Microsoft.HTTPXML&quot;&lt;/span&gt;);	&lt;span class=&quot;comment&quot;&gt;// IE5/6&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果不考虑IE5/6，其实只需下面的代码：&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; xhr = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; XMLHttpRequest();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="Ajax" scheme="http://coderfe.github.io/tags/Ajax/"/>
+    
+      <category term="笔记" scheme="http://coderfe.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title>搭建个人博客Hexo &amp; Github Pages</title>

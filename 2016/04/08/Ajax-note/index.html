@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="blog,GitHub Pages," />
+  <meta name="keywords" content="Ajax,笔记," />
 
 
 
@@ -59,27 +59,25 @@
 
 
 
-<meta name="description" content="工欲善其事，必先利其器。在开发过程中用到的软件有Nodejs / Sublime Text3 / Git等，参考资料主要是官方文档
+<meta name="description" content="Ajax即Asynchronous Javascript and XML（异步的Javascript与XML技术），简单来说就是无需刷新整个页面就能更新用户界面，从而更快地响应用户行为的一套技术。
 
-安装配置安装安装很简单，只需要几分钟的时间，前提是已经安装了Nodejs12$ npm install -g hexo-cli$ hexo -v
-建立博客目录123$ hexo init &amp;lt;folder&amp;gt;$ cd &amp;lt;folder&amp;gt;$ npm">
+Step1—创建实例化对象由于各浏览器间的差异，创建实例的方法也不同，下面的代码创建了一个跨浏览器的类实例。
+123456var xhr;if (window.XMLHttpRequest) &amp;#1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="搭建个人博客Hexo & Github Pages">
-<meta property="og:url" content="http://coderfe.github.io/2016/04/07/hexo-github-blog/index.html">
+<meta property="og:title" content="Ajax学习笔记">
+<meta property="og:url" content="http://coderfe.github.io/2016/04/08/Ajax-note/index.html">
 <meta property="og:site_name" content="SimonCorner">
-<meta property="og:description" content="工欲善其事，必先利其器。在开发过程中用到的软件有Nodejs / Sublime Text3 / Git等，参考资料主要是官方文档
+<meta property="og:description" content="Ajax即Asynchronous Javascript and XML（异步的Javascript与XML技术），简单来说就是无需刷新整个页面就能更新用户界面，从而更快地响应用户行为的一套技术。
 
-安装配置安装安装很简单，只需要几分钟的时间，前提是已经安装了Nodejs12$ npm install -g hexo-cli$ hexo -v
-建立博客目录123$ hexo init &amp;lt;folder&amp;gt;$ cd &amp;lt;folder&amp;gt;$ npm">
-<meta property="og:image" content="http://7xphzj.com1.z0.glb.clouddn.com/dnspod.png">
-<meta property="og:updated_time" content="2016-04-07T13:01:33.239Z">
+Step1—创建实例化对象由于各浏览器间的差异，创建实例的方法也不同，下面的代码创建了一个跨浏览器的类实例。
+123456var xhr;if (window.XMLHttpRequest) &amp;#1">
+<meta property="og:updated_time" content="2016-04-10T01:41:16.546Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="搭建个人博客Hexo & Github Pages">
-<meta name="twitter:description" content="工欲善其事，必先利其器。在开发过程中用到的软件有Nodejs / Sublime Text3 / Git等，参考资料主要是官方文档
+<meta name="twitter:title" content="Ajax学习笔记">
+<meta name="twitter:description" content="Ajax即Asynchronous Javascript and XML（异步的Javascript与XML技术），简单来说就是无需刷新整个页面就能更新用户界面，从而更快地响应用户行为的一套技术。
 
-安装配置安装安装很简单，只需要几分钟的时间，前提是已经安装了Nodejs12$ npm install -g hexo-cli$ hexo -v
-建立博客目录123$ hexo init &amp;lt;folder&amp;gt;$ cd &amp;lt;folder&amp;gt;$ npm">
-<meta name="twitter:image" content="http://7xphzj.com1.z0.glb.clouddn.com/dnspod.png">
+Step1—创建实例化对象由于各浏览器间的差异，创建实例的方法也不同，下面的代码创建了一个跨浏览器的类实例。
+123456var xhr;if (window.XMLHttpRequest) &amp;#1">
 
 
 
@@ -97,7 +95,7 @@
   };
 </script>
 
-  <title> 搭建个人博客Hexo & Github Pages | SimonCorner </title>
+  <title> Ajax学习笔记 | SimonCorner </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -227,7 +225,7 @@
             
             
               
-                搭建个人博客Hexo & Github Pages
+                Ajax学习笔记
               
             
           </h1>
@@ -239,8 +237,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-07T20:00:00+08:00" content="2016-04-07">
-              2016-04-07
+            <time itemprop="dateCreated" datetime="2016-04-08T17:26:39+08:00" content="2016-04-08">
+              2016-04-08
             </time>
           </span>
 
@@ -250,8 +248,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/04/07/hexo-github-blog/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/07/hexo-github-blog/" itemprop="commentsCount"></span>
+                <a href="/2016/04/08/Ajax-note/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/08/Ajax-note/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -274,34 +272,36 @@
 
       
         <blockquote>
-<p>工欲善其事，必先利其器。在开发过程中用到的软件有<strong>Nodejs / Sublime Text3 / Git</strong>等，参考资料主要是<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">官方文档</a></p>
+<p>Ajax即<strong>Asynchronous Javascript and XML</strong>（异步的Javascript与XML技术），简单来说就是无需刷新整个页面就能更新用户界面，从而更快地响应用户行为的一套技术。</p>
 </blockquote>
-<h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>安装很简单，只需要几分钟的时间，前提是已经安装了<strong>Nodejs</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure></p>
-<h3 id="建立博客目录"><a href="#建立博客目录" class="headerlink" title="建立博客目录"></a>建立博客目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ cd &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
-<p>上面的几行命令会把你指定的文件夹初始化为博客目录，目录如下：</p>
+<h2 id="Step1—创建实例化对象"><a href="#Step1—创建实例化对象" class="headerlink" title="Step1—创建实例化对象"></a>Step1—创建实例化对象</h2><p>由于各浏览器间的差异，创建实例的方法也不同，下面的代码创建了一个跨浏览器的类实例。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr;</span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123;</span><br><span class="line">  xhr = <span class="keyword">new</span> XMLHttpRequest();	<span class="comment">// sarifi/firefox/chrome/IE7+</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.HTTPXML"</span>);	<span class="comment">// IE5/6</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果不考虑IE5/6，其实只需下面的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;folder&gt;</span><br><span class="line">  _config.yml</span><br><span class="line">  package.json</span><br><span class="line">  scaffolds</span><br><span class="line">  source</span><br><span class="line">  	_drafts</span><br><span class="line">  	_posts</span><br><span class="line">  themes</span><br></pre></td></tr></table></figure>
-<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>有关站点的配置都在<code>&lt;folder&gt;/_config.yml</code> &amp; <code>&lt;folder&gt;/themes/_config.yml</code>文件中修改，具体参数参见<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">官方文档</a></p>
-<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><ul>
-<li><code>hexo init &lt;folder&gt;</code>初始化</li>
-<li><code>hexo new &lt;title&gt;</code>新建文章</li>
-<li><code>hexo generate</code>生成静态文件<table><thead><tr><th>选项</th><th>描述</th></tr></thead><tbody><tr><td><code>-d</code>, <code>–deploy</code></td><td>文件生成后立即部署网站</td></tr><tr><td><code>-w</code>, <code>–watch</code></td><td>监视文件变动</td></tr></tbody></table></li>
-<li><code>hexo publish &lt;title&gt;</code>发表草稿</li>
-<li><code>heox server</code>启动服务器<table><thead><tr><th>选项</th><th>描述</th></tr></thead><tbody><tr><td><code>-p</code>, <code>–port</code></td><td>重设端口</td></tr><tr><td><code>-s</code>, <code>–static</code></td><td>只使用静态文件</td></tr><tr><td><code>-l</code>, <code>–log</code></td><td>启动日记记录，使用覆盖记录格式</td></tr></tbody></table></li>
-<li><code>hexo deploy</code>部署网站<table><thead><tr><th>参数</th><th>描述</th></tr></thead><tbody><tr><td><code>-g</code>, <code>–generate</code></td><td>部署之前预先生成静态文件</td></tr></tbody></table></li>
-<li><code>hexo clean</code>清除缓存文件<code>db.json</code>和静态文件<code>public</code></li>
-<li><code>hexo list</code>列出网站资料</li>
+<h2 id="Step2—发送请求"><a href="#Step2—发送请求" class="headerlink" title="Step2—发送请求"></a>Step2—发送请求</h2><ul>
+<li><p><code>open()方法</code></p>
+<table><thead><tr><th>参数</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td>method</td><td>请求类型，参数大写</td><td><code>POST</code>, <code>GET</code></td></tr><tr><td>URL</td><td>请求的URL地址</td><td><code>url</code></td></tr><tr><td>async</td><td>请求是否为异步模式，默认为<code>true</code></td><td><code>true</code>, <code>false</code></td></tr></tbody></table>
+</li>
+<li><p><code>send()方法</code></p>
+<table><thead><tr><th>请求类型</th><th>参数</th></tr></thead><tbody><tr><td><code>POST</code></td><td><code>string</code></td></tr><tr><td><code>GET</code></td><td><code>null</code></td></tr></tbody></table>
+
+</li>
 </ul>
-<h3 id="生成RSS"><a href="#生成RSS" class="headerlink" title="生成RSS"></a>生成RSS</h3><p>安装RSS插件<code>hexo-generator-feed</code>插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure></p>
-<p>编辑站点配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">feed:</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: 20</span><br></pre></td></tr></table></figure></p>
-<h3 id="通过Git方式部署"><a href="#通过Git方式部署" class="headerlink" title="通过Git方式部署"></a>通过Git方式部署</h3><p>编辑站点配置文件，如果部署在GitHub上会自动检测<code>branch</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;repo URL&gt;</span><br><span class="line">  branch: </span><br><span class="line">  message:</span><br></pre></td></tr></table></figure></p>
-<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><ol>
-<li>首先得有个域名，申请域名的网站国外的有<a href="https://sg.godaddy.com/" target="_blank" rel="external">GoDaddy</a>等，国内的<a href="https://wanwang.aliyun.com" target="_blank" rel="external">万网</a>等</li>
-<li>在<code>/source</code>目录下新建<code>CNAME</code>文件，输入自己的域名<code>coderfe.cn</code></li>
-<li><p>登陆<a href="https://www.dnspod.cn/" target="_blank" rel="external">DnsPod</a>，添加域名解析，只需添加<strong>第一项</strong>和<strong>第四项</strong>就OK</p>
-<p><img src="http://7xphzj.com1.z0.glb.clouddn.com/dnspod.png" alt="解析记录"></p>
-<h2 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h2></li>
-</ol>
+<h2 id="Step3—取得响应"><a href="#Step3—取得响应" class="headerlink" title="Step3—取得响应"></a>Step3—取得响应</h2><p>检查请求状态，监听<code>readyState</code>和<code>status</code>的变化</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (xhr.readystate === <span class="number">4</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (xhr.status === <span class="number">200</span>) &#123;</span><br><span class="line">      <span class="comment">// perfect, do something</span></span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      <span class="comment">// something was wrong</span></span><br><span class="line">	&#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>readyState</code>取值如下</p>
+<table><thead><tr><th align="left">readyState</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left">0</td><td align="left">请求未初始化，open方法未调用</td></tr><tr><td align="left">1</td><td align="left">服务器连接已建立，open方法已调用</td></tr><tr><td align="left">2</td><td align="left">请求已接受，收到头信息</td></tr><tr><td align="left">3</td><td align="left">请求处理中，收到响应体</td></tr><tr><td align="left">4</td><td align="left">请求已完成，响应完成</td></tr></tbody></table>
+
+<p><code>status</code>取值如下</p>
+<table><thead><tr><th>status</th><th>说明</th></tr></thead><tbody><tr><td>1XX</td><td>信息类，收到请求，表示正在处理</td></tr><tr><td>2XX</td><td>成功，表示用户请求被正确接收处理</td></tr><tr><td>3XX</td><td>重定向，表示请求没有成功</td></tr><tr><td>4XX</td><td>客户端错误</td></tr><tr><td>5XX</td><td>服务器错误</td></tr></tbody></table>
+
+<p><a href="https://help.aliyun.com/knowledge_detail/6555009.html?spm=0.0.0.0.hIQaqR" target="_blank" rel="external">http状态码详解</a></p>
+<h2 id="Step4—jQuery实现Ajax"><a href="#Step4—jQuery实现Ajax" class="headerlink" title="Step4—jQuery实现Ajax"></a>Step4—jQuery实现Ajax</h2><p>jQuery中提供了一个实现Ajax的方法即<code>jQuery.ajax([settings])</code>，参数如下：</p>
+<table><thead><tr><th>参数</th><th>说明</th></tr></thead><tbody><tr><td>type</td><td>请求类型<code>POST</code> <code>GET</code></td></tr><tr><td>url</td><td>发送请求地址</td></tr><tr><td>data</td><td>一个对象，发送到服务器的数据</td></tr><tr><td>dataType</td><td>预期服务器返回的数据类型，一般采用<code>json</code></td></tr><tr><td>success</td><td>请求成功后的回调函数</td></tr><tr><td>error</td><td>请求失败后的回调函数</td></tr></tbody></table>
+
+<p>示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">  type: <span class="string">"POST"</span>,</span><br><span class="line">  url: &lt;url&gt;</span><br><span class="line">  data: &lt;data&gt;,</span><br><span class="line">  dataType: "josn",</span><br><span class="line">  success: function() &#123;</span><br><span class="line">    // do something</span><br><span class="line">  &#125;,</span><br><span class="line">  error: function() &#123;</span><br><span class="line">    // do something</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -316,9 +316,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/blog/" rel="tag">#blog</a>
+            <a href="/tags/Ajax/" rel="tag">#Ajax</a>
           
-            <a href="/tags/GitHub-Pages/" rel="tag">#GitHub Pages</a>
+            <a href="/tags/笔记/" rel="tag">#笔记</a>
           
         </div>
       
@@ -327,17 +327,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/04/front-end-performance/" rel="next" title="前端性能优化">
-                <i class="fa fa-chevron-left"></i> 前端性能优化
+              <a href="/2016/04/07/hexo-github-blog/" rel="next" title="搭建个人博客Hexo & Github Pages">
+                <i class="fa fa-chevron-left"></i> 搭建个人博客Hexo & Github Pages
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/04/08/Ajax-note/" rel="prev" title="Ajax学习笔记">
-                Ajax学习笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -363,8 +359,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/04/07/hexo-github-blog/"
-           data-title="搭建个人博客Hexo & Github Pages" data-url="http://coderfe.github.io/2016/04/07/hexo-github-blog/">
+      <div class="ds-thread" data-thread-key="2016/04/08/Ajax-note/"
+           data-title="Ajax学习笔记" data-url="http://coderfe.github.io/2016/04/08/Ajax-note/">
       </div>
     
   </div>
@@ -483,7 +479,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装配置"><span class="nav-number">1.</span> <span class="nav-text">安装配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立博客目录"><span class="nav-number">1.2.</span> <span class="nav-text">建立博客目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">1.3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令"><span class="nav-number">1.4.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成RSS"><span class="nav-number">1.5.</span> <span class="nav-text">生成RSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过Git方式部署"><span class="nav-number">1.6.</span> <span class="nav-text">通过Git方式部署</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定域名"><span class="nav-number">2.</span> <span class="nav-text">绑定域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待续"><span class="nav-number">3.</span> <span class="nav-text">未完待续</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step1—创建实例化对象"><span class="nav-number">1.</span> <span class="nav-text">Step1—创建实例化对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step2—发送请求"><span class="nav-number">2.</span> <span class="nav-text">Step2—发送请求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step3—取得响应"><span class="nav-number">3.</span> <span class="nav-text">Step3—取得响应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step4—jQuery实现Ajax"><span class="nav-number">4.</span> <span class="nav-text">Step4—jQuery实现Ajax</span></a></li></ol></div>
             
           </div>
         </section>
