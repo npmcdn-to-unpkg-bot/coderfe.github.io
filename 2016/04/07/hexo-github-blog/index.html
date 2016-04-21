@@ -75,7 +75,7 @@
 建立博客目录123$ hexo init &amp;lt;folder&amp;gt;$ cd &amp;lt;folder&amp;g">
 <meta property="og:image" content="http://7xphzj.com1.z0.glb.clouddn.com/blog-pic.png">
 <meta property="og:image" content="http://7xphzj.com1.z0.glb.clouddn.com/dnspod.png">
-<meta property="og:updated_time" content="2016-04-10T02:58:36.048Z">
+<meta property="og:updated_time" content="2016-04-10T12:12:21.055Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="搭建个人博客Hexo & Github Pages">
 <meta name="twitter:description" content="工欲善其事，必先利其器。在开发过程中用到的软件有Nodejs / Sublime Text3 / Git等，参考资料主要是官方文档
@@ -307,8 +307,12 @@
 <li><code>hexo list</code>列出网站资料</li>
 </ul>
 <h3 id="生成RSS"><a href="#生成RSS" class="headerlink" title="生成RSS"></a>生成RSS</h3><p>安装RSS插件<code>hexo-generator-feed</code>插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-feed --save</span><br></pre></td></tr></table></figure></p>
-<p>编辑站点配置文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">feed:</span><br><span class="line">  type: atom</span><br><span class="line">  path: atom.xml</span><br><span class="line">  limit: 20</span><br></pre></td></tr></table></figure></p>
-<h3 id="通过Git方式部署"><a href="#通过Git方式部署" class="headerlink" title="通过Git方式部署"></a>通过Git方式部署</h3><p>编辑站点配置文件，如果部署在GitHub上会自动检测<code>branch</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: &lt;repo URL&gt;</span><br><span class="line">  branch: </span><br><span class="line">  message:</span><br></pre></td></tr></table></figure></p>
+<p>编辑站点配置文件：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">feed:</span></span><br><span class="line"><span class="attr">  type:</span> atom</span><br><span class="line"><span class="attr">  path:</span> atom.xml</span><br><span class="line"><span class="attr">  limit:</span> <span class="number">20</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="生成sitemap-xml"><a href="#生成sitemap-xml" class="headerlink" title="生成sitemap.xml"></a>生成sitemap.xml</h3><p>安装插件<code>hexo-generator-sitemap</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+<p>编辑配置文件：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">sitemap:</span></span><br><span class="line"><span class="attr">  path:</span> sitemap.xml</span><br></pre></td></tr></table></figure>
+<h3 id="通过Git方式部署"><a href="#通过Git方式部署" class="headerlink" title="通过Git方式部署"></a>通过Git方式部署</h3><p>编辑站点配置文件，如果部署在GitHub上会自动检测<code>branch</code><br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line"><span class="attr">  type:</span> git</span><br><span class="line"><span class="attr">  repo:</span> &lt;repo URL<span class="string">&gt;</span><br><span class="line"></span><span class="attr">  branch:</span> </span><br><span class="line"><span class="attr">  message:</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><ol>
 <li>首先得有个域名，申请域名的网站国外的有<a href="https://sg.godaddy.com/" target="_blank" rel="external">GoDaddy</a>等，国内的<a href="https://wanwang.aliyun.com" target="_blank" rel="external">万网</a>等</li>
 <li>在<code>/source</code>目录下新建<code>CNAME</code>文件，输入自己的域名<code>coderfe.cn</code></li>
@@ -316,6 +320,11 @@
 <p><img src="http://7xphzj.com1.z0.glb.clouddn.com/dnspod.png" alt="解析记录"></p>
 </li>
 </ol>
+<h2 id="用到的免费服务"><a href="#用到的免费服务" class="headerlink" title="用到的免费服务"></a>用到的免费服务</h2><ul>
+<li><a href="http://www.qiniu.com/" target="_blank" rel="external">七牛云存储</a></li>
+<li><a href="https://www.dnspod.cn/" target="_blank" rel="external">DnsPod</a></li>
+<li><a href="http://duoshuo.com/" target="_blank" rel="external">多说</a></li>
+</ul>
 <h2 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h2>
       
     </div>
@@ -423,7 +432,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -433,7 +442,7 @@
           
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
@@ -497,7 +506,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装配置"><span class="nav-number">1.</span> <span class="nav-text">安装配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立博客目录"><span class="nav-number">1.2.</span> <span class="nav-text">建立博客目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">1.3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令"><span class="nav-number">1.4.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成RSS"><span class="nav-number">1.5.</span> <span class="nav-text">生成RSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过Git方式部署"><span class="nav-number">1.6.</span> <span class="nav-text">通过Git方式部署</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定域名"><span class="nav-number">2.</span> <span class="nav-text">绑定域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待续"><span class="nav-number">3.</span> <span class="nav-text">未完待续</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装配置"><span class="nav-number">1.</span> <span class="nav-text">安装配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立博客目录"><span class="nav-number">1.2.</span> <span class="nav-text">建立博客目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">1.3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令"><span class="nav-number">1.4.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成RSS"><span class="nav-number">1.5.</span> <span class="nav-text">生成RSS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成sitemap-xml"><span class="nav-number">1.6.</span> <span class="nav-text">生成sitemap.xml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通过Git方式部署"><span class="nav-number">1.7.</span> <span class="nav-text">通过Git方式部署</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#绑定域名"><span class="nav-number">2.</span> <span class="nav-text">绑定域名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用到的免费服务"><span class="nav-number">3.</span> <span class="nav-text">用到的免费服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未完待续"><span class="nav-number">4.</span> <span class="nav-text">未完待续</span></a></li></ol></div>
             
           </div>
         </section>
