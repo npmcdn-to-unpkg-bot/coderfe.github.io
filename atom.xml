@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>SimonCorner</title>
+  <title>CODERFE</title>
   <subtitle>Reading Coding Thinking</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://coderfe.github.io/"/>
-  <updated>2016-05-08T02:51:13.486Z</updated>
-  <id>http://coderfe.github.io/</id>
+  <link href="http://coderfe.cn/"/>
+  <updated>2016-05-10T08:01:12.333Z</updated>
+  <id>http://coderfe.cn/</id>
   
   <author>
-    <name>ChenDong</name>
+    <name>ChD</name>
     
   </author>
   
@@ -17,12 +17,15 @@
   
   <entry>
     <title>优化博客性能</title>
-    <link href="http://coderfe.github.io/2016/05/07/performance-optimization/"/>
-    <id>http://coderfe.github.io/2016/05/07/performance-optimization/</id>
+    <link href="http://coderfe.cn/2016/05/07/performance-optimization/"/>
+    <id>http://coderfe.cn/2016/05/07/performance-optimization/</id>
     <published>2016-05-07T20:08:30.000Z</published>
-    <updated>2016-05-08T02:51:13.486Z</updated>
+    <updated>2016-05-10T08:01:12.333Z</updated>
     
-    <content type="html">&lt;p&gt;今天发现博客首页的加载时间比较慢，于是就用 Google 出品的 &lt;a href=&quot;https://developers.google.com/speed/pagespeed/insights/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pagespeed Insights&lt;/a&gt; 检测了一下，发现了不少问题，而且这些问题都严重拖慢了加载时间。以下：&lt;/p&gt;
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;今天发现博客首页的加载速度比较感人，于是就用 Google 出品的 &lt;a href=&quot;https://developers.google.com/speed/pagespeed/insights/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pagespeed Insights&lt;/a&gt; 检测了一下，发现了不少问题，而且这些问题都严重拖慢了加载时间。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;ul&gt;
 &lt;li&gt;HTML / CSS / JS / Photos 都是未压缩状态&lt;/li&gt;
 &lt;li&gt;部分静态资源没有设置缓存&lt;/li&gt;
@@ -30,7 +33,7 @@
 &lt;/ul&gt;
 &lt;p&gt;暂时只解决了第一个问题：&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;修改一下 &lt;code&gt;Travis CI&lt;/code&gt; 的部署脚本 &lt;code&gt;.travis.yml&lt;/code&gt; 即可实现自动压缩（利用 &lt;code&gt;gulpjs&lt;/code&gt;）：&lt;figure class=&quot;highlight yml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;install:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; npm install hexo-cli gulp -g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; npm install&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;script:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; hexo clean&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; hexo g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; gulp&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; hexo d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;li&gt;修改一下 &lt;code&gt;Travis CI&lt;/code&gt; 的部署脚本 &lt;code&gt;.travis.yml&lt;/code&gt; 即可实现自动压缩（利用 &lt;code&gt;gulpjs&lt;/code&gt;）：&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;install:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- npm install hexo-cli gulp -g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- npm install&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;script:&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- hexo clean&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- hexo g&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- gulp&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;- hexo d&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;查看 &lt;a href=&quot;https://github.com/coderfe/blog/blob/master/gulpfile.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;code&gt;gulpfile.js&lt;/code&gt;&lt;/a&gt; 配置&lt;/p&gt;
@@ -41,29 +44,32 @@
     
     <summary type="html">
     
-      &lt;p&gt;今天发现博客首页的加载时间比较慢，于是就用 Google 出品的 &lt;a href=&quot;https://developers.google.com/speed/pagespeed/insights/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pagespe
+      &lt;blockquote&gt;
+&lt;p&gt;今天发现博客首页的加载速度比较感人，于是就用 Google 出品的 &lt;a href=&quot;https://developers.google.com/speed/pagespeed/insights/&quot;&gt;Pagespeed Insights&lt;/a&gt; 检测了一下，发现了不少问题，而且这些问题都严重拖慢了加载时间。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
     
-      <category term="性能优化" scheme="http://coderfe.github.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+      <category term="性能优化" scheme="http://coderfe.cn/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
-      <category term="gulp" scheme="http://coderfe.github.io/tags/gulp/"/>
+      <category term="gulp" scheme="http://coderfe.cn/tags/gulp/"/>
     
-      <category term="Travis CI" scheme="http://coderfe.github.io/tags/Travis-CI/"/>
+      <category term="Travis CI" scheme="http://coderfe.cn/tags/Travis-CI/"/>
     
   </entry>
   
   <entry>
     <title>为Atom编辑器安装本地插件</title>
-    <link href="http://coderfe.github.io/2016/05/02/install-local-atom-packages/"/>
-    <id>http://coderfe.github.io/2016/05/02/install-local-atom-packages/</id>
+    <link href="http://coderfe.cn/2016/05/02/install-local-atom-packages/"/>
+    <id>http://coderfe.cn/2016/05/02/install-local-atom-packages/</id>
     <published>2016-05-02T16:03:55.000Z</published>
-    <updated>2016-05-08T02:51:13.486Z</updated>
+    <updated>2016-05-10T08:01:12.333Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;Atom是一款优秀的编辑器，但是国内的网络环境太让人尴尬了，安装个插件都困难。这几天逛论坛时发现，可以把Github上的插件clone到本地再安装，做一下记录，免得又忘记了。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;&lt;strong&gt;Atom插件的位置&lt;/strong&gt;&lt;br&gt;Windows是在&lt;code&gt;C:\Users\yourname\.atom\packages&lt;/code&gt;目录&lt;br&gt;Linux是在&lt;code&gt;~\.atom\packages&lt;/code&gt;目录下&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;首先在&lt;a href=&quot;https://atom.io/packages&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;找到想要的插件，然后点击Repo链接到作者的Github&lt;/li&gt;
@@ -80,26 +86,26 @@
       &lt;blockquote&gt;
 &lt;p&gt;Atom是一款优秀的编辑器，但是国内的网络环境太让人尴尬了，安装个插件都困难。这几天逛论坛时发现，可以把Github上的插件clone到本地再安装，做一下记录，免得又忘记了。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Atom插件的
     
     </summary>
     
     
-      <category term="atom" scheme="http://coderfe.github.io/tags/atom/"/>
+      <category term="atom" scheme="http://coderfe.cn/tags/atom/"/>
     
   </entry>
   
   <entry>
     <title>利用TravisCI自动部署Hexo blog</title>
-    <link href="http://coderfe.github.io/2016/04/25/travisCI-deploy-hexo-blog/"/>
-    <id>http://coderfe.github.io/2016/04/25/travisCI-deploy-hexo-blog/</id>
+    <link href="http://coderfe.cn/2016/04/25/travisCI-deploy-hexo-blog/"/>
+    <id>http://coderfe.cn/2016/04/25/travisCI-deploy-hexo-blog/</id>
     <published>2016-04-25T15:11:14.000Z</published>
-    <updated>2016-05-08T02:51:13.486Z</updated>
+    <updated>2016-05-10T08:01:12.333Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Travis CI&lt;/strong&gt;是在软件开发领域中的一个在线的，分布式的持续集成服务，用来构建及测试在GitHub托管的代码。这个软件的代码同时也是开源的，可以在GitHub上下载到，尽管开发者当前并不推荐在闭源项目中单独使用它。—— &lt;a href=&quot;https://zh.wikipedia.org/wiki/Travis_CI&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Wiki&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;前几天的&lt;a href=&quot;http://coderfe.cn/2016/04/07/hexo-github-blog/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;一篇文章&lt;/a&gt;介绍了搭建自己的Hexo博客，可是，今天遇到了一个问题：我要在另一台电脑上写博客文章，但是博客的源代码却不在身边，而且我也没有备份。于是就有一下几个解决方案：&lt;/p&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;前几天的&lt;a href=&quot;http://coderfe.cn/2016/04/07/hexo-github-blog/&quot;&gt;一篇文章&lt;/a&gt;介绍了搭建自己的Hexo博客，可是，今天遇到了一个问题：我要在另一台电脑上写博客文章，但是博客的源代码却不在身边，而且我也没有备份。于是就有一下几个解决方案：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;拷贝到U盘随身携带。但是，相信我，总有一天你会忘记的&lt;/li&gt;
 &lt;li&gt;备份在云端，比如DropBox或者其他云盘。缺点：太麻烦，每次更新都要手动上传&lt;/li&gt;
@@ -110,11 +116,9 @@
 &lt;li&gt;以我的博客为例，blog是源码项目(目录)，coderfe.github.io是部署后的博客项目&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;安装Travis Ci命令行工具&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ gem install travis&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;li&gt;&lt;p&gt;安装Travis Ci命令行工具&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ gem install travis&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
-&lt;/ul&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;生成 SSH key,并且把id_rsa.pub添加为coderfe.github.io项目的Deploy key，注意要勾选&lt;code&gt;Allow write access&lt;/code&gt;,因为Travis CI要对这个仓库拥有写入权限&lt;/p&gt;
 &lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ ssh-keygen -t rsa -C &lt;span class=&quot;string&quot;&gt;&quot;your_email@example.com&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 生成的ssh key一般在`~/home/.ssh`目录下&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;/li&gt;
@@ -154,42 +158,31 @@
       &lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Travis CI&lt;/strong&gt;是在软件开发领域中的一个在线的，分布式的持续集成服务，用来构建及测试在GitHub托管的代码。这个软件的代码同时也是开源的，可以在GitHub上下载到，尽管开发者当前并不推荐在闭源项目中单独使用它。—— &lt;a href=&quot;https://zh.wikipedia.org/wiki/Travis_CI&quot;&gt;Wiki&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;前几天的&lt;a href=&quot;http://coderfe.cn/2016/04/07/hexo-github-blog/&quot;&gt;一篇文章&lt;/a&gt;介绍了搭建自己的Hexo博客，可是，今天遇到了一个问题：我要在另一台电脑上写博客文章，但是博客的源代码却不在身边，而且我也没有备份。于是就有一下几个解决方案：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;拷贝到U盘随身携带。但是，相信我，总有一天你会忘记的&lt;/li&gt;
-&lt;li&gt;备份在云端，比如DropBox或者其他云盘。缺点：太麻烦，每次更新都要手动上传&lt;/li&gt;
-&lt;li&gt;放在Github上。恩，这似乎是个不错的办法。但是这个方法每次既要更新博客，还要push到Github上&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Travis-CI解决方案&quot;&gt;&lt;a href=&quot;#Travis-CI解决方案&quot; class=&quot;headerlink&quot; title=&quot;Travis CI解决方案&quot;&gt;&lt;/a&gt;Travis CI解决方案&lt;/h2&gt;&lt;h3 id=&quot;约定&quot;&gt;&lt;a href=&quot;#约定&quot; class=&quot;headerlink&quot; title=&quot;约定&quot;&gt;&lt;/a&gt;约定&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;这些步骤都是Linux中完成的，其他平台的步骤大同小异&lt;/li&gt;
-&lt;li&gt;以我的博客为例，blog是源码项目(目录)，coderfe.github.io是部署后的博客项目&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;安装Travis Ci命令行工具&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ gem install travis&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
     
     </summary>
     
     
-      <category term="blog" scheme="http://coderfe.github.io/tags/blog/"/>
+      <category term="笔记" scheme="http://coderfe.cn/tags/%E7%AC%94%E8%AE%B0/"/>
     
-      <category term="Travis CI" scheme="http://coderfe.github.io/tags/Travis-CI/"/>
+      <category term="blog" scheme="http://coderfe.cn/tags/blog/"/>
+    
+      <category term="Travis CI" scheme="http://coderfe.cn/tags/Travis-CI/"/>
     
   </entry>
   
   <entry>
-    <title>Stylish —— 让你优雅的刷网页</title>
-    <link href="http://coderfe.github.io/2016/04/23/restyle-website-with-stylish/"/>
-    <id>http://coderfe.github.io/2016/04/23/restyle-website-with-stylish/</id>
+    <title>Stylish —— 优雅地刷网页</title>
+    <link href="http://coderfe.cn/2016/04/23/restyle-website-with-stylish/"/>
+    <id>http://coderfe.cn/2016/04/23/restyle-website-with-stylish/</id>
     <published>2016-04-23T22:28:51.000Z</published>
-    <updated>2016-05-08T02:51:13.486Z</updated>
+    <updated>2016-05-10T08:01:12.333Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;在PC端&lt;strong&gt;QQ空间&lt;/strong&gt;看朋友动态、&lt;strong&gt;刷微博&lt;/strong&gt;的时候你是否觉得有些东西太碍眼、太复杂了，对，我就是这样觉的，所以呢，下面就让&lt;strong&gt;Stylish&lt;/strong&gt;还给你一个清爽优雅的界面。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://coderfe.cn/2016/04/21/high-quality-apps-windows-ios-android/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Chrome浏览器&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://coderfe.cn/2016/04/21/high-quality-apps-windows-ios-android/&quot;&gt;Chrome浏览器&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;安装&lt;a href=&quot;https://chrome.google.com/webstore/detail/fjnbnpbmkenffdnngjfgmeleoegfcffe&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Styleish插件&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;一丢丢&lt;code&gt;CSS&lt;/code&gt;基础&lt;/li&gt;
 &lt;/ul&gt;
@@ -212,27 +205,29 @@
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;在PC端&lt;strong&gt;QQ空间&lt;/strong&gt;看朋友动态、&lt;strong&gt;刷微博&lt;/strong&gt;的时候你是否觉得有些东西太碍眼、太复杂了，对，我就是这样觉的，所以呢，下面就让&lt;strong&gt;Stylish&lt;/strong&gt;还给你一个清爽优雅的
+&lt;p&gt;在PC端&lt;strong&gt;QQ空间&lt;/strong&gt;看朋友动态、&lt;strong&gt;刷微博&lt;/strong&gt;的时候你是否觉得有些东西太碍眼、太复杂了，对，我就是这样觉的，所以呢，下面就让&lt;strong&gt;Stylish&lt;/strong&gt;还给你一个清爽优雅的界面。&lt;/p&gt;
+&lt;/blockquote&gt;
     
     </summary>
     
     
-      <category term="美化" scheme="http://coderfe.github.io/tags/%E7%BE%8E%E5%8C%96/"/>
+      <category term="美化" scheme="http://coderfe.cn/tags/%E7%BE%8E%E5%8C%96/"/>
     
-      <category term="CSS" scheme="http://coderfe.github.io/tags/CSS/"/>
+      <category term="CSS" scheme="http://coderfe.cn/tags/CSS/"/>
     
   </entry>
   
   <entry>
-    <title>三大平台优质应用</title>
-    <link href="http://coderfe.github.io/2016/04/21/high-quality-apps-windows-ios-android/"/>
-    <id>http://coderfe.github.io/2016/04/21/high-quality-apps-windows-ios-android/</id>
+    <title>一些优质Apps</title>
+    <link href="http://coderfe.cn/2016/04/21/some-apps/"/>
+    <id>http://coderfe.cn/2016/04/21/some-apps/</id>
     <published>2016-04-21T14:30:30.000Z</published>
-    <updated>2016-05-08T02:51:13.486Z</updated>
+    <updated>2016-05-10T08:01:12.333Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;移动端的Apps数不胜数，所以高质量的Apps经常会被淹没。这些都是通过自己亲身使用，感觉很顺手且颜值也高的应用，推荐给大家喽。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;Windows-10&quot;&gt;&lt;a href=&quot;#Windows-10&quot; class=&quot;headerlink&quot; title=&quot;Windows 10&quot;&gt;&lt;/a&gt;Windows 10&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;浏览器——&lt;a href=&quot;https://www.google.com/chrome/browser/desktop/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google Chrome&lt;/a&gt;，强大而优雅，安装插件之后更强大更优雅&lt;/li&gt;
 &lt;li&gt;办公软件——&lt;a href=&quot;https://www.office.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Office 2016&lt;/a&gt;，全家桶（将来一定买正版支持）别提Office 2007，太落后&lt;/li&gt;
@@ -249,7 +244,7 @@
 &lt;li&gt;&lt;a href=&quot;https://www.voidtools.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Everything&lt;/a&gt;——搜索本地文件神器&lt;/li&gt;
 &lt;li&gt;“你好，小娜”，讲个笑话&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;Android-MEIZU-MX5&quot;&gt;&lt;a href=&quot;#Android-MEIZU-MX5&quot; class=&quot;headerlink&quot; title=&quot;Android(MEIZU MX5)&quot;&gt;&lt;/a&gt;Android(MEIZU MX5)&lt;/h2&gt;&lt;p&gt;有的应用需要在&lt;strong&gt;Google Play&lt;/strong&gt;下载：&lt;br&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Android-MEIZU-MX5&quot;&gt;&lt;a href=&quot;#Android-MEIZU-MX5&quot; class=&quot;headerlink&quot; title=&quot;Android(MEIZU MX5)&quot;&gt;&lt;/a&gt;Android(MEIZU MX5)&lt;/h2&gt;&lt;p&gt;有的应用需要在&lt;strong&gt;Google Play&lt;/strong&gt;下载：&lt;br&gt;&lt;!-- more --&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;科学上网——&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.github.shadowsocks&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ShadowSocks影梭&lt;/a&gt;，上手简单，稳定&lt;/li&gt;
 &lt;li&gt;浏览器——&lt;a href=&quot;http://www.opera.com/zh-cn/mobile/operabrowser&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Opera&lt;/a&gt;，省流量，体积小&lt;/li&gt;
@@ -286,46 +281,29 @@
       &lt;blockquote&gt;
 &lt;p&gt;移动端的Apps数不胜数，所以高质量的Apps经常会被淹没。这些都是通过自己亲身使用，感觉很顺手且颜值也高的应用，推荐给大家喽。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;Windows-10&quot;&gt;&lt;a href=&quot;#Windows-10&quot; class=&quot;headerlink&quot; title=&quot;Windows 10&quot;&gt;&lt;/a&gt;Windows 10&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;浏览器——&lt;a href=&quot;https://www.google.com/chrome/browser/desktop/index.html&quot;&gt;Google Chrome&lt;/a&gt;，强大而优雅，安装插件之后更强大更优雅&lt;/li&gt;
-&lt;li&gt;办公软件——&lt;a href=&quot;https://www.office.com/&quot;&gt;Office 2016&lt;/a&gt;，全家桶（将来一定买正版支持）别提Office 2007，太落后&lt;/li&gt;
-&lt;li&gt;笔记应用——&lt;a href=&quot;https://www.onenote.com/&quot;&gt;OneNote&lt;/a&gt;，跨平台，免费，同步也不慢，随时随地记笔记&lt;/li&gt;
-&lt;li&gt;码字专用——&lt;a href=&quot;https://www.typora.io/&quot;&gt;Typora&lt;/a&gt;，界面简洁，功能丰富，完全免费，支持Markdown语法&lt;/li&gt;
-&lt;li&gt;科学上网——&lt;a href=&quot;https://shadowsocks.com/client.html&quot;&gt;ShadowSocks&lt;/a&gt;，百度一下你就知道，谷歌一下你就知道太多了&lt;/li&gt;
-&lt;li&gt;音乐播放器——&lt;a href=&quot;http://music.163.com/&quot;&gt;网易云音乐&lt;/a&gt;，忒好，用户体验很棒，跨平台，But部分歌曲有版权限制&lt;/li&gt;
-&lt;li&gt;云存储——&lt;a href=&quot;https://www.dropbox.com/&quot;&gt;DropBox&lt;/a&gt; or &lt;a href=&quot;https://onedrive.live.com/&quot;&gt;Onedrive&lt;/a&gt;，同步快，但是DropBox需翻墙&lt;/li&gt;
-&lt;li&gt;思维导图——&lt;a href=&quot;http://www.xmind.net/download/&quot;&gt;XMind&lt;/a&gt;，可以借助DropBox同步&lt;/li&gt;
-&lt;li&gt;解压缩——&lt;a href=&quot;http://www.7-zip.org/&quot;&gt;7-Zip&lt;/a&gt;，速度快，多种格式，免费&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.yingdev.com/projects/tickeys&quot;&gt;Tickeys&lt;/a&gt;——模拟机械键盘的声音，让你沉浸在打字的乐趣当中&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.irolan.com/&quot;&gt;Rolan&lt;/a&gt;——桌面文件夹分类归组，嗯(⊙_⊙)好整齐的桌面&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://rocketdock.com/&quot;&gt;RocketDock&lt;/a&gt;——Dock应用程序栏，类似Mac电脑上的Dock&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.voidtools.com/&quot;&gt;Everything&lt;/a&gt;——搜索本地文件神器&lt;/li&gt;
-&lt;li&gt;“你好，小娜”，讲个笑话&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Android-MEIZU-MX5&quot;&gt;&lt;a href=&quot;#Android-MEIZU-MX5&quot; class=&quot;headerlink&quot; title=&quot;Android(MEIZU MX5)&quot;&gt;&lt;/a&gt;Android(MEIZU MX5)&lt;/h2&gt;&lt;p&gt;有的应用需要在&lt;strong&gt;Google Play&lt;/strong&gt;下载：&lt;br&gt;
     
     </summary>
     
     
-      <category term="Apps" scheme="http://coderfe.github.io/tags/Apps/"/>
+      <category term="Apps" scheme="http://coderfe.cn/tags/Apps/"/>
     
   </entry>
   
   <entry>
     <title>Ajax学习笔记</title>
-    <link href="http://coderfe.github.io/2016/04/08/Ajax-note/"/>
-    <id>http://coderfe.github.io/2016/04/08/Ajax-note/</id>
+    <link href="http://coderfe.cn/2016/04/08/Ajax-note/"/>
+    <id>http://coderfe.cn/2016/04/08/Ajax-note/</id>
     <published>2016-04-08T17:26:39.000Z</published>
-    <updated>2016-05-08T02:51:13.486Z</updated>
+    <updated>2016-05-10T08:01:12.333Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;Ajax即&lt;strong&gt;Asynchronous Javascript and XML&lt;/strong&gt;（异步的Javascript与XML技术），简单来说就是无需刷新整个页面就能更新用户界面，从而更快地响应用户行为的一套技术。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;Step1—创建实例化对象&quot;&gt;&lt;a href=&quot;#Step1—创建实例化对象&quot; class=&quot;headerlink&quot; title=&quot;Step1—创建实例化对象&quot;&gt;&lt;/a&gt;Step1—创建实例化对象&lt;/h2&gt;&lt;p&gt;由于各浏览器间的差异，创建实例的方法也不同，下面的代码创建了一个跨浏览器的类实例。&lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; xhr;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.XMLHttpRequest) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  xhr = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; XMLHttpRequest();	&lt;span class=&quot;comment&quot;&gt;// sarifi/firefox/chrome/IE7+&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  xhr = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ActiveXObject(&lt;span class=&quot;string&quot;&gt;&quot;Microsoft.HTTPXML&quot;&lt;/span&gt;);	&lt;span class=&quot;comment&quot;&gt;// IE5/6&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;如果不考虑IE5/6，其实只需下面的代码：&lt;/p&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; xhr = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; XMLHttpRequest();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h2 id=&quot;Step2—发送请求&quot;&gt;&lt;a href=&quot;#Step2—发送请求&quot; class=&quot;headerlink&quot; title=&quot;Step2—发送请求&quot;&gt;&lt;/a&gt;Step2—发送请求&lt;/h2&gt;&lt;ul&gt;
 &lt;li&gt;&lt;p&gt;&lt;code&gt;open()方法&lt;/code&gt;&lt;/p&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;参数&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;th&gt;取值&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;method&lt;/td&gt;&lt;td&gt;请求类型，参数大写&lt;/td&gt;&lt;td&gt;&lt;code&gt;POST&lt;/code&gt;, &lt;code&gt;GET&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;URL&lt;/td&gt;&lt;td&gt;请求的URL地址&lt;/td&gt;&lt;td&gt;&lt;code&gt;url&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;async&lt;/td&gt;&lt;td&gt;请求是否为异步模式，默认为&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
@@ -356,35 +334,32 @@
       &lt;blockquote&gt;
 &lt;p&gt;Ajax即&lt;strong&gt;Asynchronous Javascript and XML&lt;/strong&gt;（异步的Javascript与XML技术），简单来说就是无需刷新整个页面就能更新用户界面，从而更快地响应用户行为的一套技术。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;Step1—创建实例化对象&quot;&gt;&lt;a href=&quot;#Step1—创建实例化对象&quot; class=&quot;headerlink&quot; title=&quot;Step1—创建实例化对象&quot;&gt;&lt;/a&gt;Step1—创建实例化对象&lt;/h2&gt;&lt;p&gt;由于各浏览器间的差异，创建实例的方法也不同，下面的代码创建了一个跨浏览器的类实例。&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; xhr;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.XMLHttpRequest) &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  xhr = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; XMLHttpRequest();	&lt;span class=&quot;comment&quot;&gt;// sarifi/firefox/chrome/IE7+&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  xhr = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ActiveXObject(&lt;span class=&quot;string&quot;&gt;&quot;Microsoft.HTTPXML&quot;&lt;/span&gt;);	&lt;span class=&quot;comment&quot;&gt;// IE5/6&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;如果不考虑IE5/6，其实只需下面的代码：&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; xhr = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; XMLHttpRequest();&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
     
-      <category term="Ajax" scheme="http://coderfe.github.io/tags/Ajax/"/>
+      <category term="Ajax" scheme="http://coderfe.cn/tags/Ajax/"/>
     
-      <category term="笔记" scheme="http://coderfe.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
+      <category term="笔记" scheme="http://coderfe.cn/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
   <entry>
     <title>搭建个人博客Hexo &amp; Github Pages</title>
-    <link href="http://coderfe.github.io/2016/04/07/hexo-github-blog/"/>
-    <id>http://coderfe.github.io/2016/04/07/hexo-github-blog/</id>
+    <link href="http://coderfe.cn/2016/04/07/hexo-github-blog/"/>
+    <id>http://coderfe.cn/2016/04/07/hexo-github-blog/</id>
     <published>2016-04-07T20:00:00.000Z</published>
-    <updated>2016-05-08T02:51:13.486Z</updated>
+    <updated>2016-05-10T08:01:12.333Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;工欲善其事，必先利其器。在开发过程中用到的软件有&lt;strong&gt;Nodejs / Sublime Text3 / Git&lt;/strong&gt;等，参考资料主要是&lt;a href=&quot;https://hexo.io/zh-cn/docs/configuration.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;p&gt;最终效果图：&lt;br&gt;&lt;img src=&quot;http://7xphzj.com1.z0.glb.clouddn.com/blog-pic.png&quot; alt=&quot;SimonCorner&quot;&gt;&lt;/p&gt;
 &lt;h2 id=&quot;安装配置&quot;&gt;&lt;a href=&quot;#安装配置&quot; class=&quot;headerlink&quot; title=&quot;安装配置&quot;&gt;&lt;/a&gt;安装配置&lt;/h2&gt;&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;p&gt;安装很简单，只需要几分钟的时间，前提是已经安装了&lt;strong&gt;Nodejs&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install -g hexo-cli&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ hexo -v&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;h3 id=&quot;建立博客目录&quot;&gt;&lt;a href=&quot;#建立博客目录&quot; class=&quot;headerlink&quot; title=&quot;建立博客目录&quot;&gt;&lt;/a&gt;建立博客目录&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo init &amp;lt;folder&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ cd &amp;lt;folder&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ npm install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;上面的几行命令会把你指定的文件夹初始化为博客目录，目录如下：&lt;/p&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;!-- more --&gt;
 &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;folder&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  _config.yml&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  package.json&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  scaffolds&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  source&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  	_drafts&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  	_posts&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;  themes&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;h3 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h3&gt;&lt;p&gt;有关站点的配置都在&lt;code&gt;&amp;lt;folder&amp;gt;/_config.yml&lt;/code&gt; &amp;amp; &lt;code&gt;&amp;lt;folder&amp;gt;/themes/_config.yml&lt;/code&gt;文件中修改，具体参数参见&lt;a href=&quot;https://hexo.io/zh-cn/docs/configuration.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
 &lt;h3 id=&quot;命令&quot;&gt;&lt;a href=&quot;#命令&quot; class=&quot;headerlink&quot; title=&quot;命令&quot;&gt;&lt;/a&gt;命令&lt;/h3&gt;&lt;ul&gt;
@@ -423,37 +398,33 @@
       &lt;blockquote&gt;
 &lt;p&gt;工欲善其事，必先利其器。在开发过程中用到的软件有&lt;strong&gt;Nodejs / Sublime Text3 / Git&lt;/strong&gt;等，参考资料主要是&lt;a href=&quot;https://hexo.io/zh-cn/docs/configuration.html&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;最终效果图：&lt;br&gt;&lt;img src=&quot;http://7xphzj.com1.z0.glb.clouddn.com/blog-pic.png&quot; alt=&quot;SimonCorner&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;安装配置&quot;&gt;&lt;a href=&quot;#安装配置&quot; class=&quot;headerlink&quot; title=&quot;安装配置&quot;&gt;&lt;/a&gt;安装配置&lt;/h2&gt;&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;p&gt;安装很简单，只需要几分钟的时间，前提是已经安装了&lt;strong&gt;Nodejs&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ npm install -g hexo-cli&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ hexo -v&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&quot;建立博客目录&quot;&gt;&lt;a href=&quot;#建立博客目录&quot; class=&quot;headerlink&quot; title=&quot;建立博客目录&quot;&gt;&lt;/a&gt;建立博客目录&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo init &amp;lt;folder&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ cd &amp;lt;folder&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;$ npm install&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;上面的几行命令会把你指定的文件夹初始化为博客目录，目录如下：&lt;/p&gt;
     
     </summary>
     
     
-      <category term="blog" scheme="http://coderfe.github.io/tags/blog/"/>
+      <category term="blog" scheme="http://coderfe.cn/tags/blog/"/>
     
-      <category term="GitHub Pages" scheme="http://coderfe.github.io/tags/GitHub-Pages/"/>
+      <category term="GitHub Pages" scheme="http://coderfe.cn/tags/GitHub-Pages/"/>
     
   </entry>
   
   <entry>
     <title>前端性能优化</title>
-    <link href="http://coderfe.github.io/2016/04/04/front-end-performance/"/>
-    <id>http://coderfe.github.io/2016/04/04/front-end-performance/</id>
+    <link href="http://coderfe.cn/2016/04/04/front-end-performance/"/>
+    <id>http://coderfe.cn/2016/04/04/front-end-performance/</id>
     <published>2016-04-04T13:38:37.000Z</published>
-    <updated>2016-05-08T02:51:13.486Z</updated>
+    <updated>2016-05-10T08:01:12.333Z</updated>
     
     <content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;时间黄金法则:&lt;/strong&gt;只有10%-20%的时间花在下载HTML文档上,其余80%-90%都花在下载页面组件上&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;时间黄金法则:&lt;/strong&gt;只有10%-20%的时间花在下载HTML文档上,其余80%-90%都花在下载页面组件上，以下规则大部分都是摘自“雅虎军规”。&lt;/p&gt;
 &lt;/blockquote&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
 &lt;h5 id=&quot;减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&quot;&gt;&lt;a href=&quot;#减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&quot; class=&quot;headerlink&quot; title=&quot;减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&quot;&gt;&lt;/a&gt;减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;图片&lt;code&gt;css sprite&lt;/code&gt;&lt;/li&gt;
 &lt;li&gt;图片地图,在一张图片上关联多个URL,URL最终指向取决于用户点击的位置&lt;br&gt;&lt;code&gt;script&lt;/code&gt;合并、&lt;code&gt;css&lt;/code&gt;合并&lt;/li&gt;
 &lt;li&gt;内联图片,通过使用&lt;code&gt;data:URL&lt;/code&gt;模式可以使页面包含图片但无需额外的HTTP请求&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h5 id=&quot;使用CDN内容分发网络（Content-Delivery-Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&quot;&gt;&lt;a href=&quot;#使用CDN内容分发网络（Content-Delivery-Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&quot; class=&quot;headerlink&quot; title=&quot;使用CDN内容分发网络（Content Delivery Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&quot;&gt;&lt;/a&gt;使用&lt;code&gt;CDN&lt;/code&gt;内容分发网络（&lt;code&gt;Content Delivery Network&lt;/code&gt;其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&lt;/h5&gt;&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h5 id=&quot;压缩javascript和css-gzip&quot;&gt;&lt;a href=&quot;#压缩javascript和css-gzip&quot; class=&quot;headerlink&quot; title=&quot;压缩javascript和css(gzip)&quot;&gt;&lt;/a&gt;压缩&lt;code&gt;javascript&lt;/code&gt;和&lt;code&gt;css&lt;/code&gt;(gzip)&lt;/h5&gt;&lt;ul&gt;
+&lt;h5 id=&quot;使用CDN内容分发网络（Content-Delivery-Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&quot;&gt;&lt;a href=&quot;#使用CDN内容分发网络（Content-Delivery-Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&quot; class=&quot;headerlink&quot; title=&quot;使用CDN内容分发网络（Content Delivery Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&quot;&gt;&lt;/a&gt;使用&lt;code&gt;CDN&lt;/code&gt;内容分发网络（&lt;code&gt;Content Delivery Network&lt;/code&gt;其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&lt;/h5&gt;&lt;h5 id=&quot;压缩javascript和css-gzip&quot;&gt;&lt;a href=&quot;#压缩javascript和css-gzip&quot; class=&quot;headerlink&quot; title=&quot;压缩javascript和css(gzip)&quot;&gt;&lt;/a&gt;压缩&lt;code&gt;javascript&lt;/code&gt;和&lt;code&gt;css&lt;/code&gt;(gzip)&lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;去除空格、空白符、注释符&lt;/li&gt;
 &lt;li&gt;简写方法名、参数名,精简&lt;code&gt;javascript&lt;/code&gt;脚本&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;css&lt;/code&gt;重用类,删除空的声明&lt;/li&gt;
@@ -498,19 +469,13 @@
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;时间黄金法则:&lt;/strong&gt;只有10%-20%的时间花在下载HTML文档上,其余80%-90%都花在下载页面组件上&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;时间黄金法则:&lt;/strong&gt;只有10%-20%的时间花在下载HTML文档上,其余80%-90%都花在下载页面组件上，以下规则大部分都是摘自“雅虎军规”。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h5 id=&quot;减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&quot;&gt;&lt;a href=&quot;#减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&quot; class=&quot;headerlink&quot; title=&quot;减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&quot;&gt;&lt;/a&gt;减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&lt;/h5&gt;&lt;ul&gt;
-&lt;li&gt;图片&lt;code&gt;css sprite&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;图片地图,在一张图片上关联多个URL,URL最终指向取决于用户点击的位置&lt;br&gt;&lt;code&gt;script&lt;/code&gt;合并、&lt;code&gt;css&lt;/code&gt;合并&lt;/li&gt;
-&lt;li&gt;内联图片,通过使用&lt;code&gt;data:URL&lt;/code&gt;模式可以使页面包含图片但无需额外的HTTP请求&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5 id=&quot;使用CDN内容分发网络（Content-Delivery-Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&quot;&gt;&lt;a href=&quot;#使用CDN内容分发网络（Content-Delivery-Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&quot; class=&quot;headerlink&quot; title=&quot;使用CDN内容分发网络（Content Delivery Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&quot;&gt;&lt;/a&gt;使用&lt;code&gt;CDN&lt;/code&gt;内容分发网络（&lt;code&gt;Content Delivery Network&lt;/code&gt;其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&lt;/h5&gt;
     
     </summary>
     
     
-      <category term="性能优化" scheme="http://coderfe.github.io/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
+      <category term="性能优化" scheme="http://coderfe.cn/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
