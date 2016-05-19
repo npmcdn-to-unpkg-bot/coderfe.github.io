@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coderfe.cn/"/>
-  <updated>2016-05-14T12:52:45.544Z</updated>
+  <updated>2016-05-19T07:25:31.812Z</updated>
   <id>http://coderfe.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://coderfe.cn/2016/05/07/performance-optimization/"/>
     <id>http://coderfe.cn/2016/05/07/performance-optimization/</id>
     <published>2016-05-07T20:08:30.000Z</published>
-    <updated>2016-05-14T12:52:45.544Z</updated>
+    <updated>2016-05-19T07:25:31.812Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;今天发现博客首页的加载速度比较感人，于是就用 Google 出品的 &lt;a href=&quot;https://developers.google.com/speed/pagespeed/insights/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pagespeed Insights&lt;/a&gt; 检测了一下，发现了不少问题，而且这些问题都严重拖慢了加载时间。&lt;/p&gt;
@@ -64,7 +64,7 @@
     <link href="http://coderfe.cn/2016/05/02/install-local-atom-packages/"/>
     <id>http://coderfe.cn/2016/05/02/install-local-atom-packages/</id>
     <published>2016-05-02T16:03:55.000Z</published>
-    <updated>2016-05-14T12:52:45.544Z</updated>
+    <updated>2016-05-19T07:25:31.812Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;Atom是一款优秀的编辑器，但是国内的网络环境太让人尴尬了，安装个插件都困难。这几天逛论坛时发现，可以把Github上的插件clone到本地再安装，做一下记录，免得又忘记了。&lt;/p&gt;
@@ -99,7 +99,7 @@
     <link href="http://coderfe.cn/2016/04/25/travisCI-deploy-hexo-blog/"/>
     <id>http://coderfe.cn/2016/04/25/travisCI-deploy-hexo-blog/</id>
     <published>2016-04-25T15:11:14.000Z</published>
-    <updated>2016-05-14T12:52:45.544Z</updated>
+    <updated>2016-05-19T07:25:31.812Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Travis CI&lt;/strong&gt;是在软件开发领域中的一个在线的，分布式的持续集成服务，用来构建及测试在GitHub托管的代码。这个软件的代码同时也是开源的，可以在GitHub上下载到，尽管开发者当前并不推荐在闭源项目中单独使用它。—— &lt;a href=&quot;https://zh.wikipedia.org/wiki/Travis_CI&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Wiki&lt;/a&gt;&lt;/p&gt;
@@ -175,7 +175,7 @@
     <link href="http://coderfe.cn/2016/04/23/restyle-website-with-stylish/"/>
     <id>http://coderfe.cn/2016/04/23/restyle-website-with-stylish/</id>
     <published>2016-04-23T22:28:51.000Z</published>
-    <updated>2016-05-14T12:52:45.544Z</updated>
+    <updated>2016-05-19T07:25:31.812Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;在PC端&lt;strong&gt;QQ空间&lt;/strong&gt;看朋友动态、&lt;strong&gt;刷微博&lt;/strong&gt;的时候你是否觉得有些东西太碍眼、太复杂了，对，我就是这样觉的，所以呢，下面就让&lt;strong&gt;Stylish&lt;/strong&gt;还给你一个清爽优雅的界面。&lt;/p&gt;
@@ -222,57 +222,60 @@
     <link href="http://coderfe.cn/2016/04/21/some-apps/"/>
     <id>http://coderfe.cn/2016/04/21/some-apps/</id>
     <published>2016-04-21T14:30:30.000Z</published>
-    <updated>2016-05-14T12:52:45.544Z</updated>
+    <updated>2016-05-19T07:25:31.812Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;移动端的Apps数不胜数，所以高质量的Apps经常会被淹没。这些都是通过自己亲身使用，感觉很顺手且颜值也高的应用，推荐给大家喽。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;Windows-10&quot;&gt;&lt;a href=&quot;#Windows-10&quot; class=&quot;headerlink&quot; title=&quot;Windows 10&quot;&gt;&lt;/a&gt;Windows 10&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;浏览器——&lt;a href=&quot;https://www.google.com/chrome/browser/desktop/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google Chrome&lt;/a&gt;，强大而优雅，安装插件之后更强大更优雅&lt;/li&gt;
-&lt;li&gt;办公软件——&lt;a href=&quot;https://www.office.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Office 2016&lt;/a&gt;，全家桶（将来一定买正版支持）别提Office 2007，太落后&lt;/li&gt;
-&lt;li&gt;笔记应用——&lt;a href=&quot;https://www.onenote.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OneNote&lt;/a&gt;，跨平台，免费，同步也不慢，随时随地记笔记&lt;/li&gt;
-&lt;li&gt;码字专用——&lt;a href=&quot;https://www.typora.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Typora&lt;/a&gt;，界面简洁，功能丰富，完全免费，支持Markdown语法&lt;/li&gt;
-&lt;li&gt;科学上网——&lt;a href=&quot;https://shadowsocks.com/client.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ShadowSocks&lt;/a&gt;，百度一下你就知道，谷歌一下你就知道太多了&lt;/li&gt;
-&lt;li&gt;音乐播放器——&lt;a href=&quot;http://music.163.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;网易云音乐&lt;/a&gt;，忒好，用户体验很棒，跨平台，But部分歌曲有版权限制&lt;/li&gt;
-&lt;li&gt;云存储——&lt;a href=&quot;https://www.dropbox.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DropBox&lt;/a&gt; or &lt;a href=&quot;https://onedrive.live.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Onedrive&lt;/a&gt;，同步快，但是DropBox需翻墙&lt;/li&gt;
-&lt;li&gt;思维导图——&lt;a href=&quot;http://www.xmind.net/download/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;XMind&lt;/a&gt;，可以借助DropBox同步&lt;/li&gt;
-&lt;li&gt;解压缩——&lt;a href=&quot;http://www.7-zip.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;7-Zip&lt;/a&gt;，速度快，多种格式，免费&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.yingdev.com/projects/tickeys&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Tickeys&lt;/a&gt;——模拟机械键盘的声音，让你沉浸在打字的乐趣当中&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.irolan.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Rolan&lt;/a&gt;——桌面文件夹分类归组，嗯(⊙_⊙)好整齐的桌面&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://rocketdock.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RocketDock&lt;/a&gt;——Dock应用程序栏，类似Mac电脑上的Dock&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.voidtools.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Everything&lt;/a&gt;——搜索本地文件神器&lt;/li&gt;
+&lt;h1 id=&quot;Windows-10&quot;&gt;&lt;a href=&quot;#Windows-10&quot; class=&quot;headerlink&quot; title=&quot;Windows 10&quot;&gt;&lt;/a&gt;Windows 10&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;浏览器—-&lt;a href=&quot;https://www.google.com/chrome/browser/desktop/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google Chrome&lt;/a&gt;，强大而优雅，安装插件之后更强大更优雅&lt;/li&gt;
+&lt;li&gt;办公软件—-&lt;a href=&quot;https://www.office.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Office 2016&lt;/a&gt;，全家桶（将来一定买正版支持）别提Office 2007，太落后&lt;/li&gt;
+&lt;li&gt;笔记应用—-&lt;a href=&quot;https://www.onenote.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OneNote&lt;/a&gt;，跨平台，免费，同步也不慢，随时随地记笔记&lt;/li&gt;
+&lt;li&gt;码字专用—-&lt;a href=&quot;https://www.typora.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Typora&lt;/a&gt;，界面简洁，功能丰富，完全免费，支持Markdown语法&lt;/li&gt;
+&lt;li&gt;科学上网—-&lt;a href=&quot;https://shadowsocks.com/client.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ShadowSocks&lt;/a&gt;，百度一下你就知道，谷歌一下你就知道太多了&lt;/li&gt;
+&lt;li&gt;音乐播放器—-&lt;a href=&quot;http://music.163.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;网易云音乐&lt;/a&gt;，忒好，用户体验很棒，跨平台，But部分歌曲有版权限制&lt;/li&gt;
+&lt;li&gt;云存储—-&lt;a href=&quot;https://www.dropbox.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DropBox&lt;/a&gt; or &lt;a href=&quot;https://onedrive.live.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Onedrive&lt;/a&gt;，同步快，但是DropBox需翻墙&lt;/li&gt;
+&lt;li&gt;思维导图—-&lt;a href=&quot;http://www.xmind.net/download/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;XMind&lt;/a&gt;，可以借助DropBox同步&lt;/li&gt;
+&lt;li&gt;解压缩—-&lt;a href=&quot;http://www.7-zip.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;7-Zip&lt;/a&gt;，速度快，多种格式，免费&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.yingdev.com/projects/tickeys&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Tickeys&lt;/a&gt;—-模拟机械键盘的声音，让你沉浸在打字的乐趣当中&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.irolan.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Rolan&lt;/a&gt;—-桌面文件夹分类归组&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://rocketdock.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RocketDock&lt;/a&gt;—-Dock应用程序栏，类似Mac电脑上的Dock&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.voidtools.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Everything&lt;/a&gt;—-搜索本地文件神器&lt;/li&gt;
 &lt;li&gt;“你好，小娜”，讲个笑话&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;Android-MEIZU-MX5&quot;&gt;&lt;a href=&quot;#Android-MEIZU-MX5&quot; class=&quot;headerlink&quot; title=&quot;Android(MEIZU MX5)&quot;&gt;&lt;/a&gt;Android(MEIZU MX5)&lt;/h2&gt;&lt;p&gt;有的应用需要在&lt;strong&gt;Google Play&lt;/strong&gt;下载：&lt;br&gt;&lt;!-- more --&gt;&lt;/p&gt;
+&lt;h1 id=&quot;Android-MEIZU-MX5&quot;&gt;&lt;a href=&quot;#Android-MEIZU-MX5&quot; class=&quot;headerlink&quot; title=&quot;Android(MEIZU MX5)&quot;&gt;&lt;/a&gt;Android(MEIZU MX5)&lt;/h1&gt;&lt;p&gt;有的应用需要在&lt;strong&gt;Google Play&lt;/strong&gt;下载： &lt;!-- more --&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;科学上网——&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.github.shadowsocks&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ShadowSocks影梭&lt;/a&gt;，上手简单，稳定&lt;/li&gt;
-&lt;li&gt;浏览器——&lt;a href=&quot;http://www.opera.com/zh-cn/mobile/operabrowser&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Opera&lt;/a&gt;，省流量，体积小&lt;/li&gt;
-&lt;li&gt;微博客户端——&lt;a href=&quot;https://play.google.com/store/apps/details?id=us.shandian.blacklight&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;BlackLight&lt;/a&gt;，墙外下载，简约不简单&lt;/li&gt;
-&lt;li&gt;RSS——&lt;a href=&quot;https://play.google.com/store/apps/details?id=it.mvilla.android.quote&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Quote&lt;/a&gt;，干净舒适，体积小&lt;/li&gt;
-&lt;li&gt;资料管理——&lt;a href=&quot;https://play.google.com/store/apps/details?id=co.refme&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RefMe&lt;/a&gt;，写论文的好帮手&lt;/li&gt;
-&lt;li&gt;云存储——&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.dropbox.android&amp;amp;hl=zh-cn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DropBox&lt;/a&gt; / &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.microsoft.skydrive&amp;amp;hl=zh-cn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Onedrive&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;便签——&lt;a href=&quot;http://www.smartisan.com/apps/notes&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;锤子便签&lt;/a&gt;，情怀，好看，体验顺滑&lt;/li&gt;
-&lt;li&gt;音乐——&lt;a href=&quot;http://music.163.com/#/download&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;网易云音乐&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;写东西——&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.ryeeeeee.markdownx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MarkdownX&lt;/a&gt;，简洁，可以和DropBox同步&lt;/li&gt;
-&lt;li&gt;长知识——&lt;a href=&quot;http://www.zhihu.com/app/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.quora.android&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Quora&lt;/a&gt;、&lt;a href=&quot;https://play.google.com/store/apps/details?id=org.wikipedia&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;维基百科&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;看新闻——&lt;a href=&quot;https://play.google.com/store/apps/details?id=jp.gocro.smartnews.android&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SmartNews&lt;/a&gt;，英语新闻客户端&lt;/li&gt;
-&lt;li&gt;待办事项——&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.accomplish&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Accomplish&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;连接你的Apps——&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.ifttt.ifttt&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;IF by IFTTT&lt;/a&gt;，功能有待进一步发掘&lt;/li&gt;
-&lt;li&gt;桌面启动器——&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.teslacoilsw.launcher&amp;amp;hl=zh-CN&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Nova Launcher&lt;/a&gt;，体验Google原生桌面风格&lt;/li&gt;
+&lt;li&gt;科学上网—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.github.shadowsocks&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ShadowSocks影梭&lt;/a&gt;，上手简单，稳定&lt;/li&gt;
+&lt;li&gt;浏览器—-&lt;a href=&quot;http://www.opera.com/zh-cn/mobile/operabrowser&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Opera&lt;/a&gt;，省流量，体积小&lt;/li&gt;
+&lt;li&gt;微博客户端—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=us.shandian.blacklight&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;BlackLight&lt;/a&gt;，墙外下载，简约不简单&lt;/li&gt;
+&lt;li&gt;RSS—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=it.mvilla.android.quote&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Quote&lt;/a&gt;，干净舒适，体积小&lt;/li&gt;
+&lt;li&gt;资料管理—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=co.refme&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RefMe&lt;/a&gt;，写论文的好帮手&lt;/li&gt;
+&lt;li&gt;云存储—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.dropbox.android&amp;amp;hl=zh-cn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DropBox&lt;/a&gt; / &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.microsoft.skydrive&amp;amp;hl=zh-cn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Onedrive&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;便签—-&lt;a href=&quot;http://www.smartisan.com/apps/notes&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;锤子便签&lt;/a&gt;，情怀，好看，体验顺滑&lt;/li&gt;
+&lt;li&gt;音乐—-&lt;a href=&quot;http://music.163.com/#/download&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;网易云音乐&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;写东西—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.ryeeeeee.markdownx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MarkdownX&lt;/a&gt;，简洁，可以和DropBox同步&lt;/li&gt;
+&lt;li&gt;长知识—-&lt;a href=&quot;http://www.zhihu.com/app/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.quora.android&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Quora&lt;/a&gt;、&lt;a href=&quot;https://play.google.com/store/apps/details?id=org.wikipedia&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;维基百科&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;看新闻—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=jp.gocro.smartnews.android&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SmartNews&lt;/a&gt;，英语新闻客户端&lt;/li&gt;
+&lt;li&gt;待办事项—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.accomplish&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Accomplish&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;连接你的Apps—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.ifttt.ifttt&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;IF by IFTTT&lt;/a&gt;，功能有待进一步发掘&lt;/li&gt;
+&lt;li&gt;桌面启动器—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.teslacoilsw.launcher&amp;amp;hl=zh-CN&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Nova Launcher&lt;/a&gt;，体验Google原生桌面风格&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&quot;iOS-iPad-mini-2&quot;&gt;&lt;a href=&quot;#iOS-iPad-mini-2&quot; class=&quot;headerlink&quot; title=&quot;iOS(iPad mini 2)&quot;&gt;&lt;/a&gt;iOS(iPad mini 2)&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;科学上网——&lt;a href=&quot;https://itunes.apple.com/us/app/surge-web-developer-tool-proxy/id1040100637?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Surge&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;浏览器——&lt;strong&gt;Safari&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;微博客户端——&lt;a href=&quot;https://itunes.apple.com/us/app/vvebo-wei-bo-ke-hu-duan/id670910957?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;VVebo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;写点东西——&lt;a href=&quot;https://itunes.apple.com/cn/app/ulysses/id950335311?mt=8&amp;amp;ign-mpt=uo%3D4&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ulysses&lt;/a&gt; / &lt;a href=&quot;https://itunes.apple.com/cn/app/day-one-2-ri-ji-+-bi-ji/id1044867788?mt=8&amp;amp;ign-mpt=uo%3D4&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Day One&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;思维导图——&lt;a href=&quot;https://itunes.apple.com/us/app/mindnode-delightful-mind-mapping/id312220102?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MindNode&lt;/a&gt; / &lt;a href=&quot;https://itunes.apple.com/us/app/ithoughts-mindmap/id866786833?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iThoughts&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;新闻——&lt;a href=&quot;https://itunes.apple.com/us/app/id579581125&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SmartNews&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;图片——&lt;a href=&quot;https://itunes.apple.com/us/app/typorama-typography-generator/id978659937?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Typorama&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;RSS——&lt;a href=&quot;https://itunes.apple.com/us/app/feedly/id396069556&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Feedly&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;文件管理——&lt;a href=&quot;https://itunes.apple.com/us/app/documents-5-fast-pdf-reader/id364901807?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Documents&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;云存储——&lt;a href=&quot;https://itunes.apple.com/cn/app/dropbox/id327630330?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DropBox&lt;/a&gt; / &lt;a href=&quot;https://itunes.apple.com/cn/app/skydrive/id477537958?ls=1&amp;amp;mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Onedrive&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;写大纲，理思路——&lt;a href=&quot;https://itunes.apple.com/cn/app/omnioutliner-pro/id404647179?mt=12&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OmniOutliner&lt;/a&gt;，有点小贵:D&lt;/li&gt;
+&lt;h1 id=&quot;iOS-iPad-mini-2&quot;&gt;&lt;a href=&quot;#iOS-iPad-mini-2&quot; class=&quot;headerlink&quot; title=&quot;iOS(iPad mini 2)&quot;&gt;&lt;/a&gt;iOS(iPad mini 2)&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;科学上网—-&lt;a href=&quot;https://itunes.apple.com/us/app/surge-web-developer-tool-proxy/id1040100637?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Surge&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;浏览器—-&lt;strong&gt;Safari&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;微博客户端—-&lt;a href=&quot;https://itunes.apple.com/us/app/vvebo-wei-bo-ke-hu-duan/id670910957?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;VVebo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;写点东西—-&lt;a href=&quot;https://itunes.apple.com/cn/app/ulysses/id950335311?mt=8&amp;amp;ign-mpt=uo%3D4&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ulysses&lt;/a&gt; / &lt;a href=&quot;https://itunes.apple.com/cn/app/day-one-2-ri-ji-+-bi-ji/id1044867788?mt=8&amp;amp;ign-mpt=uo%3D4&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Day One&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;思维导图—-&lt;a href=&quot;https://itunes.apple.com/us/app/mindnode-delightful-mind-mapping/id312220102?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MindNode&lt;/a&gt; / &lt;a href=&quot;https://itunes.apple.com/us/app/ithoughts-mindmap/id866786833?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iThoughts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;新闻—-&lt;a href=&quot;https://itunes.apple.com/us/app/id579581125&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SmartNews&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;图片—-&lt;a href=&quot;https://itunes.apple.com/us/app/typorama-typography-generator/id978659937?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Typorama&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;RSS—-&lt;a href=&quot;https://itunes.apple.com/us/app/feedly/id396069556&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Feedly&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;文件管理—-&lt;a href=&quot;https://itunes.apple.com/us/app/documents-5-fast-pdf-reader/id364901807?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Documents&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;云存储—-&lt;a href=&quot;https://itunes.apple.com/cn/app/dropbox/id327630330?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DropBox&lt;/a&gt; / &lt;a href=&quot;https://itunes.apple.com/cn/app/skydrive/id477537958?ls=1&amp;amp;mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Onedrive&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;写大纲，理思路—-&lt;a href=&quot;https://itunes.apple.com/cn/app/omnioutliner-pro/id404647179?mt=12&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OmniOutliner&lt;/a&gt;，有点小贵:D&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;Linux-Ubuntu&quot;&gt;&lt;a href=&quot;#Linux-Ubuntu&quot; class=&quot;headerlink&quot; title=&quot;Linux(Ubuntu)&quot;&gt;&lt;/a&gt;Linux(Ubuntu)&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/getlantern/lantern&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Lantern&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
     
@@ -294,7 +297,7 @@
     <link href="http://coderfe.cn/2016/04/08/Ajax-note/"/>
     <id>http://coderfe.cn/2016/04/08/Ajax-note/</id>
     <published>2016-04-08T17:26:39.000Z</published>
-    <updated>2016-05-14T12:52:45.544Z</updated>
+    <updated>2016-05-19T07:25:31.812Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;Ajax即&lt;strong&gt;Asynchronous Javascript and XML&lt;/strong&gt;（异步的Javascript与XML技术），简单来说就是无需刷新整个页面就能更新用户界面，从而更快地响应用户行为的一套技术。&lt;/p&gt;
@@ -349,7 +352,7 @@
     <link href="http://coderfe.cn/2016/04/07/hexo-github-blog/"/>
     <id>http://coderfe.cn/2016/04/07/hexo-github-blog/</id>
     <published>2016-04-07T20:00:00.000Z</published>
-    <updated>2016-05-14T12:52:45.544Z</updated>
+    <updated>2016-05-19T07:25:31.812Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;工欲善其事，必先利其器。在开发过程中用到的软件有&lt;strong&gt;Nodejs / Sublime Text3 / Git&lt;/strong&gt;等，参考资料主要是&lt;a href=&quot;https://hexo.io/zh-cn/docs/configuration.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
@@ -413,7 +416,7 @@
     <link href="http://coderfe.cn/2016/04/04/front-end-performance/"/>
     <id>http://coderfe.cn/2016/04/04/front-end-performance/</id>
     <published>2016-04-04T13:38:37.000Z</published>
-    <updated>2016-05-14T12:52:45.544Z</updated>
+    <updated>2016-05-19T07:25:31.812Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;时间黄金法则:&lt;/strong&gt;只有10%-20%的时间花在下载HTML文档上,其余80%-90%都花在下载页面组件上，以下规则大部分都是摘自“雅虎军规”。&lt;/p&gt;
