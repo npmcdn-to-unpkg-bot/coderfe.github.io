@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coderfe.cn/"/>
-  <updated>2016-07-18T08:34:22.090Z</updated>
+  <updated>2016-07-18T14:12:39.574Z</updated>
   <id>http://coderfe.cn/</id>
   
   <author>
@@ -17,19 +17,36 @@
   
   <entry>
     <title>工作的第一周</title>
-    <link href="http://coderfe.cn/2016/07/18/about-job/"/>
-    <id>http://coderfe.cn/2016/07/18/about-job/</id>
-    <published>2016-07-18T16:23:30.000Z</published>
-    <updated>2016-07-18T08:34:22.090Z</updated>
+    <link href="http://coderfe.cn/2016/07/18/job-weekly-1/"/>
+    <id>http://coderfe.cn/2016/07/18/job-weekly-1/</id>
+    <published>2016-07-18T19:20:54.000Z</published>
+    <updated>2016-07-18T14:12:39.574Z</updated>
     
-    <content type="html"></content>
+    <content type="html">&lt;blockquote&gt;
+&lt;p&gt;毕业了差不多一个月了，终于找到了一份说的过去的工作，虽然跟自己想象中的工作还有那么一丢丢差距，但起码也能继续做自己喜欢的事情了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;毕业，踏入社会，这是一个艰难的过程。投过很多的简历，但是得到的面试也不怎么多，毕竟自己的技术是差点。从大三开始接触前端，一直到现在，虽然接触了很多的技术和理念，但在实践方面的经验很少，我想这也是那些企业拒绝我的原因。&lt;/p&gt;
+&lt;p&gt;6月份毕业之后，拿着如此简陋的简历开始找工作了，虽然会碰壁，但面试官也会教会了我如何继续学习前端，走自己喜欢的路，做自己喜欢的事。&lt;/p&gt;
+&lt;p&gt;找到如今这份工作的说来还要感谢我姐。&lt;/p&gt;
+&lt;p&gt;7月11号正式入职，但是分配到项目是在7月15号啊，这中间几天都不知道自己要干嘛，还好终于分到了项目组，开始自己的正式前端之旅。可是闹心的是项目要兼容到 IE8 ，我要哭了😭，耐心点，慢慢来。&lt;/p&gt;
+&lt;p&gt;周六培训，周日休息！&lt;/p&gt;
+&lt;p&gt;还有我最不喜欢的事——挤地铁！&lt;/p&gt;
+&lt;p&gt;前端路上的旅行，继续。。。&lt;/p&gt;
+</content>
     
     <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;毕业了差不多一个月了，终于找到了一份说的过去的工作，虽然跟自己想象中的工作还有那么一丢丢差距，但起码也能继续做自己喜欢的事情了。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;毕业，踏入社会，这是一个艰难的过程。投过很多的简历，但是得到的面试也不怎么多
     
     </summary>
     
     
       <category term="工作" scheme="http://coderfe.cn/tags/%E5%B7%A5%E4%BD%9C/"/>
+    
+      <category term="Weekly" scheme="http://coderfe.cn/tags/Weekly/"/>
     
   </entry>
   
@@ -38,7 +55,7 @@
     <link href="http://coderfe.cn/2016/07/08/interview-07-07/"/>
     <id>http://coderfe.cn/2016/07/08/interview-07-07/</id>
     <published>2016-07-08T13:15:39.000Z</published>
-    <updated>2016-07-18T08:34:22.090Z</updated>
+    <updated>2016-07-18T14:12:39.574Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;7月份毕业之后一直在找一份前端方面的工作，昨天终于得到了一次面试的机会。昨天去面试，面试官给了我三道题目，太紧张了，磕磕绊绊的答了一下，不太满意，今天总结一下昨天的几道面试题。&lt;/p&gt;
@@ -76,7 +93,7 @@
     <link href="http://coderfe.cn/2016/05/24/npm-package/"/>
     <id>http://coderfe.cn/2016/05/24/npm-package/</id>
     <published>2016-05-24T22:06:14.000Z</published>
-    <updated>2016-07-18T08:34:22.090Z</updated>
+    <updated>2016-07-18T14:12:39.574Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;npm是由nodejs提供的一个包管理工具，npm可以获取第三方nodejs工具，比如gulp-sass, gulp-autoprefixer等可以大大提高开发效率。Let’s learn it!&lt;/p&gt;
@@ -115,7 +132,7 @@
     <link href="http://coderfe.cn/2016/05/07/performance-optimization/"/>
     <id>http://coderfe.cn/2016/05/07/performance-optimization/</id>
     <published>2016-05-07T20:08:30.000Z</published>
-    <updated>2016-07-18T08:34:22.090Z</updated>
+    <updated>2016-07-18T14:12:39.574Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;今天发现博客首页的加载速度比较感人，于是就用 Google 出品的 &lt;a href=&quot;https://developers.google.com/speed/pagespeed/insights/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pagespeed Insights&lt;/a&gt; 检测了一下，发现了不少问题，而且这些问题都严重拖慢了加载时间。&lt;/p&gt;
@@ -159,7 +176,7 @@
     <link href="http://coderfe.cn/2016/05/02/install-local-atom-packages/"/>
     <id>http://coderfe.cn/2016/05/02/install-local-atom-packages/</id>
     <published>2016-05-02T16:03:55.000Z</published>
-    <updated>2016-07-18T08:34:22.090Z</updated>
+    <updated>2016-07-18T14:12:39.574Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;Atom是一款优秀的编辑器，但是国内的网络环境太让人尴尬了，安装个插件都困难。这几天逛论坛时发现，可以把Github上的插件clone到本地再安装，做一下记录，免得又忘记了。&lt;/p&gt;
@@ -194,7 +211,7 @@
     <link href="http://coderfe.cn/2016/04/25/travisCI-deploy-hexo-blog/"/>
     <id>http://coderfe.cn/2016/04/25/travisCI-deploy-hexo-blog/</id>
     <published>2016-04-25T15:11:14.000Z</published>
-    <updated>2016-07-18T08:34:22.090Z</updated>
+    <updated>2016-07-18T14:12:39.574Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;Travis CI&lt;/strong&gt;是在软件开发领域中的一个在线的，分布式的持续集成服务，用来构建及测试在GitHub托管的代码。这个软件的代码同时也是开源的，可以在GitHub上下载到，尽管开发者当前并不推荐在闭源项目中单独使用它。—— &lt;a href=&quot;https://zh.wikipedia.org/wiki/Travis_CI&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Wiki&lt;/a&gt;&lt;/p&gt;
@@ -270,7 +287,7 @@
     <link href="http://coderfe.cn/2016/04/23/restyle-website-with-stylish/"/>
     <id>http://coderfe.cn/2016/04/23/restyle-website-with-stylish/</id>
     <published>2016-04-23T22:28:51.000Z</published>
-    <updated>2016-07-18T08:34:22.090Z</updated>
+    <updated>2016-07-18T14:12:39.574Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;在PC端&lt;strong&gt;QQ空间&lt;/strong&gt;看朋友动态、&lt;strong&gt;刷微博&lt;/strong&gt;的时候你是否觉得有些东西太碍眼、太复杂了，对，我就是这样觉的，所以呢，下面就让&lt;strong&gt;Stylish&lt;/strong&gt;还给你一个清爽优雅的界面。&lt;/p&gt;
@@ -317,7 +334,7 @@
     <link href="http://coderfe.cn/2016/04/21/some-apps/"/>
     <id>http://coderfe.cn/2016/04/21/some-apps/</id>
     <published>2016-04-21T14:30:30.000Z</published>
-    <updated>2016-07-18T08:34:22.090Z</updated>
+    <updated>2016-07-18T14:12:39.574Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;移动端的Apps数不胜数，所以高质量的Apps经常会被淹没。这些都是通过自己亲身使用，感觉很顺手且颜值也高的应用，推荐给大家喽。&lt;/p&gt;
@@ -392,7 +409,7 @@
     <link href="http://coderfe.cn/2016/04/08/Ajax-note/"/>
     <id>http://coderfe.cn/2016/04/08/Ajax-note/</id>
     <published>2016-04-08T17:26:39.000Z</published>
-    <updated>2016-07-18T08:34:22.090Z</updated>
+    <updated>2016-07-18T14:12:39.574Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;Ajax即&lt;strong&gt;Asynchronous Javascript and XML&lt;/strong&gt;（异步的Javascript与XML技术），简单来说就是无需刷新整个页面就能更新用户界面，从而更快地响应用户行为的一套技术。&lt;/p&gt;
@@ -447,7 +464,7 @@
     <link href="http://coderfe.cn/2016/04/07/hexo-github-blog/"/>
     <id>http://coderfe.cn/2016/04/07/hexo-github-blog/</id>
     <published>2016-04-07T20:00:00.000Z</published>
-    <updated>2016-07-18T08:34:22.090Z</updated>
+    <updated>2016-07-18T14:12:39.574Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;工欲善其事，必先利其器。在开发过程中用到的软件有&lt;strong&gt;Nodejs / Sublime Text3 / Git&lt;/strong&gt;等，参考资料主要是&lt;a href=&quot;https://hexo.io/zh-cn/docs/configuration.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
@@ -511,7 +528,7 @@
     <link href="http://coderfe.cn/2016/04/04/front-end-performance/"/>
     <id>http://coderfe.cn/2016/04/04/front-end-performance/</id>
     <published>2016-04-04T13:38:37.000Z</published>
-    <updated>2016-07-18T08:34:22.090Z</updated>
+    <updated>2016-07-18T14:12:39.574Z</updated>
     
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;&lt;strong&gt;时间黄金法则:&lt;/strong&gt;只有10%-20%的时间花在下载HTML文档上,其余80%-90%都花在下载页面组件上，以下规则大部分都是摘自“雅虎军规”。&lt;/p&gt;
