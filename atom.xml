@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coderfe.cn/"/>
-  <updated>2016-07-18T14:17:09.080Z</updated>
+  <updated>2016-07-20T14:20:19.762Z</updated>
   <id>http://coderfe.cn/</id>
   
   <author>
@@ -16,24 +16,64 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Gulp and Browser-sync</title>
+    <link href="http://coderfe.cn/2016/07/20/browser-sync/"/>
+    <id>http://coderfe.cn/2016/07/20/browser-sync/</id>
+    <published>2016-07-20T21:39:25.000Z</published>
+    <updated>2016-07-20T14:20:19.762Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>使用 <code>gulp</code> 和 <code>browser-sync</code> 做开发也已经有一段时间了，他们俩配合着用的话，简直就是提高开发效率的神器。但搞笑的是我今天才发现利用 <code>browser-sync</code> 可以同时在 PC 和 移动端预览效果，我承认我发现的有点晚😅。。。</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g browser-sync gulp</div></pre></td></tr></table></figure>
+<h3 id="启动服务"><a href="#启动服务" class="headerlink" title="启动服务"></a>启动服务</h3><p>可以和 <code>gulp</code> 搭配使用，也可以单独使用，通常我都是搭配 <code>gulp</code> 使用的，但在这里仅作演示。通过以下命令可以启动一个小型的服务器，并监听文件变化。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># *号代表要监听的文件，可以使任何文件</div><div class="line">browser-sync start --server --file &quot;*&quot;</div></pre></td></tr></table></figure>
+<p>此时，会在默认浏览器中打开一个窗口并自动访问 <a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a> ，同时呢，命令行会显示一下内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[BS] Access URLs:</div><div class="line"> --------------------------------------</div><div class="line">       Local: http://localhost:3000</div><div class="line">    External: http://192.168.1.103:3000</div><div class="line"> --------------------------------------</div><div class="line">          UI: http://localhost:3001</div><div class="line"> UI External: http://192.168.1.103:3001</div><div class="line"> --------------------------------------</div><div class="line">[BS] Serving files from: ./</div></pre></td></tr></table></figure>
+<p><strong>用你的移动设备打开 <a href="http://192.168.1.103:3000" target="_blank" rel="external">http://192.168.1.103:3000</a> ，你会看见网页会呈现在你面前，而且设备间可以同步进行滚动等操作，调试响应式网站简直不要太好用😎</strong></p>
+<p><strong><a href="http://localhost:3001" target="_blank" rel="external">http://localhost:3001</a> 这个地址是一个可视化操作的界面，可以在这个网页中配置 <code>browser-sync</code> 的相关服务，很神奇，有木有？</strong></p>
+<h3 id="gulp-amp-browser-sync"><a href="#gulp-amp-browser-sync" class="headerlink" title="gulp &amp; browser-sync"></a>gulp &amp; browser-sync</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install gulp browser-sync --save-dev</div></pre></td></tr></table></figure>
+<p><strong>gulpfile.js</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>),</div><div class="line">truebrowserSync = <span class="built_in">require</span>(<span class="string">'browser-sync'</span>).create();</div><div class="line"></div><div class="line">gulp.task(<span class="string">'server'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    browserSync.init(&#123;</div><div class="line">        server: &#123;</div><div class="line">            baseDir: <span class="string">"./"</span></div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>最后在命令行中运行 <code>gulp server</code></p>
+<h3 id="Others"><a href="#Others" class="headerlink" title="Others"></a>Others</h3><p>其实利用 <code>gulp</code> 可以做的事情很多很多，编译 <code>SCSS</code> 、压缩代码/图片等等。前端要做的工作它几乎都可以胜任。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;使用 &lt;code&gt;gulp&lt;/code&gt; 和 &lt;code&gt;browser-sync&lt;/code&gt; 做开发也已经有一段时间了，他们俩配合着用的话，简直就是提高开发效率的神器。但搞笑的是我今天才发现利用 &lt;code&gt;browser-sync&lt;/code&gt; 可以同时在 PC 和 移动端预览效果，我承认我发现的有点晚😅。。。&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="笔记" scheme="http://coderfe.cn/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+      <category term="gulp" scheme="http://coderfe.cn/tags/gulp/"/>
+    
+  </entry>
+  
+  <entry>
     <title>工作的第一周</title>
     <link href="http://coderfe.cn/2016/07/18/job-weekly-1/"/>
     <id>http://coderfe.cn/2016/07/18/job-weekly-1/</id>
     <published>2016-07-18T19:20:54.000Z</published>
-    <updated>2016-07-18T14:17:09.080Z</updated>
+    <updated>2016-07-20T14:20:19.762Z</updated>
     
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;毕业了差不多一个月了，终于找到了一份说的过去的工作，虽然跟自己想象中的工作还有那么一丢丢差距，但起码也能继续做自己喜欢的事情了。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;毕业，踏入社会，这是一个艰难的过程。投过很多的简历，但是得到的面试也不怎么多，毕竟自己的技术是差点。从大三开始接触前端，一直到现在，虽然接触了很多的技术和理念，但在实践方面的经验很少，我想这也是那些企业拒绝我的原因。&lt;/p&gt;
-&lt;p&gt;6月份毕业之后，拿着如此简陋的简历开始找工作了，虽然会碰壁，但面试官也会教会了我如何继续学习前端，走自己喜欢的路，做自己喜欢的事。&lt;/p&gt;
-&lt;p&gt;找到如今这份工作的说来还要感谢我姐。&lt;/p&gt;
-&lt;p&gt;7月11号正式入职，但是分配到项目是在7月15号啊，这中间几天都不知道自己要干嘛，还好终于分到了项目组，开始自己的正式前端之旅。可是闹心的是项目要兼容到 IE8 ，我要哭了😭，耐心点，慢慢来。&lt;/p&gt;
-&lt;p&gt;周六培训，周日休息！&lt;/p&gt;
-&lt;p&gt;还有我最不喜欢的事——挤地铁！&lt;/p&gt;
-&lt;p&gt;前端路上的旅行，继续。。。&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<blockquote>
+<p>毕业了差不多一个月了，终于找到了一份说的过去的工作，虽然跟自己想象中的工作还有那么一丢丢差距，但起码也能继续做自己喜欢的事情了。</p>
+</blockquote>
+<a id="more"></a>
+<p>毕业，踏入社会，这是一个艰难的过程。投过很多的简历，但是得到的面试也不怎么多，毕竟自己的技术是差点。从大三开始接触前端，一直到现在，虽然接触了很多的技术和理念，但在实践方面的经验很少，我想这也是那些企业拒绝我的原因。</p>
+<p>6月份毕业之后，拿着如此简陋的简历开始找工作了，虽然会碰壁，但面试官也会教会了我如何继续学习前端，走自己喜欢的路，做自己喜欢的事。</p>
+<p>找到如今这份工作的说来还要感谢我姐。</p>
+<p>7月11号正式入职，但是分配到项目是在7月15号啊，这中间几天都不知道自己要干嘛，还好终于分到了项目组，开始自己的正式前端之旅。可是闹心的是项目要兼容到 IE8 ，我要哭了😭，耐心点，慢慢来。</p>
+<p>周六培训，周日休息！</p>
+<p>还有我最不喜欢的事——挤地铁！</p>
+<p>前端路上的旅行，继续。。。</p>
+]]></content>
     
     <summary type="html">
     
@@ -55,25 +95,25 @@
     <link href="http://coderfe.cn/2016/07/08/interview-07-07/"/>
     <id>http://coderfe.cn/2016/07/08/interview-07-07/</id>
     <published>2016-07-08T13:15:39.000Z</published>
-    <updated>2016-07-18T14:17:09.080Z</updated>
+    <updated>2016-07-20T14:20:19.762Z</updated>
     
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;7月份毕业之后一直在找一份前端方面的工作，昨天终于得到了一次面试的机会。昨天去面试，面试官给了我三道题目，太紧张了，磕磕绊绊的答了一下，不太满意，今天总结一下昨天的几道面试题。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;文本内容溢出后用省略号代替显示：&lt;/p&gt;
-&lt;p&gt;这个可以直接用 &lt;code&gt;text-overflow&lt;/code&gt; 来完成，当时竟然没有记起来这个属性。。。兼容 IE / FF / Chrome&lt;/p&gt;
-&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;.text &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  width：100px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  height: 30px;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  overflow: hidden;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  white-space: nowrap;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  tetx-overflow: ellipsis;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;三列布局，左右两列不定宽，中间自适应：&lt;/p&gt;
-&lt;p&gt;这道题我的思路是用 &lt;code&gt;flexbox&lt;/code&gt; 实现，其实实现的方法也很多，可以使用 浮动 / 绝对定位等&lt;/p&gt;
-&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.container&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;position&lt;/span&gt;: relative;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;50px&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;border&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;1px&lt;/span&gt; solid &lt;span class=&quot;number&quot;&gt;#111&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;line-height&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;50px&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.left&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.right&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;position&lt;/span&gt;: absolute;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;top&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.left&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;left&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;background-color&lt;/span&gt;: darkkhaki;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;selector-class&quot;&gt;.right&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;right&lt;/span&gt;: &lt;span class=&quot;number&quot;&gt;0&lt;/span&gt;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;attribute&quot;&gt;background-color&lt;/span&gt;: cadetblue;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;鼠标滑过用户头像时出现一张卡片，鼠标移出头像时卡消失，同时鼠标在卡片上时卡片保持显示状态：&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-</content>
+    <content type="html"><![CDATA[<blockquote>
+<p>7月份毕业之后一直在找一份前端方面的工作，昨天终于得到了一次面试的机会。昨天去面试，面试官给了我三道题目，太紧张了，磕磕绊绊的答了一下，不太满意，今天总结一下昨天的几道面试题。</p>
+</blockquote>
+<a id="more"></a>
+<ol>
+<li><p>文本内容溢出后用省略号代替显示：</p>
+<p>这个可以直接用 <code>text-overflow</code> 来完成，当时竟然没有记起来这个属性。。。兼容 IE / FF / Chrome</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.text &#123;</div><div class="line">  width：100px;</div><div class="line">  height: 30px;</div><div class="line">  overflow: hidden;</div><div class="line">  white-space: nowrap;</div><div class="line">  tetx-overflow: ellipsis;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>三列布局，左右两列不定宽，中间自适应：</p>
+<p>这道题我的思路是用 <code>flexbox</code> 实现，其实实现的方法也很多，可以使用 浮动 / 绝对定位等</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.container</span> &#123;</div><div class="line">  <span class="attribute">position</span>: relative;</div><div class="line">  <span class="attribute">height</span>: <span class="number">50px</span>;</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#111</span>;</div><div class="line">  <span class="attribute">line-height</span>: <span class="number">50px</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.left</span>,</div><div class="line"><span class="selector-class">.right</span> &#123;</div><div class="line">  <span class="attribute">position</span>: absolute;</div><div class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.left</span> &#123;</div><div class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">background-color</span>: darkkhaki;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.right</span> &#123;</div><div class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">background-color</span>: cadetblue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>鼠标滑过用户头像时出现一张卡片，鼠标移出头像时卡消失，同时鼠标在卡片上时卡片保持显示状态：</p>
+</li>
+</ol>
+]]></content>
     
     <summary type="html">
     
@@ -93,26 +133,26 @@
     <link href="http://coderfe.cn/2016/05/24/npm-package/"/>
     <id>http://coderfe.cn/2016/05/24/npm-package/</id>
     <published>2016-05-24T22:06:14.000Z</published>
-    <updated>2016-07-18T14:17:09.080Z</updated>
+    <updated>2016-07-20T14:20:19.762Z</updated>
     
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;npm是由nodejs提供的一个包管理工具，npm可以获取第三方nodejs工具，比如gulp-sass, gulp-autoprefixer等可以大大提高开发效率。Let’s learn it!&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;package-json&quot;&gt;&lt;a href=&quot;#package-json&quot; class=&quot;headerlink&quot; title=&quot;package.json&quot;&gt;&lt;/a&gt;package.json&lt;/h2&gt;&lt;p&gt;&lt;code&gt;package.json&lt;/code&gt;文件里包含了包的名称、版本、依赖、开源协议等重要信息。不确定的信息可以直接回车，之后再修改。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm init&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# 或者&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm init --yes&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;生成的package.json如下：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;name&amp;quot;: &amp;quot;example&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;version&amp;quot;: &amp;quot;1.0.0&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;description&amp;quot;: &amp;quot;example npm package&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;main&amp;quot;: &amp;quot;index.js&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;scripts&amp;quot;: &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;quot;test&amp;quot;: &amp;quot;echo \&amp;quot;Error: no test specified\&amp;quot; &amp;amp;&amp;amp; exit 1&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;author&amp;quot;: &amp;quot;coderfee&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;quot;license&amp;quot;: &amp;quot;MIT&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h2 id=&quot;注册npm账号&quot;&gt;&lt;a href=&quot;#注册npm账号&quot; class=&quot;headerlink&quot; title=&quot;注册npm账号&quot;&gt;&lt;/a&gt;注册npm账号&lt;/h2&gt;&lt;p&gt;在 &lt;a href=&quot;https://www.npmjs.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.npmjs.org/&lt;/a&gt; 注册用户，然后使用命令行登录，会要求输入账户名、密码、邮箱，正确输入即可。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm login&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Username: your name&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Password: your password&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Email: your email&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h2 id=&quot;发布npm包&quot;&gt;&lt;a href=&quot;#发布npm包&quot; class=&quot;headerlink&quot; title=&quot;发布npm包&quot;&gt;&lt;/a&gt;发布npm包&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm publish&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;# 或者&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm publish path/to/package&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;更新npm包&quot;&gt;&lt;a href=&quot;#更新npm包&quot; class=&quot;headerlink&quot; title=&quot;更新npm包&quot;&gt;&lt;/a&gt;更新npm包&lt;/h2&gt;&lt;p&gt;更新时修改版本后再发布即可，版本格式：主版号.次版号.修订号&lt;/p&gt;
-&lt;p&gt;版本号修改规则：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;主版号：当你做了不相容的 API 修改。&lt;/li&gt;
-&lt;li&gt;次版号：当你做了向下相容的功能性新增。&lt;/li&gt;
-&lt;li&gt;修订号：当你做了向下相容的问题修正。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;撤销发布的包&quot;&gt;&lt;a href=&quot;#撤销发布的包&quot; class=&quot;headerlink&quot; title=&quot;撤销发布的包&quot;&gt;&lt;/a&gt;撤销发布的包&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;npm unpublish package-name@package-version&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://docs.npmjs.com/getting-started/what-is-npm&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;npm doc&lt;/a&gt;&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<blockquote>
+<p>npm是由nodejs提供的一个包管理工具，npm可以获取第三方nodejs工具，比如gulp-sass, gulp-autoprefixer等可以大大提高开发效率。Let’s learn it!</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><p><code>package.json</code>文件里包含了包的名称、版本、依赖、开源协议等重要信息。不确定的信息可以直接回车，之后再修改。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm init</div><div class="line"># 或者</div><div class="line">npm init --yes</div></pre></td></tr></table></figure></p>
+<p>生成的package.json如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  &quot;name&quot;: &quot;example&quot;,</div><div class="line">  &quot;version&quot;: &quot;1.0.0&quot;,</div><div class="line">  &quot;description&quot;: &quot;example npm package&quot;,</div><div class="line">  &quot;main&quot;: &quot;index.js&quot;,</div><div class="line">  &quot;scripts&quot;: &#123;</div><div class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;</div><div class="line">  &#125;,</div><div class="line">  &quot;author&quot;: &quot;coderfee&quot;,</div><div class="line">  &quot;license&quot;: &quot;MIT&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="注册npm账号"><a href="#注册npm账号" class="headerlink" title="注册npm账号"></a>注册npm账号</h2><p>在 <a href="https://www.npmjs.org/" target="_blank" rel="external">https://www.npmjs.org/</a> 注册用户，然后使用命令行登录，会要求输入账户名、密码、邮箱，正确输入即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm login</div><div class="line">Username: your name</div><div class="line">Password: your password</div><div class="line">Email: your email</div></pre></td></tr></table></figure></p>
+<h2 id="发布npm包"><a href="#发布npm包" class="headerlink" title="发布npm包"></a>发布npm包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">npm publish</div><div class="line"># 或者</div><div class="line">npm publish path/to/package</div></pre></td></tr></table></figure>
+<h2 id="更新npm包"><a href="#更新npm包" class="headerlink" title="更新npm包"></a>更新npm包</h2><p>更新时修改版本后再发布即可，版本格式：主版号.次版号.修订号</p>
+<p>版本号修改规则：</p>
+<ul>
+<li>主版号：当你做了不相容的 API 修改。</li>
+<li>次版号：当你做了向下相容的功能性新增。</li>
+<li>修订号：当你做了向下相容的问题修正。</li>
+</ul>
+<h2 id="撤销发布的包"><a href="#撤销发布的包" class="headerlink" title="撤销发布的包"></a>撤销发布的包</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm unpublish package-name@package-version</div></pre></td></tr></table></figure>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://docs.npmjs.com/getting-started/what-is-npm" target="_blank" rel="external">npm doc</a></p>
+]]></content>
     
     <summary type="html">
     
@@ -132,27 +172,27 @@
     <link href="http://coderfe.cn/2016/05/07/performance-optimization/"/>
     <id>http://coderfe.cn/2016/05/07/performance-optimization/</id>
     <published>2016-05-07T20:08:30.000Z</published>
-    <updated>2016-07-18T14:17:09.080Z</updated>
+    <updated>2016-07-20T14:20:19.762Z</updated>
     
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;今天发现博客首页的加载速度比较感人，于是就用 Google 出品的 &lt;a href=&quot;https://developers.google.com/speed/pagespeed/insights/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Pagespeed Insights&lt;/a&gt; 检测了一下，发现了不少问题，而且这些问题都严重拖慢了加载时间。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;HTML / CSS / JS / Photos 都是未压缩状态&lt;/li&gt;
-&lt;li&gt;部分静态资源没有设置缓存&lt;/li&gt;
-&lt;li&gt;CSS 出现阻塞，即首页出现空白的情况&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;暂时只解决了第一个问题：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;修改一下 &lt;code&gt;Travis CI&lt;/code&gt; 的部署脚本 &lt;code&gt;.travis.yml&lt;/code&gt; 即可实现自动压缩（利用 &lt;code&gt;gulpjs&lt;/code&gt;）：&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;install:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;- npm install hexo-cli gulp -g&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;- npm install&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;script:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;- hexo clean&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;- hexo g&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;- gulp&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;- hexo d&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;查看 &lt;a href=&quot;https://github.com/coderfe/blog/blob/master/gulpfile.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;code&gt;gulpfile.js&lt;/code&gt;&lt;/a&gt; 配置&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;优化之后，加载速度明显提升了。剩下的几个问题还得研究一下&lt;/li&gt;
-&lt;/ul&gt;
-</content>
+    <content type="html"><![CDATA[<blockquote>
+<p>今天发现博客首页的加载速度比较感人，于是就用 Google 出品的 <a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank" rel="external">Pagespeed Insights</a> 检测了一下，发现了不少问题，而且这些问题都严重拖慢了加载时间。</p>
+</blockquote>
+<a id="more"></a>
+<ul>
+<li>HTML / CSS / JS / Photos 都是未压缩状态</li>
+<li>部分静态资源没有设置缓存</li>
+<li>CSS 出现阻塞，即首页出现空白的情况</li>
+</ul>
+<p>暂时只解决了第一个问题：</p>
+<ul>
+<li>修改一下 <code>Travis CI</code> 的部署脚本 <code>.travis.yml</code> 即可实现自动压缩（利用 <code>gulpjs</code>）：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">install:</div><div class="line">- npm install hexo-cli gulp -g</div><div class="line">- npm install</div><div class="line"></div><div class="line">script:</div><div class="line">- hexo clean</div><div class="line">- hexo g</div><div class="line">- gulp</div><div class="line">- hexo d</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>查看 <a href="https://github.com/coderfe/blog/blob/master/gulpfile.js" target="_blank" rel="external"><code>gulpfile.js</code></a> 配置</p>
+<ul>
+<li>优化之后，加载速度明显提升了。剩下的几个问题还得研究一下</li>
+</ul>
+]]></content>
     
     <summary type="html">
     
@@ -163,9 +203,9 @@
     </summary>
     
     
-      <category term="性能优化" scheme="http://coderfe.cn/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
-    
       <category term="gulp" scheme="http://coderfe.cn/tags/gulp/"/>
+    
+      <category term="性能优化" scheme="http://coderfe.cn/tags/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"/>
     
       <category term="Travis CI" scheme="http://coderfe.cn/tags/Travis-CI/"/>
     
@@ -176,22 +216,22 @@
     <link href="http://coderfe.cn/2016/05/02/install-local-atom-packages/"/>
     <id>http://coderfe.cn/2016/05/02/install-local-atom-packages/</id>
     <published>2016-05-02T16:03:55.000Z</published>
-    <updated>2016-07-18T14:17:09.080Z</updated>
+    <updated>2016-07-20T14:20:19.762Z</updated>
     
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;Atom是一款优秀的编辑器，但是国内的网络环境太让人尴尬了，安装个插件都困难。这几天逛论坛时发现，可以把Github上的插件clone到本地再安装，做一下记录，免得又忘记了。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;&lt;strong&gt;Atom插件的位置&lt;/strong&gt;&lt;br&gt;Windows是在&lt;code&gt;C:\Users\yourname\.atom\packages&lt;/code&gt;目录&lt;br&gt;Linux是在&lt;code&gt;~\.atom\packages&lt;/code&gt;目录下&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;首先在&lt;a href=&quot;https://atom.io/packages&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;找到想要的插件，然后点击Repo链接到作者的Github&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;把这个Repo clone到Atom插件所在的目录，以&lt;code&gt;git-plus&lt;/code&gt;为例&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ git &lt;span class=&quot;built_in&quot;&gt;clone&lt;/span&gt; https://github.com/akonwi/git-plus.git&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ &lt;span class=&quot;built_in&quot;&gt;cd&lt;/span&gt; git-plus&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ npm install&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;重启之后就可以使用了&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-</content>
+    <content type="html"><![CDATA[<blockquote>
+<p>Atom是一款优秀的编辑器，但是国内的网络环境太让人尴尬了，安装个插件都困难。这几天逛论坛时发现，可以把Github上的插件clone到本地再安装，做一下记录，免得又忘记了。</p>
+</blockquote>
+<a id="more"></a>
+<p><strong>Atom插件的位置</strong><br>Windows是在<code>C:\Users\yourname\.atom\packages</code>目录<br>Linux是在<code>~\.atom\packages</code>目录下</p>
+<ol>
+<li>首先在<a href="https://atom.io/packages" target="_blank" rel="external">这里</a>找到想要的插件，然后点击Repo链接到作者的Github</li>
+<li><p>把这个Repo clone到Atom插件所在的目录，以<code>git-plus</code>为例</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git <span class="built_in">clone</span> https://github.com/akonwi/git-plus.git</div><div class="line">$ <span class="built_in">cd</span> git-plus</div><div class="line">$ npm install</div></pre></td></tr></table></figure>
+</li>
+<li><p>重启之后就可以使用了</p>
+</li>
+</ol>
+]]></content>
     
     <summary type="html">
     
@@ -211,59 +251,59 @@
     <link href="http://coderfe.cn/2016/04/25/travisCI-deploy-hexo-blog/"/>
     <id>http://coderfe.cn/2016/04/25/travisCI-deploy-hexo-blog/</id>
     <published>2016-04-25T15:11:14.000Z</published>
-    <updated>2016-07-18T14:17:09.080Z</updated>
+    <updated>2016-07-20T14:20:19.762Z</updated>
     
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Travis CI&lt;/strong&gt;是在软件开发领域中的一个在线的，分布式的持续集成服务，用来构建及测试在GitHub托管的代码。这个软件的代码同时也是开源的，可以在GitHub上下载到，尽管开发者当前并不推荐在闭源项目中单独使用它。—— &lt;a href=&quot;https://zh.wikipedia.org/wiki/Travis_CI&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Wiki&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;前几天的&lt;a href=&quot;http://coderfe.cn/2016/04/07/hexo-github-blog/&quot;&gt;一篇文章&lt;/a&gt;介绍了搭建自己的Hexo博客，可是，今天遇到了一个问题：我要在另一台电脑上写博客文章，但是博客的源代码却不在身边，而且我也没有备份。于是就有一下几个解决方案：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;拷贝到U盘随身携带。但是，相信我，总有一天你会忘记的&lt;/li&gt;
-&lt;li&gt;备份在云端，比如DropBox或者其他云盘。缺点：太麻烦，每次更新都要手动上传&lt;/li&gt;
-&lt;li&gt;放在Github上。恩，这似乎是个不错的办法。但是这个方法每次既要更新博客，还要push到Github上&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Travis-CI解决方案&quot;&gt;&lt;a href=&quot;#Travis-CI解决方案&quot; class=&quot;headerlink&quot; title=&quot;Travis CI解决方案&quot;&gt;&lt;/a&gt;Travis CI解决方案&lt;/h2&gt;&lt;h3 id=&quot;约定&quot;&gt;&lt;a href=&quot;#约定&quot; class=&quot;headerlink&quot; title=&quot;约定&quot;&gt;&lt;/a&gt;约定&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;这些步骤都是Linux中完成的，其他平台的步骤大同小异&lt;/li&gt;
-&lt;li&gt;以我的博客为例，blog是源码项目(目录)，coderfe.github.io是部署后的博客项目&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;安装Travis Ci命令行工具&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ gem install travis&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;生成 SSH key,并且把id_rsa.pub添加为coderfe.github.io项目的Deploy key，注意要勾选&lt;code&gt;Allow write access&lt;/code&gt;,因为Travis CI要对这个仓库拥有写入权限&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ ssh-keygen -t rsa -C &lt;span class=&quot;string&quot;&gt;&quot;your_email@example.com&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 生成的ssh key一般在`~/home/.ssh`目录下&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在本地的blog项目中新建&lt;code&gt;.travis&lt;/code&gt;文件夹，最后它的结构如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;.travis&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|__id_rsa.enc&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;|__ssh_config&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;正式开始&quot;&gt;&lt;a href=&quot;#正式开始&quot; class=&quot;headerlink&quot; title=&quot;正式开始&quot;&gt;&lt;/a&gt;正式开始&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;把整个Hexo项目push到Github上，这个就是博客的源代码&lt;/li&gt;
-&lt;li&gt;前往&lt;a href=&quot;https://travis-ci.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Travis CI官网&lt;/a&gt;用GitHub账号的登陆，并把自己的项目同步到Travis CI，然后把&lt;code&gt;coderfe/blog&lt;/code&gt;的开关打开&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;安装Travis CI命令行并用GitHub账号登录&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 安装&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ gem install travis&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 登录&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ travis login --auto&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;加密&lt;code&gt;id_rsa&lt;/code&gt;私钥（不能暴露在公开仓库中）&lt;/p&gt;
-&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 把id_rsa复制到当前目录.travis/&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ cp ~/.ssh/.id_rsa .&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 加密之前必须新建.travis.yml文件，否则会报错&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ touch .travis.yml&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 加密&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ travis encrypt-file ssh_key --add&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 删除id_rsa&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ rm id_rsa&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;以上代码执行完成功后在&lt;code&gt;.travis.yml&lt;/code&gt;文件中有一串字母和数字，这是用来解密的，每个人都不一样，先不要动，而且会生成了&lt;code&gt;id_rsa.enc&lt;/code&gt;文件，把&lt;code&gt;.travis.yml&lt;/code&gt;移动到&lt;code&gt;blog&lt;/code&gt;根目录&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;再在&lt;code&gt;.travis&lt;/code&gt;下新建&lt;code&gt;ssh_config&lt;/code&gt;文件，内容如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;Host github.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  User git&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  StrictHostKeyChecking no&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  IdentityFile ~/.ssh/id_rsa&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  IdentitiesOnly yes&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;配置&lt;code&gt;.travis.yml&lt;/code&gt;文件，我的配置如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight yml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;28&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;29&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;30&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;branches:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  only:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;  -&lt;/span&gt; master&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;language:&lt;/span&gt; node_js&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;sudo:&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;false&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;node_js:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;    -&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;stable&#39;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;before_install:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; openssl aes&lt;span class=&quot;bullet&quot;&gt;-256&lt;/span&gt;-cbc -K $encrypted_d2cb722f4635_key -iv $encrypted_d2cb722f4635_iv&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;  -&lt;/span&gt;in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; chmod &lt;span class=&quot;number&quot;&gt;600&lt;/span&gt; ~/.ssh/id_rsa&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; eval $(ssh-agent)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; ssh-add ~/.ssh/id_rsa&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; cp .travis/ssh_config ~/.ssh/config&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; git config --global user.name &lt;span class=&quot;string&quot;&gt;&quot;coderfe&quot;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; git config --global user.email coderfee@outlook.com&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; git clone -b master git@github.com:coderfe/coderfe.github.io.git .deploy_git&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;install:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; npm install hexo-cli -g&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; npm install&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;script:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; hexo clean&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; hexo g&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;bullet&quot;&gt;-&lt;/span&gt; hexo d&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;需要注意的问题&quot;&gt;&lt;a href=&quot;#需要注意的问题&quot; class=&quot;headerlink&quot; title=&quot;需要注意的问题&quot;&gt;&lt;/a&gt;需要注意的问题&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;Deploy key&lt;/code&gt;权限问题，记得勾选&lt;code&gt;Allow write access&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;加密私钥&lt;code&gt;id_rsa&lt;/code&gt;，私钥不能暴露在公开仓库，否则其他人也会拥有你仓库的读写权限&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;结语&quot;&gt;&lt;a href=&quot;#结语&quot; class=&quot;headerlink&quot; title=&quot;结语&quot;&gt;&lt;/a&gt;结语&lt;/h2&gt;&lt;p&gt;利用Travis CI持续集成服务，再也不必去手动备份了，只需要一次push就可实现博客的更新和备份，大大提高了效率啊，有木有！这种自动化的工具真的是多多益善。当然像Nodejs这样的项目都在用这项服务，说明自动部署Hexo Blog只是其功能中很小的一部分，继续学习！&lt;/p&gt;
-&lt;h3 id=&quot;参考资料&quot;&gt;&lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://zespia.tw/blog/2015/01/21/continuous-deployment-to-github-with-travis/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;用 Travis CI 自動部署網站到 GitHub&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://docs.travis-ci.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Travis CI官方文档&lt;/a&gt;&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<blockquote>
+<p><strong>Travis CI</strong>是在软件开发领域中的一个在线的，分布式的持续集成服务，用来构建及测试在GitHub托管的代码。这个软件的代码同时也是开源的，可以在GitHub上下载到，尽管开发者当前并不推荐在闭源项目中单独使用它。—— <a href="https://zh.wikipedia.org/wiki/Travis_CI" target="_blank" rel="external">Wiki</a></p>
+</blockquote>
+<a id="more"></a>
+<p>前几天的<a href="http://coderfe.cn/2016/04/07/hexo-github-blog/">一篇文章</a>介绍了搭建自己的Hexo博客，可是，今天遇到了一个问题：我要在另一台电脑上写博客文章，但是博客的源代码却不在身边，而且我也没有备份。于是就有一下几个解决方案：</p>
+<ul>
+<li>拷贝到U盘随身携带。但是，相信我，总有一天你会忘记的</li>
+<li>备份在云端，比如DropBox或者其他云盘。缺点：太麻烦，每次更新都要手动上传</li>
+<li>放在Github上。恩，这似乎是个不错的办法。但是这个方法每次既要更新博客，还要push到Github上</li>
+</ul>
+<h2 id="Travis-CI解决方案"><a href="#Travis-CI解决方案" class="headerlink" title="Travis CI解决方案"></a>Travis CI解决方案</h2><h3 id="约定"><a href="#约定" class="headerlink" title="约定"></a>约定</h3><ul>
+<li>这些步骤都是Linux中完成的，其他平台的步骤大同小异</li>
+<li>以我的博客为例，blog是源码项目(目录)，coderfe.github.io是部署后的博客项目</li>
+</ul>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ul>
+<li><p>安装Travis Ci命令行工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ gem install travis</div></pre></td></tr></table></figure>
+</li>
+<li><p>生成 SSH key,并且把id_rsa.pub添加为coderfe.github.io项目的Deploy key，注意要勾选<code>Allow write access</code>,因为Travis CI要对这个仓库拥有写入权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C <span class="string">"your_email@example.com"</span></div><div class="line"><span class="comment"># 生成的ssh key一般在`~/home/.ssh`目录下</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>在本地的blog项目中新建<code>.travis</code>文件夹，最后它的结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.travis</div><div class="line">|__id_rsa.enc</div><div class="line">|__ssh_config</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="正式开始"><a href="#正式开始" class="headerlink" title="正式开始"></a>正式开始</h3><ul>
+<li>把整个Hexo项目push到Github上，这个就是博客的源代码</li>
+<li>前往<a href="https://travis-ci.org/" target="_blank" rel="external">Travis CI官网</a>用GitHub账号的登陆，并把自己的项目同步到Travis CI，然后把<code>coderfe/blog</code>的开关打开</li>
+<li><p>安装Travis CI命令行并用GitHub账号登录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装</span></div><div class="line">$ gem install travis</div><div class="line"><span class="comment"># 登录</span></div><div class="line">$ travis login --auto</div></pre></td></tr></table></figure>
+</li>
+<li><p>加密<code>id_rsa</code>私钥（不能暴露在公开仓库中）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 把id_rsa复制到当前目录.travis/</span></div><div class="line">$ cp ~/.ssh/.id_rsa .</div><div class="line"><span class="comment"># 加密之前必须新建.travis.yml文件，否则会报错</span></div><div class="line">$ touch .travis.yml</div><div class="line"><span class="comment"># 加密</span></div><div class="line">$ travis encrypt-file ssh_key --add</div><div class="line"><span class="comment"># 删除id_rsa</span></div><div class="line">$ rm id_rsa</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>以上代码执行完成功后在<code>.travis.yml</code>文件中有一串字母和数字，这是用来解密的，每个人都不一样，先不要动，而且会生成了<code>id_rsa.enc</code>文件，把<code>.travis.yml</code>移动到<code>blog</code>根目录</p>
+<ul>
+<li><p>再在<code>.travis</code>下新建<code>ssh_config</code>文件，内容如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Host github.com</div><div class="line">  User git</div><div class="line">  StrictHostKeyChecking no</div><div class="line">  IdentityFile ~/.ssh/id_rsa</div><div class="line">  IdentitiesOnly yes</div></pre></td></tr></table></figure>
+</li>
+<li><p>配置<code>.travis.yml</code>文件，我的配置如下：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="attr">branches:</span></div><div class="line"><span class="attr">  only:</span></div><div class="line"><span class="bullet">  -</span> master</div><div class="line"></div><div class="line"><span class="attr">language:</span> node_js</div><div class="line"></div><div class="line"><span class="attr">sudo:</span> <span class="literal">false</span></div><div class="line"></div><div class="line"><span class="attr">node_js:</span></div><div class="line"><span class="bullet">    -</span> <span class="string">'stable'</span></div><div class="line"></div><div class="line"><span class="attr">before_install:</span></div><div class="line"><span class="bullet">-</span> openssl aes<span class="bullet">-256</span>-cbc -K $encrypted_d2cb722f4635_key -iv $encrypted_d2cb722f4635_iv</div><div class="line"><span class="bullet">  -</span>in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d</div><div class="line"><span class="bullet">-</span> chmod <span class="number">600</span> ~/.ssh/id_rsa</div><div class="line"><span class="bullet">-</span> eval $(ssh-agent)</div><div class="line"><span class="bullet">-</span> ssh-add ~/.ssh/id_rsa</div><div class="line"><span class="bullet">-</span> cp .travis/ssh_config ~/.ssh/config</div><div class="line"><span class="bullet">-</span> git config --global user.name <span class="string">"coderfe"</span></div><div class="line"><span class="bullet">-</span> git config --global user.email coderfee@outlook.com</div><div class="line"><span class="bullet">-</span> git clone -b master git@github.com:coderfe/coderfe.github.io.git .deploy_git</div><div class="line"></div><div class="line"><span class="attr">install:</span></div><div class="line"><span class="bullet">-</span> npm install hexo-cli -g</div><div class="line"><span class="bullet">-</span> npm install</div><div class="line"></div><div class="line"><span class="attr">script:</span></div><div class="line"><span class="bullet">-</span> hexo clean</div><div class="line"><span class="bullet">-</span> hexo g</div><div class="line"><span class="bullet">-</span> hexo d</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="需要注意的问题"><a href="#需要注意的问题" class="headerlink" title="需要注意的问题"></a>需要注意的问题</h3><ul>
+<li><code>Deploy key</code>权限问题，记得勾选<code>Allow write access</code></li>
+<li>加密私钥<code>id_rsa</code>，私钥不能暴露在公开仓库，否则其他人也会拥有你仓库的读写权限</li>
+</ul>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>利用Travis CI持续集成服务，再也不必去手动备份了，只需要一次push就可实现博客的更新和备份，大大提高了效率啊，有木有！这种自动化的工具真的是多多益善。当然像Nodejs这样的项目都在用这项服务，说明自动部署Hexo Blog只是其功能中很小的一部分，继续学习！</p>
+<h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><p><a href="https://zespia.tw/blog/2015/01/21/continuous-deployment-to-github-with-travis/" target="_blank" rel="external">用 Travis CI 自動部署網站到 GitHub</a><br><a href="https://docs.travis-ci.com/" target="_blank" rel="external">Travis CI官方文档</a></p>
+]]></content>
     
     <summary type="html">
     
@@ -287,32 +327,32 @@
     <link href="http://coderfe.cn/2016/04/23/restyle-website-with-stylish/"/>
     <id>http://coderfe.cn/2016/04/23/restyle-website-with-stylish/</id>
     <published>2016-04-23T22:28:51.000Z</published>
-    <updated>2016-07-18T14:17:09.080Z</updated>
+    <updated>2016-07-20T14:20:19.762Z</updated>
     
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;在PC端&lt;strong&gt;QQ空间&lt;/strong&gt;看朋友动态、&lt;strong&gt;刷微博&lt;/strong&gt;的时候你是否觉得有些东西太碍眼、太复杂了，对，我就是这样觉的，所以呢，下面就让&lt;strong&gt;Stylish&lt;/strong&gt;还给你一个清爽优雅的界面。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;准备工作&quot;&gt;&lt;a href=&quot;#准备工作&quot; class=&quot;headerlink&quot; title=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://coderfe.cn/2016/04/21/high-quality-apps-windows-ios-android/&quot;&gt;Chrome浏览器&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;安装&lt;a href=&quot;https://chrome.google.com/webstore/detail/fjnbnpbmkenffdnngjfgmeleoegfcffe&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Styleish插件&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;一丢丢&lt;code&gt;CSS&lt;/code&gt;基础&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;QQ空间优化&quot;&gt;&lt;a href=&quot;#QQ空间优化&quot; class=&quot;headerlink&quot; title=&quot;QQ空间优化&quot;&gt;&lt;/a&gt;QQ空间优化&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;打开你的&lt;a href=&quot;http://qzone.qq.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;QQ空间&lt;/a&gt;，点击&lt;strong&gt;右上角那个S字母的图标&lt;/strong&gt;，选择&lt;strong&gt;编写样式给这个URL&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;第一步完成会打开一个写代码的窗口，复制&lt;a href=&quot;https://github.com/coderfe/cssstyles/blob/master/qzone-redesign.css&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;我的样式&lt;/a&gt;到那个框框里，输入名称，保存&lt;/li&gt;
-&lt;li&gt;优雅地刷好友动态&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xphzj.com1.z0.glb.clouddn.com/qzone-restyle.gif&quot; alt=&quot;qzone-restyle&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;微博的优化&quot;&gt;&lt;a href=&quot;#微博的优化&quot; class=&quot;headerlink&quot; title=&quot;微博的优化&quot;&gt;&lt;/a&gt;微博的优化&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;有现成的微博样式供你选择&lt;a href=&quot;https://userstyles.org/styles/106272/weibo-v6&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;weibo_v6&lt;/a&gt;和&lt;a href=&quot;https://userstyles.org/styles/123737/weibo-v6-patch&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;weibo_v6_patch&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;打开&lt;a href=&quot;http://www.weibo.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;微博&lt;/a&gt;，点击按钮，编写样式&lt;/li&gt;
-&lt;li&gt;复制&lt;a href=&quot;https://github.com/coderfe/cssstyles/blob/master/weibo-redesign.css&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;我的样式&lt;/a&gt;，粘贴&lt;/li&gt;
-&lt;li&gt;优雅的刷微博&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xphzj.com1.z0.glb.clouddn.com/weibo-restyle.gif&quot; alt=&quot;weibo-restyle&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;其他&quot;&gt;&lt;a href=&quot;#其他&quot; class=&quot;headerlink&quot; title=&quot;其他&quot;&gt;&lt;/a&gt;其他&lt;/h2&gt;&lt;p&gt;如果你有兴趣可以再添加其他样式，并且Stylish可以实现的远不止这些，等待你的发掘！&lt;br&gt;其次，微博的样式是在前两个样式的基础上加了一些背景图片和动画效果，感谢原作者的创作！&lt;/p&gt;
-</content>
+    <content type="html"><![CDATA[<blockquote>
+<p>在PC端<strong>QQ空间</strong>看朋友动态、<strong>刷微博</strong>的时候你是否觉得有些东西太碍眼、太复杂了，对，我就是这样觉的，所以呢，下面就让<strong>Stylish</strong>还给你一个清爽优雅的界面。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li><a href="http://coderfe.cn/2016/04/21/high-quality-apps-windows-ios-android/">Chrome浏览器</a></li>
+<li>安装<a href="https://chrome.google.com/webstore/detail/fjnbnpbmkenffdnngjfgmeleoegfcffe" target="_blank" rel="external">Styleish插件</a></li>
+<li>一丢丢<code>CSS</code>基础</li>
+</ul>
+<h2 id="QQ空间优化"><a href="#QQ空间优化" class="headerlink" title="QQ空间优化"></a>QQ空间优化</h2><ul>
+<li>打开你的<a href="http://qzone.qq.com/" target="_blank" rel="external">QQ空间</a>，点击<strong>右上角那个S字母的图标</strong>，选择<strong>编写样式给这个URL</strong></li>
+<li>第一步完成会打开一个写代码的窗口，复制<a href="https://github.com/coderfe/cssstyles/blob/master/qzone-redesign.css" target="_blank" rel="external">我的样式</a>到那个框框里，输入名称，保存</li>
+<li>优雅地刷好友动态</li>
+</ul>
+<p><img src="http://7xphzj.com1.z0.glb.clouddn.com/qzone-restyle.gif" alt="qzone-restyle"></p>
+<h2 id="微博的优化"><a href="#微博的优化" class="headerlink" title="微博的优化"></a>微博的优化</h2><ul>
+<li>有现成的微博样式供你选择<a href="https://userstyles.org/styles/106272/weibo-v6" target="_blank" rel="external">weibo_v6</a>和<a href="https://userstyles.org/styles/123737/weibo-v6-patch" target="_blank" rel="external">weibo_v6_patch</a></li>
+<li>打开<a href="http://www.weibo.com" target="_blank" rel="external">微博</a>，点击按钮，编写样式</li>
+<li>复制<a href="https://github.com/coderfe/cssstyles/blob/master/weibo-redesign.css" target="_blank" rel="external">我的样式</a>，粘贴</li>
+<li>优雅的刷微博</li>
+</ul>
+<p><img src="http://7xphzj.com1.z0.glb.clouddn.com/weibo-restyle.gif" alt="weibo-restyle"></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>如果你有兴趣可以再添加其他样式，并且Stylish可以实现的远不止这些，等待你的发掘！<br>其次，微博的样式是在前两个样式的基础上加了一些背景图片和动画效果，感谢原作者的创作！</p>
+]]></content>
     
     <summary type="html">
     
@@ -334,62 +374,62 @@
     <link href="http://coderfe.cn/2016/04/21/some-apps/"/>
     <id>http://coderfe.cn/2016/04/21/some-apps/</id>
     <published>2016-04-21T14:30:30.000Z</published>
-    <updated>2016-07-18T14:17:09.080Z</updated>
+    <updated>2016-07-20T14:20:19.762Z</updated>
     
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;移动端的Apps数不胜数，所以高质量的Apps经常会被淹没。这些都是通过自己亲身使用，感觉很顺手且颜值也高的应用，推荐给大家喽。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h1 id=&quot;Windows-10&quot;&gt;&lt;a href=&quot;#Windows-10&quot; class=&quot;headerlink&quot; title=&quot;Windows 10&quot;&gt;&lt;/a&gt;Windows 10&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;浏览器—-&lt;a href=&quot;https://www.google.com/chrome/browser/desktop/index.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Google Chrome&lt;/a&gt;，强大而优雅，安装插件之后更强大更优雅&lt;/li&gt;
-&lt;li&gt;办公软件—-&lt;a href=&quot;https://www.office.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Office 2016&lt;/a&gt;，全家桶（将来一定买正版支持）别提Office 2007，太落后&lt;/li&gt;
-&lt;li&gt;笔记应用—-&lt;a href=&quot;https://www.onenote.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OneNote&lt;/a&gt;，跨平台，免费，同步也不慢，随时随地记笔记&lt;/li&gt;
-&lt;li&gt;码字专用—-&lt;a href=&quot;https://www.typora.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Typora&lt;/a&gt;，界面简洁，功能丰富，完全免费，支持Markdown语法&lt;/li&gt;
-&lt;li&gt;科学上网—-&lt;a href=&quot;https://shadowsocks.com/client.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ShadowSocks&lt;/a&gt;，百度一下你就知道，谷歌一下你就知道太多了&lt;/li&gt;
-&lt;li&gt;音乐播放器—-&lt;a href=&quot;http://music.163.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;网易云音乐&lt;/a&gt;，忒好，用户体验很棒，跨平台，But部分歌曲有版权限制&lt;/li&gt;
-&lt;li&gt;云存储—-&lt;a href=&quot;https://www.dropbox.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DropBox&lt;/a&gt; or &lt;a href=&quot;https://onedrive.live.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Onedrive&lt;/a&gt;，同步快，但是DropBox需翻墙&lt;/li&gt;
-&lt;li&gt;思维导图—-&lt;a href=&quot;http://www.xmind.net/download/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;XMind&lt;/a&gt;，可以借助DropBox同步&lt;/li&gt;
-&lt;li&gt;解压缩—-&lt;a href=&quot;http://www.7-zip.org/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;7-Zip&lt;/a&gt;，速度快，多种格式，免费&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.yingdev.com/projects/tickeys&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Tickeys&lt;/a&gt;—-模拟机械键盘的声音，让你沉浸在打字的乐趣当中&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.irolan.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Rolan&lt;/a&gt;—-桌面文件夹分类归组&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://rocketdock.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RocketDock&lt;/a&gt;—-Dock应用程序栏，类似Mac电脑上的Dock&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.voidtools.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Everything&lt;/a&gt;—-搜索本地文件神器&lt;/li&gt;
-&lt;li&gt;“你好，小娜”，讲个笑话&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;Android-MEIZU-MX5&quot;&gt;&lt;a href=&quot;#Android-MEIZU-MX5&quot; class=&quot;headerlink&quot; title=&quot;Android(MEIZU MX5)&quot;&gt;&lt;/a&gt;Android(MEIZU MX5)&lt;/h1&gt;&lt;p&gt;有的应用需要在&lt;strong&gt;Google Play&lt;/strong&gt;下载： &lt;!-- more --&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;科学上网—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.github.shadowsocks&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;ShadowSocks影梭&lt;/a&gt;，上手简单，稳定&lt;/li&gt;
-&lt;li&gt;浏览器—-&lt;a href=&quot;http://www.opera.com/zh-cn/mobile/operabrowser&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Opera&lt;/a&gt;，省流量，体积小&lt;/li&gt;
-&lt;li&gt;微博客户端—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=us.shandian.blacklight&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;BlackLight&lt;/a&gt;，墙外下载，简约不简单&lt;/li&gt;
-&lt;li&gt;RSS—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=it.mvilla.android.quote&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Quote&lt;/a&gt;，干净舒适，体积小&lt;/li&gt;
-&lt;li&gt;资料管理—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=co.refme&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;RefMe&lt;/a&gt;，写论文的好帮手&lt;/li&gt;
-&lt;li&gt;云存储—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.dropbox.android&amp;amp;hl=zh-cn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DropBox&lt;/a&gt; / &lt;a href=&quot;https://play.google.com/store/apps/details?id=com.microsoft.skydrive&amp;amp;hl=zh-cn&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Onedrive&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;便签—-&lt;a href=&quot;http://www.smartisan.com/apps/notes&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;锤子便签&lt;/a&gt;，情怀，好看，体验顺滑&lt;/li&gt;
-&lt;li&gt;音乐—-&lt;a href=&quot;http://music.163.com/#/download&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;网易云音乐&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;写东西—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.ryeeeeee.markdownx&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MarkdownX&lt;/a&gt;，简洁，可以和DropBox同步&lt;/li&gt;
-&lt;li&gt;长知识—-&lt;a href=&quot;http://www.zhihu.com/app/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;知乎&lt;/a&gt;、&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.quora.android&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Quora&lt;/a&gt;、&lt;a href=&quot;https://play.google.com/store/apps/details?id=org.wikipedia&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;维基百科&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;看新闻—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=jp.gocro.smartnews.android&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SmartNews&lt;/a&gt;，英语新闻客户端&lt;/li&gt;
-&lt;li&gt;待办事项—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.accomplish&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Accomplish&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;连接你的Apps—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.ifttt.ifttt&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;IF by IFTTT&lt;/a&gt;，功能有待进一步发掘&lt;/li&gt;
-&lt;li&gt;桌面启动器—-&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.teslacoilsw.launcher&amp;amp;hl=zh-CN&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Nova Launcher&lt;/a&gt;，体验Google原生桌面风格&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;iOS-iPad-mini-2&quot;&gt;&lt;a href=&quot;#iOS-iPad-mini-2&quot; class=&quot;headerlink&quot; title=&quot;iOS(iPad mini 2)&quot;&gt;&lt;/a&gt;iOS(iPad mini 2)&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;科学上网—-&lt;a href=&quot;https://itunes.apple.com/us/app/surge-web-developer-tool-proxy/id1040100637?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Surge&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;浏览器—-&lt;strong&gt;Safari&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;微博客户端—-&lt;a href=&quot;https://itunes.apple.com/us/app/vvebo-wei-bo-ke-hu-duan/id670910957?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;VVebo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;写点东西—-&lt;a href=&quot;https://itunes.apple.com/cn/app/ulysses/id950335311?mt=8&amp;amp;ign-mpt=uo%3D4&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Ulysses&lt;/a&gt; / &lt;a href=&quot;https://itunes.apple.com/cn/app/day-one-2-ri-ji-+-bi-ji/id1044867788?mt=8&amp;amp;ign-mpt=uo%3D4&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Day One&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;思维导图—-&lt;a href=&quot;https://itunes.apple.com/us/app/mindnode-delightful-mind-mapping/id312220102?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;MindNode&lt;/a&gt; / &lt;a href=&quot;https://itunes.apple.com/us/app/ithoughts-mindmap/id866786833?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;iThoughts&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;新闻—-&lt;a href=&quot;https://itunes.apple.com/us/app/id579581125&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;SmartNews&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;图片—-&lt;a href=&quot;https://itunes.apple.com/us/app/typorama-typography-generator/id978659937?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Typorama&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;RSS—-&lt;a href=&quot;https://itunes.apple.com/us/app/feedly/id396069556&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Feedly&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;文件管理—-&lt;a href=&quot;https://itunes.apple.com/us/app/documents-5-fast-pdf-reader/id364901807?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Documents&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;云存储—-&lt;a href=&quot;https://itunes.apple.com/cn/app/dropbox/id327630330?mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DropBox&lt;/a&gt; / &lt;a href=&quot;https://itunes.apple.com/cn/app/skydrive/id477537958?ls=1&amp;amp;mt=8&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Onedrive&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;写大纲，理思路—-&lt;a href=&quot;https://itunes.apple.com/cn/app/omnioutliner-pro/id404647179?mt=12&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;OmniOutliner&lt;/a&gt;，有点小贵:D&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;Linux-Ubuntu&quot;&gt;&lt;a href=&quot;#Linux-Ubuntu&quot; class=&quot;headerlink&quot; title=&quot;Linux(Ubuntu)&quot;&gt;&lt;/a&gt;Linux(Ubuntu)&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;https://github.com/getlantern/lantern&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Lantern&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
+    <content type="html"><![CDATA[<blockquote>
+<p>移动端的Apps数不胜数，所以高质量的Apps经常会被淹没。这些都是通过自己亲身使用，感觉很顺手且颜值也高的应用，推荐给大家喽。</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="Windows-10"><a href="#Windows-10" class="headerlink" title="Windows 10"></a>Windows 10</h1><ul>
+<li>浏览器—-<a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank" rel="external">Google Chrome</a>，强大而优雅，安装插件之后更强大更优雅</li>
+<li>办公软件—-<a href="https://www.office.com/" target="_blank" rel="external">Office 2016</a>，全家桶（将来一定买正版支持）别提Office 2007，太落后</li>
+<li>笔记应用—-<a href="https://www.onenote.com/" target="_blank" rel="external">OneNote</a>，跨平台，免费，同步也不慢，随时随地记笔记</li>
+<li>码字专用—-<a href="https://www.typora.io/" target="_blank" rel="external">Typora</a>，界面简洁，功能丰富，完全免费，支持Markdown语法</li>
+<li>科学上网—-<a href="https://shadowsocks.com/client.html" target="_blank" rel="external">ShadowSocks</a>，百度一下你就知道，谷歌一下你就知道太多了</li>
+<li>音乐播放器—-<a href="http://music.163.com/" target="_blank" rel="external">网易云音乐</a>，忒好，用户体验很棒，跨平台，But部分歌曲有版权限制</li>
+<li>云存储—-<a href="https://www.dropbox.com/" target="_blank" rel="external">DropBox</a> or <a href="https://onedrive.live.com/" target="_blank" rel="external">Onedrive</a>，同步快，但是DropBox需翻墙</li>
+<li>思维导图—-<a href="http://www.xmind.net/download/" target="_blank" rel="external">XMind</a>，可以借助DropBox同步</li>
+<li>解压缩—-<a href="http://www.7-zip.org/" target="_blank" rel="external">7-Zip</a>，速度快，多种格式，免费</li>
+<li><a href="http://www.yingdev.com/projects/tickeys" target="_blank" rel="external">Tickeys</a>—-模拟机械键盘的声音，让你沉浸在打字的乐趣当中</li>
+<li><a href="http://www.irolan.com/" target="_blank" rel="external">Rolan</a>—-桌面文件夹分类归组</li>
+<li><a href="http://rocketdock.com/" target="_blank" rel="external">RocketDock</a>—-Dock应用程序栏，类似Mac电脑上的Dock</li>
+<li><a href="https://www.voidtools.com/" target="_blank" rel="external">Everything</a>—-搜索本地文件神器</li>
+<li>“你好，小娜”，讲个笑话</li>
+</ul>
+<h1 id="Android-MEIZU-MX5"><a href="#Android-MEIZU-MX5" class="headerlink" title="Android(MEIZU MX5)"></a>Android(MEIZU MX5)</h1><p>有的应用需要在<strong>Google Play</strong>下载： <!-- more --></p>
+<ul>
+<li>科学上网—-<a href="https://play.google.com/store/apps/details?id=com.github.shadowsocks" target="_blank" rel="external">ShadowSocks影梭</a>，上手简单，稳定</li>
+<li>浏览器—-<a href="http://www.opera.com/zh-cn/mobile/operabrowser" target="_blank" rel="external">Opera</a>，省流量，体积小</li>
+<li>微博客户端—-<a href="https://play.google.com/store/apps/details?id=us.shandian.blacklight" target="_blank" rel="external">BlackLight</a>，墙外下载，简约不简单</li>
+<li>RSS—-<a href="https://play.google.com/store/apps/details?id=it.mvilla.android.quote" target="_blank" rel="external">Quote</a>，干净舒适，体积小</li>
+<li>资料管理—-<a href="https://play.google.com/store/apps/details?id=co.refme" target="_blank" rel="external">RefMe</a>，写论文的好帮手</li>
+<li>云存储—-<a href="https://play.google.com/store/apps/details?id=com.dropbox.android&amp;hl=zh-cn" target="_blank" rel="external">DropBox</a> / <a href="https://play.google.com/store/apps/details?id=com.microsoft.skydrive&amp;hl=zh-cn" target="_blank" rel="external">Onedrive</a></li>
+<li>便签—-<a href="http://www.smartisan.com/apps/notes" target="_blank" rel="external">锤子便签</a>，情怀，好看，体验顺滑</li>
+<li>音乐—-<a href="http://music.163.com/#/download" target="_blank" rel="external">网易云音乐</a></li>
+<li>写东西—-<a href="https://play.google.com/store/apps/details?id=com.ryeeeeee.markdownx" target="_blank" rel="external">MarkdownX</a>，简洁，可以和DropBox同步</li>
+<li>长知识—-<a href="http://www.zhihu.com/app/" target="_blank" rel="external">知乎</a>、<a href="https://play.google.com/store/apps/details?id=com.quora.android" target="_blank" rel="external">Quora</a>、<a href="https://play.google.com/store/apps/details?id=org.wikipedia" target="_blank" rel="external">维基百科</a></li>
+<li>看新闻—-<a href="https://play.google.com/store/apps/details?id=jp.gocro.smartnews.android" target="_blank" rel="external">SmartNews</a>，英语新闻客户端</li>
+<li>待办事项—-<a href="https://play.google.com/store/apps/details?id=com.accomplish" target="_blank" rel="external">Accomplish</a></li>
+<li>连接你的Apps—-<a href="https://play.google.com/store/apps/details?id=com.ifttt.ifttt" target="_blank" rel="external">IF by IFTTT</a>，功能有待进一步发掘</li>
+<li>桌面启动器—-<a href="https://play.google.com/store/apps/details?id=com.teslacoilsw.launcher&amp;hl=zh-CN" target="_blank" rel="external">Nova Launcher</a>，体验Google原生桌面风格</li>
+</ul>
+<h1 id="iOS-iPad-mini-2"><a href="#iOS-iPad-mini-2" class="headerlink" title="iOS(iPad mini 2)"></a>iOS(iPad mini 2)</h1><ul>
+<li>科学上网—-<a href="https://itunes.apple.com/us/app/surge-web-developer-tool-proxy/id1040100637?mt=8" target="_blank" rel="external">Surge</a></li>
+<li>浏览器—-<strong>Safari</strong></li>
+<li>微博客户端—-<a href="https://itunes.apple.com/us/app/vvebo-wei-bo-ke-hu-duan/id670910957?mt=8" target="_blank" rel="external">VVebo</a></li>
+<li>写点东西—-<a href="https://itunes.apple.com/cn/app/ulysses/id950335311?mt=8&amp;ign-mpt=uo%3D4" target="_blank" rel="external">Ulysses</a> / <a href="https://itunes.apple.com/cn/app/day-one-2-ri-ji-+-bi-ji/id1044867788?mt=8&amp;ign-mpt=uo%3D4" target="_blank" rel="external">Day One</a></li>
+<li>思维导图—-<a href="https://itunes.apple.com/us/app/mindnode-delightful-mind-mapping/id312220102?mt=8" target="_blank" rel="external">MindNode</a> / <a href="https://itunes.apple.com/us/app/ithoughts-mindmap/id866786833?mt=8" target="_blank" rel="external">iThoughts</a></li>
+<li>新闻—-<a href="https://itunes.apple.com/us/app/id579581125" target="_blank" rel="external">SmartNews</a></li>
+<li>图片—-<a href="https://itunes.apple.com/us/app/typorama-typography-generator/id978659937?mt=8" target="_blank" rel="external">Typorama</a></li>
+<li>RSS—-<a href="https://itunes.apple.com/us/app/feedly/id396069556" target="_blank" rel="external">Feedly</a></li>
+<li>文件管理—-<a href="https://itunes.apple.com/us/app/documents-5-fast-pdf-reader/id364901807?mt=8" target="_blank" rel="external">Documents</a></li>
+<li>云存储—-<a href="https://itunes.apple.com/cn/app/dropbox/id327630330?mt=8" target="_blank" rel="external">DropBox</a> / <a href="https://itunes.apple.com/cn/app/skydrive/id477537958?ls=1&amp;mt=8" target="_blank" rel="external">Onedrive</a></li>
+<li>写大纲，理思路—-<a href="https://itunes.apple.com/cn/app/omnioutliner-pro/id404647179?mt=12" target="_blank" rel="external">OmniOutliner</a>，有点小贵:D</li>
+</ul>
+<h1 id="Linux-Ubuntu"><a href="#Linux-Ubuntu" class="headerlink" title="Linux(Ubuntu)"></a>Linux(Ubuntu)</h1><ul>
+<li><a href="https://github.com/getlantern/lantern" target="_blank" rel="external">Lantern</a></li>
+</ul>
+]]></content>
     
     <summary type="html">
     
@@ -409,40 +449,40 @@
     <link href="http://coderfe.cn/2016/04/08/Ajax-note/"/>
     <id>http://coderfe.cn/2016/04/08/Ajax-note/</id>
     <published>2016-04-08T17:26:39.000Z</published>
-    <updated>2016-07-18T14:17:09.080Z</updated>
+    <updated>2016-07-20T14:20:19.762Z</updated>
     
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;Ajax即&lt;strong&gt;Asynchronous Javascript and XML&lt;/strong&gt;（异步的Javascript与XML技术），简单来说就是无需刷新整个页面就能更新用户界面，从而更快地响应用户行为的一套技术。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h2 id=&quot;Step1—创建实例化对象&quot;&gt;&lt;a href=&quot;#Step1—创建实例化对象&quot; class=&quot;headerlink&quot; title=&quot;Step1—创建实例化对象&quot;&gt;&lt;/a&gt;Step1—创建实例化对象&lt;/h2&gt;&lt;p&gt;由于各浏览器间的差异，创建实例的方法也不同，下面的代码创建了一个跨浏览器的类实例。&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; xhr;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (&lt;span class=&quot;built_in&quot;&gt;window&lt;/span&gt;.XMLHttpRequest) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  xhr = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; XMLHttpRequest();	&lt;span class=&quot;comment&quot;&gt;// sarifi/firefox/chrome/IE7+&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  xhr = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ActiveXObject(&lt;span class=&quot;string&quot;&gt;&quot;Microsoft.HTTPXML&quot;&lt;/span&gt;);	&lt;span class=&quot;comment&quot;&gt;// IE5/6&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;如果不考虑IE5/6，其实只需下面的代码：&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; xhr = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; XMLHttpRequest();&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h2 id=&quot;Step2—发送请求&quot;&gt;&lt;a href=&quot;#Step2—发送请求&quot; class=&quot;headerlink&quot; title=&quot;Step2—发送请求&quot;&gt;&lt;/a&gt;Step2—发送请求&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;open()方法&lt;/code&gt;&lt;/p&gt;
-&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;参数&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;th&gt;取值&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;method&lt;/td&gt;&lt;td&gt;请求类型，参数大写&lt;/td&gt;&lt;td&gt;&lt;code&gt;POST&lt;/code&gt;, &lt;code&gt;GET&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;URL&lt;/td&gt;&lt;td&gt;请求的URL地址&lt;/td&gt;&lt;td&gt;&lt;code&gt;url&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;async&lt;/td&gt;&lt;td&gt;请求是否为异步模式，默认为&lt;code&gt;true&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;send()方法&lt;/code&gt;&lt;/p&gt;
-&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;请求类型&lt;/th&gt;&lt;th&gt;参数&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;POST&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;string&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;GET&lt;/code&gt;&lt;/td&gt;&lt;td&gt;&lt;code&gt;null&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+    <content type="html"><![CDATA[<blockquote>
+<p>Ajax即<strong>Asynchronous Javascript and XML</strong>（异步的Javascript与XML技术），简单来说就是无需刷新整个页面就能更新用户界面，从而更快地响应用户行为的一套技术。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Step1—创建实例化对象"><a href="#Step1—创建实例化对象" class="headerlink" title="Step1—创建实例化对象"></a>Step1—创建实例化对象</h2><p>由于各浏览器间的差异，创建实例的方法也不同，下面的代码创建了一个跨浏览器的类实例。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr;</div><div class="line"><span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123;</div><div class="line">  xhr = <span class="keyword">new</span> XMLHttpRequest();	<span class="comment">// sarifi/firefox/chrome/IE7+</span></div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  xhr = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.HTTPXML"</span>);	<span class="comment">// IE5/6</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>如果不考虑IE5/6，其实只需下面的代码：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> xhr = <span class="keyword">new</span> XMLHttpRequest();</div></pre></td></tr></table></figure>
+<h2 id="Step2—发送请求"><a href="#Step2—发送请求" class="headerlink" title="Step2—发送请求"></a>Step2—发送请求</h2><ul>
+<li><p><code>open()方法</code></p>
+<table><thead><tr><th>参数</th><th>说明</th><th>取值</th></tr></thead><tbody><tr><td>method</td><td>请求类型，参数大写</td><td><code>POST</code>, <code>GET</code></td></tr><tr><td>URL</td><td>请求的URL地址</td><td><code>url</code></td></tr><tr><td>async</td><td>请求是否为异步模式，默认为<code>true</code></td><td><code>true</code>, <code>false</code></td></tr></tbody></table>
+</li>
+<li><p><code>send()方法</code></p>
+<table><thead><tr><th>请求类型</th><th>参数</th></tr></thead><tbody><tr><td><code>POST</code></td><td><code>string</code></td></tr><tr><td><code>GET</code></td><td><code>null</code></td></tr></tbody></table>
 
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;Step3—取得响应&quot;&gt;&lt;a href=&quot;#Step3—取得响应&quot; class=&quot;headerlink&quot; title=&quot;Step3—取得响应&quot;&gt;&lt;/a&gt;Step3—取得响应&lt;/h2&gt;&lt;p&gt;检查请求状态，监听&lt;code&gt;readyState&lt;/code&gt;和&lt;code&gt;status&lt;/code&gt;的变化&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;xhr.onreadystatechange = &lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;function&lt;/span&gt;(&lt;span class=&quot;params&quot;&gt;&lt;/span&gt;) &lt;/span&gt;&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (xhr.readystate === &lt;span class=&quot;number&quot;&gt;4&lt;/span&gt;) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;if&lt;/span&gt; (xhr.status === &lt;span class=&quot;number&quot;&gt;200&lt;/span&gt;) &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;comment&quot;&gt;// Success do something&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125; &lt;span class=&quot;keyword&quot;&gt;else&lt;/span&gt; &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;      &lt;span class=&quot;comment&quot;&gt;// Failed&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;&lt;code&gt;readyState&lt;/code&gt;取值如下&lt;/p&gt;
-&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th align=&quot;left&quot;&gt;readyState&lt;/th&gt;&lt;th align=&quot;left&quot;&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;0&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;请求未初始化，open方法未调用&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;1&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;服务器连接已建立，open方法已调用&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;2&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;请求已接受，收到头信息&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;3&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;请求处理中，收到响应体&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td align=&quot;left&quot;&gt;4&lt;/td&gt;&lt;td align=&quot;left&quot;&gt;请求已完成，响应完成&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+</li>
+</ul>
+<h2 id="Step3—取得响应"><a href="#Step3—取得响应" class="headerlink" title="Step3—取得响应"></a>Step3—取得响应</h2><p>检查请求状态，监听<code>readyState</code>和<code>status</code>的变化</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">xhr.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">if</span> (xhr.readystate === <span class="number">4</span>) &#123;</div><div class="line">    <span class="keyword">if</span> (xhr.status === <span class="number">200</span>) &#123;</div><div class="line">      <span class="comment">// Success do something</span></div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">      <span class="comment">// Failed</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><code>readyState</code>取值如下</p>
+<table><thead><tr><th align="left">readyState</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left">0</td><td align="left">请求未初始化，open方法未调用</td></tr><tr><td align="left">1</td><td align="left">服务器连接已建立，open方法已调用</td></tr><tr><td align="left">2</td><td align="left">请求已接受，收到头信息</td></tr><tr><td align="left">3</td><td align="left">请求处理中，收到响应体</td></tr><tr><td align="left">4</td><td align="left">请求已完成，响应完成</td></tr></tbody></table>
 
-&lt;p&gt;&lt;code&gt;status&lt;/code&gt;取值如下&lt;/p&gt;
-&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;status&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;1XX&lt;/td&gt;&lt;td&gt;信息类，收到请求，表示正在处理&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;2XX&lt;/td&gt;&lt;td&gt;成功，表示用户请求被正确接收处理&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;3XX&lt;/td&gt;&lt;td&gt;重定向，表示请求没有成功&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;4XX&lt;/td&gt;&lt;td&gt;客户端错误&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;5XX&lt;/td&gt;&lt;td&gt;服务器错误&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+<p><code>status</code>取值如下</p>
+<table><thead><tr><th>status</th><th>说明</th></tr></thead><tbody><tr><td>1XX</td><td>信息类，收到请求，表示正在处理</td></tr><tr><td>2XX</td><td>成功，表示用户请求被正确接收处理</td></tr><tr><td>3XX</td><td>重定向，表示请求没有成功</td></tr><tr><td>4XX</td><td>客户端错误</td></tr><tr><td>5XX</td><td>服务器错误</td></tr></tbody></table>
 
-&lt;p&gt;&lt;a href=&quot;https://help.aliyun.com/knowledge_detail/6555009.html?spm=0.0.0.0.hIQaqR&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http状态码详解&lt;/a&gt;&lt;/p&gt;
-&lt;h2 id=&quot;Step4—jQuery实现Ajax&quot;&gt;&lt;a href=&quot;#Step4—jQuery实现Ajax&quot; class=&quot;headerlink&quot; title=&quot;Step4—jQuery实现Ajax&quot;&gt;&lt;/a&gt;Step4—jQuery实现Ajax&lt;/h2&gt;&lt;p&gt;jQuery中提供了一个实现Ajax的方法即&lt;code&gt;jQuery.ajax([settings])&lt;/code&gt;，参数如下：&lt;/p&gt;
-&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;参数&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;type&lt;/td&gt;&lt;td&gt;请求类型&lt;code&gt;POST&lt;/code&gt; &lt;code&gt;GET&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;url&lt;/td&gt;&lt;td&gt;发送请求地址&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;data&lt;/td&gt;&lt;td&gt;一个对象，发送到服务器的数据&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;dataType&lt;/td&gt;&lt;td&gt;预期服务器返回的数据类型，一般采用&lt;code&gt;json&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;success&lt;/td&gt;&lt;td&gt;请求成功后的回调函数&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;error&lt;/td&gt;&lt;td&gt;请求失败后的回调函数&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+<p><a href="https://help.aliyun.com/knowledge_detail/6555009.html?spm=0.0.0.0.hIQaqR" target="_blank" rel="external">http状态码详解</a></p>
+<h2 id="Step4—jQuery实现Ajax"><a href="#Step4—jQuery实现Ajax" class="headerlink" title="Step4—jQuery实现Ajax"></a>Step4—jQuery实现Ajax</h2><p>jQuery中提供了一个实现Ajax的方法即<code>jQuery.ajax([settings])</code>，参数如下：</p>
+<table><thead><tr><th>参数</th><th>说明</th></tr></thead><tbody><tr><td>type</td><td>请求类型<code>POST</code> <code>GET</code></td></tr><tr><td>url</td><td>发送请求地址</td></tr><tr><td>data</td><td>一个对象，发送到服务器的数据</td></tr><tr><td>dataType</td><td>预期服务器返回的数据类型，一般采用<code>json</code></td></tr><tr><td>success</td><td>请求成功后的回调函数</td></tr><tr><td>error</td><td>请求失败后的回调函数</td></tr></tbody></table>
 
-&lt;p&gt;示例：&lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$.ajax(&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  type: &lt;span class=&quot;string&quot;&gt;&quot;POST&quot;&lt;/span&gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  url: &amp;lt;url&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  data: &amp;lt;data&amp;gt;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  dataType: &quot;josn&quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  success: function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    // do something&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  error: function() &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    // do something&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-</content>
+<p>示例：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">  type: <span class="string">"POST"</span>,</div><div class="line">  url: &lt;url&gt;</div><div class="line">  data: &lt;data&gt;,</div><div class="line">  dataType: "josn",</div><div class="line">  success: function() &#123;</div><div class="line">    // do something</div><div class="line">  &#125;,</div><div class="line">  error: function() &#123;</div><div class="line">    // do something</div><div class="line">  &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+]]></content>
     
     <summary type="html">
     
@@ -464,49 +504,49 @@
     <link href="http://coderfe.cn/2016/04/07/hexo-github-blog/"/>
     <id>http://coderfe.cn/2016/04/07/hexo-github-blog/</id>
     <published>2016-04-07T20:00:00.000Z</published>
-    <updated>2016-07-18T14:17:09.080Z</updated>
+    <updated>2016-07-20T14:20:19.762Z</updated>
     
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;工欲善其事，必先利其器。在开发过程中用到的软件有&lt;strong&gt;Nodejs / Sublime Text3 / Git&lt;/strong&gt;等，参考资料主要是&lt;a href=&quot;https://hexo.io/zh-cn/docs/configuration.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;p&gt;最终效果图：&lt;br&gt;&lt;img src=&quot;http://7xphzj.com1.z0.glb.clouddn.com/blog-pic.png&quot; alt=&quot;SimonCorner&quot;&gt;&lt;/p&gt;
-&lt;h2 id=&quot;安装配置&quot;&gt;&lt;a href=&quot;#安装配置&quot; class=&quot;headerlink&quot; title=&quot;安装配置&quot;&gt;&lt;/a&gt;安装配置&lt;/h2&gt;&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;p&gt;安装很简单，只需要几分钟的时间，前提是已经安装了&lt;strong&gt;Nodejs&lt;/strong&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ npm install -g hexo-cli&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo -v&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&quot;建立博客目录&quot;&gt;&lt;a href=&quot;#建立博客目录&quot; class=&quot;headerlink&quot; title=&quot;建立博客目录&quot;&gt;&lt;/a&gt;建立博客目录&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ hexo init &amp;lt;folder&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ cd &amp;lt;folder&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ npm install&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;上面的几行命令会把你指定的文件夹初始化为博客目录，目录如下：&lt;/p&gt;
-&lt;!-- more --&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;folder&amp;gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  _config.yml&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  package.json&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  scaffolds&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  source&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  	_drafts&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  	_posts&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;  themes&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;配置&quot;&gt;&lt;a href=&quot;#配置&quot; class=&quot;headerlink&quot; title=&quot;配置&quot;&gt;&lt;/a&gt;配置&lt;/h3&gt;&lt;p&gt;有关站点的配置都在&lt;code&gt;&amp;lt;folder&amp;gt;/_config.yml&lt;/code&gt; &amp;amp; &lt;code&gt;&amp;lt;folder&amp;gt;/themes/_config.yml&lt;/code&gt;文件中修改，具体参数参见&lt;a href=&quot;https://hexo.io/zh-cn/docs/configuration.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&quot;命令&quot;&gt;&lt;a href=&quot;#命令&quot; class=&quot;headerlink&quot; title=&quot;命令&quot;&gt;&lt;/a&gt;命令&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;hexo init &amp;lt;folder&amp;gt;&lt;/code&gt;初始化&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hexo new &amp;lt;title&amp;gt;&lt;/code&gt;新建文章&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hexo generate&lt;/code&gt;生成静态文件&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;选项&lt;/th&gt;&lt;th&gt;描述&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;-d&lt;/code&gt;, &lt;code&gt;–deploy&lt;/code&gt;&lt;/td&gt;&lt;td&gt;文件生成后立即部署网站&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;-w&lt;/code&gt;, &lt;code&gt;–watch&lt;/code&gt;&lt;/td&gt;&lt;td&gt;监视文件变动&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hexo publish &amp;lt;title&amp;gt;&lt;/code&gt;发表草稿&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;heox server&lt;/code&gt;启动服务器&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;选项&lt;/th&gt;&lt;th&gt;描述&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;-p&lt;/code&gt;, &lt;code&gt;–port&lt;/code&gt;&lt;/td&gt;&lt;td&gt;重设端口&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;-s&lt;/code&gt;, &lt;code&gt;–static&lt;/code&gt;&lt;/td&gt;&lt;td&gt;只使用静态文件&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;-l&lt;/code&gt;, &lt;code&gt;–log&lt;/code&gt;&lt;/td&gt;&lt;td&gt;启动日记记录，使用覆盖记录格式&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hexo deploy&lt;/code&gt;部署网站&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th&gt;参数&lt;/th&gt;&lt;th&gt;描述&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;-g&lt;/code&gt;, &lt;code&gt;–generate&lt;/code&gt;&lt;/td&gt;&lt;td&gt;部署之前预先生成静态文件&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hexo clean&lt;/code&gt;清除缓存文件&lt;code&gt;db.json&lt;/code&gt;和静态文件&lt;code&gt;public&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;hexo list&lt;/code&gt;列出网站资料&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&quot;生成RSS&quot;&gt;&lt;a href=&quot;#生成RSS&quot; class=&quot;headerlink&quot; title=&quot;生成RSS&quot;&gt;&lt;/a&gt;生成RSS&lt;/h3&gt;&lt;p&gt;安装RSS插件&lt;code&gt;hexo-generator-feed&lt;/code&gt;插件&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ npm install hexo-generator-feed --save&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;编辑站点配置文件：&lt;br&gt;&lt;figure class=&quot;highlight yaml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;feed:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  type:&lt;/span&gt; atom&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  path:&lt;/span&gt; atom.xml&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  limit:&lt;/span&gt; &lt;span class=&quot;number&quot;&gt;20&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h3 id=&quot;生成sitemap-xml&quot;&gt;&lt;a href=&quot;#生成sitemap-xml&quot; class=&quot;headerlink&quot; title=&quot;生成sitemap.xml&quot;&gt;&lt;/a&gt;生成sitemap.xml&lt;/h3&gt;&lt;p&gt;安装插件&lt;code&gt;hexo-generator-sitemap&lt;/code&gt;&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;$ npm install hexo-generator-sitemap --save&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;编辑配置文件：&lt;/p&gt;
-&lt;figure class=&quot;highlight yaml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;sitemap:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  path:&lt;/span&gt; sitemap.xml&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;h3 id=&quot;通过Git方式部署&quot;&gt;&lt;a href=&quot;#通过Git方式部署&quot; class=&quot;headerlink&quot; title=&quot;通过Git方式部署&quot;&gt;&lt;/a&gt;通过Git方式部署&lt;/h3&gt;&lt;p&gt;编辑站点配置文件，如果部署在GitHub上会自动检测&lt;code&gt;branch&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highlight yaml&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;deploy:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  type:&lt;/span&gt; git&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  repo:&lt;/span&gt; &amp;lt;repo URL&lt;span class=&quot;string&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  branch:&lt;/span&gt; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;attr&quot;&gt;  message:&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;h2 id=&quot;绑定域名&quot;&gt;&lt;a href=&quot;#绑定域名&quot; class=&quot;headerlink&quot; title=&quot;绑定域名&quot;&gt;&lt;/a&gt;绑定域名&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;首先得有个域名，申请域名的网站国外的有&lt;a href=&quot;https://sg.godaddy.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GoDaddy&lt;/a&gt;等，国内的&lt;a href=&quot;https://wanwang.aliyun.com&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;万网&lt;/a&gt;等&lt;/li&gt;
-&lt;li&gt;在&lt;code&gt;/source&lt;/code&gt;目录下新建&lt;code&gt;CNAME&lt;/code&gt;文件，输入自己的域名&lt;code&gt;coderfe.cn&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;登陆&lt;a href=&quot;https://www.dnspod.cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DnsPod&lt;/a&gt;，添加域名解析，只需添加&lt;strong&gt;第一项&lt;/strong&gt;和&lt;strong&gt;第四项&lt;/strong&gt;就OK&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://7xphzj.com1.z0.glb.clouddn.com/dnspod.png&quot; alt=&quot;解析记录&quot;&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&quot;用到的免费服务&quot;&gt;&lt;a href=&quot;#用到的免费服务&quot; class=&quot;headerlink&quot; title=&quot;用到的免费服务&quot;&gt;&lt;/a&gt;用到的免费服务&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;http://www.qiniu.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;七牛云存储&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://www.dnspod.cn/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;DnsPod&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;http://duoshuo.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;多说&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;未完待续&quot;&gt;&lt;a href=&quot;#未完待续&quot; class=&quot;headerlink&quot; title=&quot;未完待续&quot;&gt;&lt;/a&gt;未完待续&lt;/h2&gt;</content>
+    <content type="html"><![CDATA[<blockquote>
+<p>工欲善其事，必先利其器。在开发过程中用到的软件有<strong>Nodejs / Sublime Text3 / Git</strong>等，参考资料主要是<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">官方文档</a></p>
+</blockquote>
+<a id="more"></a>
+<p>最终效果图：<br><img src="http://7xphzj.com1.z0.glb.clouddn.com/blog-pic.png" alt="SimonCorner"></p>
+<h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>安装很简单，只需要几分钟的时间，前提是已经安装了<strong>Nodejs</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div><div class="line">$ hexo -v</div></pre></td></tr></table></figure></p>
+<h3 id="建立博客目录"><a href="#建立博客目录" class="headerlink" title="建立博客目录"></a>建立博客目录</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init &lt;folder&gt;</div><div class="line">$ cd &lt;folder&gt;</div><div class="line">$ npm install</div></pre></td></tr></table></figure>
+<p>上面的几行命令会把你指定的文件夹初始化为博客目录，目录如下：</p>
+<!-- more -->
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;folder&gt;</div><div class="line">  _config.yml</div><div class="line">  package.json</div><div class="line">  scaffolds</div><div class="line">  source</div><div class="line">  	_drafts</div><div class="line">  	_posts</div><div class="line">  themes</div></pre></td></tr></table></figure>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>有关站点的配置都在<code>&lt;folder&gt;/_config.yml</code> &amp; <code>&lt;folder&gt;/themes/_config.yml</code>文件中修改，具体参数参见<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">官方文档</a></p>
+<h3 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h3><ul>
+<li><code>hexo init &lt;folder&gt;</code>初始化</li>
+<li><code>hexo new &lt;title&gt;</code>新建文章</li>
+<li><code>hexo generate</code>生成静态文件<table><thead><tr><th>选项</th><th>描述</th></tr></thead><tbody><tr><td><code>-d</code>, <code>–deploy</code></td><td>文件生成后立即部署网站</td></tr><tr><td><code>-w</code>, <code>–watch</code></td><td>监视文件变动</td></tr></tbody></table></li>
+<li><code>hexo publish &lt;title&gt;</code>发表草稿</li>
+<li><code>heox server</code>启动服务器<table><thead><tr><th>选项</th><th>描述</th></tr></thead><tbody><tr><td><code>-p</code>, <code>–port</code></td><td>重设端口</td></tr><tr><td><code>-s</code>, <code>–static</code></td><td>只使用静态文件</td></tr><tr><td><code>-l</code>, <code>–log</code></td><td>启动日记记录，使用覆盖记录格式</td></tr></tbody></table></li>
+<li><code>hexo deploy</code>部署网站<table><thead><tr><th>参数</th><th>描述</th></tr></thead><tbody><tr><td><code>-g</code>, <code>–generate</code></td><td>部署之前预先生成静态文件</td></tr></tbody></table></li>
+<li><code>hexo clean</code>清除缓存文件<code>db.json</code>和静态文件<code>public</code></li>
+<li><code>hexo list</code>列出网站资料</li>
+</ul>
+<h3 id="生成RSS"><a href="#生成RSS" class="headerlink" title="生成RSS"></a>生成RSS</h3><p>安装RSS插件<code>hexo-generator-feed</code>插件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-generator-feed --save</div></pre></td></tr></table></figure></p>
+<p>编辑站点配置文件：<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">feed:</span></div><div class="line"><span class="attr">  type:</span> atom</div><div class="line"><span class="attr">  path:</span> atom.xml</div><div class="line"><span class="attr">  limit:</span> <span class="number">20</span></div></pre></td></tr></table></figure></p>
+<h3 id="生成sitemap-xml"><a href="#生成sitemap-xml" class="headerlink" title="生成sitemap.xml"></a>生成sitemap.xml</h3><p>安装插件<code>hexo-generator-sitemap</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-generator-sitemap --save</div></pre></td></tr></table></figure>
+<p>编辑配置文件：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="attr">sitemap:</span></div><div class="line"><span class="attr">  path:</span> sitemap.xml</div></pre></td></tr></table></figure>
+<h3 id="通过Git方式部署"><a href="#通过Git方式部署" class="headerlink" title="通过Git方式部署"></a>通过Git方式部署</h3><p>编辑站点配置文件，如果部署在GitHub上会自动检测<code>branch</code><br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attr">deploy:</span></div><div class="line"><span class="attr">  type:</span> git</div><div class="line"><span class="attr">  repo:</span> &lt;repo URL<span class="string">&gt;</span></div><div class="line"><span class="attr">  branch:</span> </div><div class="line"><span class="attr">  message:</span></div></pre></td></tr></table></figure></p>
+<h2 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h2><ol>
+<li>首先得有个域名，申请域名的网站国外的有<a href="https://sg.godaddy.com/" target="_blank" rel="external">GoDaddy</a>等，国内的<a href="https://wanwang.aliyun.com" target="_blank" rel="external">万网</a>等</li>
+<li>在<code>/source</code>目录下新建<code>CNAME</code>文件，输入自己的域名<code>coderfe.cn</code></li>
+<li><p>登陆<a href="https://www.dnspod.cn/" target="_blank" rel="external">DnsPod</a>，添加域名解析，只需添加<strong>第一项</strong>和<strong>第四项</strong>就OK</p>
+<p><img src="http://7xphzj.com1.z0.glb.clouddn.com/dnspod.png" alt="解析记录"></p>
+</li>
+</ol>
+<h2 id="用到的免费服务"><a href="#用到的免费服务" class="headerlink" title="用到的免费服务"></a>用到的免费服务</h2><ul>
+<li><a href="http://www.qiniu.com/" target="_blank" rel="external">七牛云存储</a></li>
+<li><a href="https://www.dnspod.cn/" target="_blank" rel="external">DnsPod</a></li>
+<li><a href="http://duoshuo.com/" target="_blank" rel="external">多说</a></li>
+</ul>
+<h2 id="未完待续"><a href="#未完待续" class="headerlink" title="未完待续"></a>未完待续</h2>]]></content>
     
     <summary type="html">
     
@@ -528,58 +568,58 @@
     <link href="http://coderfe.cn/2016/04/04/front-end-performance/"/>
     <id>http://coderfe.cn/2016/04/04/front-end-performance/</id>
     <published>2016-04-04T13:38:37.000Z</published>
-    <updated>2016-07-18T14:17:09.080Z</updated>
+    <updated>2016-07-20T14:20:19.762Z</updated>
     
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;时间黄金法则:&lt;/strong&gt;只有10%-20%的时间花在下载HTML文档上,其余80%-90%都花在下载页面组件上，以下规则大部分都是摘自“雅虎军规”。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
-&lt;h5 id=&quot;减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&quot;&gt;&lt;a href=&quot;#减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&quot; class=&quot;headerlink&quot; title=&quot;减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&quot;&gt;&lt;/a&gt;减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）&lt;/h5&gt;&lt;ul&gt;
-&lt;li&gt;图片&lt;code&gt;css sprite&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;图片地图,在一张图片上关联多个URL,URL最终指向取决于用户点击的位置&lt;br&gt;&lt;code&gt;script&lt;/code&gt;合并、&lt;code&gt;css&lt;/code&gt;合并&lt;/li&gt;
-&lt;li&gt;内联图片,通过使用&lt;code&gt;data:URL&lt;/code&gt;模式可以使页面包含图片但无需额外的HTTP请求&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5 id=&quot;使用CDN内容分发网络（Content-Delivery-Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&quot;&gt;&lt;a href=&quot;#使用CDN内容分发网络（Content-Delivery-Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&quot; class=&quot;headerlink&quot; title=&quot;使用CDN内容分发网络（Content Delivery Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&quot;&gt;&lt;/a&gt;使用&lt;code&gt;CDN&lt;/code&gt;内容分发网络（&lt;code&gt;Content Delivery Network&lt;/code&gt;其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）&lt;/h5&gt;&lt;h5 id=&quot;压缩javascript和css-gzip&quot;&gt;&lt;a href=&quot;#压缩javascript和css-gzip&quot; class=&quot;headerlink&quot; title=&quot;压缩javascript和css(gzip)&quot;&gt;&lt;/a&gt;压缩&lt;code&gt;javascript&lt;/code&gt;和&lt;code&gt;css&lt;/code&gt;(gzip)&lt;/h5&gt;&lt;ul&gt;
-&lt;li&gt;去除空格、空白符、注释符&lt;/li&gt;
-&lt;li&gt;简写方法名、参数名,精简&lt;code&gt;javascript&lt;/code&gt;脚本&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;css&lt;/code&gt;重用类,删除空的声明&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5 id=&quot;css放在顶部head中-css-at-the-top&quot;&gt;&lt;a href=&quot;#css放在顶部head中-css-at-the-top&quot; class=&quot;headerlink&quot; title=&quot;css放在顶部head中(css at the top)&quot;&gt;&lt;/a&gt;&lt;code&gt;css&lt;/code&gt;放在顶部&lt;code&gt;head&lt;/code&gt;中(css at the top)&lt;/h5&gt;&lt;ul&gt;
-&lt;li&gt;避免页面出现空白或闪烁&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5 id=&quot;script放在页面底部-script-at-the-bottom&quot;&gt;&lt;a href=&quot;#script放在页面底部-script-at-the-bottom&quot; class=&quot;headerlink&quot; title=&quot;script放在页面底部(script at the bottom)&quot;&gt;&lt;/a&gt;&lt;code&gt;script&lt;/code&gt;放在页面底部(script at the bottom)&lt;/h5&gt;&lt;ul&gt;
-&lt;li&gt;先呈现出内容，避免浏览器因脚本出错而停止加载内容&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5 id=&quot;避免在css中使用表达式，影响浏览器的性能&quot;&gt;&lt;a href=&quot;#避免在css中使用表达式，影响浏览器的性能&quot; class=&quot;headerlink&quot; title=&quot;避免在css中使用表达式，影响浏览器的性能&quot;&gt;&lt;/a&gt;避免在&lt;code&gt;css&lt;/code&gt;中使用表达式，影响浏览器的性能&lt;/h5&gt;&lt;h5 id=&quot;将javascript和css放在外部文件&quot;&gt;&lt;a href=&quot;#将javascript和css放在外部文件&quot; class=&quot;headerlink&quot; title=&quot;将javascript和css放在外部文件&quot;&gt;&lt;/a&gt;将&lt;code&gt;javascript&lt;/code&gt;和&lt;code&gt;css&lt;/code&gt;放在外部文件&lt;/h5&gt;&lt;ul&gt;
-&lt;li&gt;单独提取&lt;ul&gt;
-&lt;li&gt;提高复用性&lt;/li&gt;
-&lt;li&gt;减小页面体积&lt;/li&gt;
-&lt;li&gt;提高&lt;code&gt;js&lt;/code&gt;和&lt;code&gt;css&lt;/code&gt;的可维护性&lt;/li&gt;
-&lt;li&gt;可单独缓存&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;写在页面内（样式只应用于一个页面，不被经常访问，脚本和样式很少&amp;lt;20）&lt;ul&gt;
-&lt;li&gt;减少页面请求&lt;/li&gt;
-&lt;li&gt;提升页面渲染速度&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5 id=&quot;减少DNS查询（DNS查找可以缓存起来以提升性能）&quot;&gt;&lt;a href=&quot;#减少DNS查询（DNS查找可以缓存起来以提升性能）&quot; class=&quot;headerlink&quot; title=&quot;减少DNS查询（DNS查找可以缓存起来以提升性能）&quot;&gt;&lt;/a&gt;减少DNS查询（DNS查找可以缓存起来以提升性能）&lt;/h5&gt;&lt;ul&gt;
-&lt;li&gt;IE 30m&lt;/li&gt;
-&lt;li&gt;Chrome 60s&lt;/li&gt;
-&lt;li&gt;Firefox 60s&lt;/li&gt;
-&lt;li&gt;缓存时间长：减少DNS重复查找，节省时间&lt;/li&gt;
-&lt;li&gt;缓存时间短：及时检测网站服务器的变化，保证访问的正确性&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5 id=&quot;避免重定向（用户的请求被重新转向其他请求）&quot;&gt;&lt;a href=&quot;#避免重定向（用户的请求被重新转向其他请求）&quot; class=&quot;headerlink&quot; title=&quot;避免重定向（用户的请求被重新转向其他请求）&quot;&gt;&lt;/a&gt;避免重定向（用户的请求被重新转向其他请求）&lt;/h5&gt;&lt;ul&gt;
-&lt;li&gt;301：用户请求的页面被移动到其他位置，永久重定向，对搜索引擎更智能&lt;/li&gt;
-&lt;li&gt;302：用户请求的的页面被找到了，但不在原始地址，临时重定向&lt;/li&gt;
-&lt;li&gt;增加了服务器的往返次数&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5 id=&quot;移除重复脚本&quot;&gt;&lt;a href=&quot;#移除重复脚本&quot; class=&quot;headerlink&quot; title=&quot;移除重复脚本&quot;&gt;&lt;/a&gt;移除重复脚本&lt;/h5&gt;&lt;ul&gt;
-&lt;li&gt;重复脚本会增加不必要的HTTP请求和执行javascript所浪费的时间&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h5 id=&quot;配置实体标签（Enity-Tag-Web服务器和浏览器用于确认缓存组件有效的一种机制&quot;&gt;&lt;a href=&quot;#配置实体标签（Enity-Tag-Web服务器和浏览器用于确认缓存组件有效的一种机制&quot; class=&quot;headerlink&quot; title=&quot;配置实体标签（Enity Tag,Web服务器和浏览器用于确认缓存组件有效的一种机制)&quot;&gt;&lt;/a&gt;配置实体标签（&lt;code&gt;Enity Tag&lt;/code&gt;,Web服务器和浏览器用于确认缓存组件有效的一种机制)&lt;/h5&gt;</content>
+    <content type="html"><![CDATA[<blockquote>
+<p><strong>时间黄金法则:</strong>只有10%-20%的时间花在下载HTML文档上,其余80%-90%都花在下载页面组件上，以下规则大部分都是摘自“雅虎军规”。</p>
+</blockquote>
+<a id="more"></a>
+<h5 id="减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）"><a href="#减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）" class="headerlink" title="减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）"></a>减少HTTP请求（打开网页的时候，我们看到的文字，图片，多媒体每个内容都是从服务器获取的，每一个内容的获取，就是一个HTTP请求）</h5><ul>
+<li>图片<code>css sprite</code></li>
+<li>图片地图,在一张图片上关联多个URL,URL最终指向取决于用户点击的位置<br><code>script</code>合并、<code>css</code>合并</li>
+<li>内联图片,通过使用<code>data:URL</code>模式可以使页面包含图片但无需额外的HTTP请求</li>
+</ul>
+<h5 id="使用CDN内容分发网络（Content-Delivery-Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）"><a href="#使用CDN内容分发网络（Content-Delivery-Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）" class="headerlink" title="使用CDN内容分发网络（Content Delivery Network其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）"></a>使用<code>CDN</code>内容分发网络（<code>Content Delivery Network</code>其目的在于让用户可就近取得所需内容，解决网络拥挤的状况，提高用户的访问速度）</h5><h5 id="压缩javascript和css-gzip"><a href="#压缩javascript和css-gzip" class="headerlink" title="压缩javascript和css(gzip)"></a>压缩<code>javascript</code>和<code>css</code>(gzip)</h5><ul>
+<li>去除空格、空白符、注释符</li>
+<li>简写方法名、参数名,精简<code>javascript</code>脚本</li>
+<li><code>css</code>重用类,删除空的声明</li>
+</ul>
+<h5 id="css放在顶部head中-css-at-the-top"><a href="#css放在顶部head中-css-at-the-top" class="headerlink" title="css放在顶部head中(css at the top)"></a><code>css</code>放在顶部<code>head</code>中(css at the top)</h5><ul>
+<li>避免页面出现空白或闪烁</li>
+</ul>
+<h5 id="script放在页面底部-script-at-the-bottom"><a href="#script放在页面底部-script-at-the-bottom" class="headerlink" title="script放在页面底部(script at the bottom)"></a><code>script</code>放在页面底部(script at the bottom)</h5><ul>
+<li>先呈现出内容，避免浏览器因脚本出错而停止加载内容</li>
+</ul>
+<h5 id="避免在css中使用表达式，影响浏览器的性能"><a href="#避免在css中使用表达式，影响浏览器的性能" class="headerlink" title="避免在css中使用表达式，影响浏览器的性能"></a>避免在<code>css</code>中使用表达式，影响浏览器的性能</h5><h5 id="将javascript和css放在外部文件"><a href="#将javascript和css放在外部文件" class="headerlink" title="将javascript和css放在外部文件"></a>将<code>javascript</code>和<code>css</code>放在外部文件</h5><ul>
+<li>单独提取<ul>
+<li>提高复用性</li>
+<li>减小页面体积</li>
+<li>提高<code>js</code>和<code>css</code>的可维护性</li>
+<li>可单独缓存</li>
+</ul>
+</li>
+<li>写在页面内（样式只应用于一个页面，不被经常访问，脚本和样式很少&lt;20）<ul>
+<li>减少页面请求</li>
+<li>提升页面渲染速度</li>
+</ul>
+</li>
+</ul>
+<h5 id="减少DNS查询（DNS查找可以缓存起来以提升性能）"><a href="#减少DNS查询（DNS查找可以缓存起来以提升性能）" class="headerlink" title="减少DNS查询（DNS查找可以缓存起来以提升性能）"></a>减少DNS查询（DNS查找可以缓存起来以提升性能）</h5><ul>
+<li>IE 30m</li>
+<li>Chrome 60s</li>
+<li>Firefox 60s</li>
+<li>缓存时间长：减少DNS重复查找，节省时间</li>
+<li>缓存时间短：及时检测网站服务器的变化，保证访问的正确性</li>
+</ul>
+<h5 id="避免重定向（用户的请求被重新转向其他请求）"><a href="#避免重定向（用户的请求被重新转向其他请求）" class="headerlink" title="避免重定向（用户的请求被重新转向其他请求）"></a>避免重定向（用户的请求被重新转向其他请求）</h5><ul>
+<li>301：用户请求的页面被移动到其他位置，永久重定向，对搜索引擎更智能</li>
+<li>302：用户请求的的页面被找到了，但不在原始地址，临时重定向</li>
+<li>增加了服务器的往返次数</li>
+</ul>
+<h5 id="移除重复脚本"><a href="#移除重复脚本" class="headerlink" title="移除重复脚本"></a>移除重复脚本</h5><ul>
+<li>重复脚本会增加不必要的HTTP请求和执行javascript所浪费的时间</li>
+</ul>
+<h5 id="配置实体标签（Enity-Tag-Web服务器和浏览器用于确认缓存组件有效的一种机制"><a href="#配置实体标签（Enity-Tag-Web服务器和浏览器用于确认缓存组件有效的一种机制" class="headerlink" title="配置实体标签（Enity Tag,Web服务器和浏览器用于确认缓存组件有效的一种机制)"></a>配置实体标签（<code>Enity Tag</code>,Web服务器和浏览器用于确认缓存组件有效的一种机制)</h5>]]></content>
     
     <summary type="html">
     
