@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coderfe.cn/"/>
-  <updated>2016-07-28T13:49:42.408Z</updated>
+  <updated>2016-08-08T12:24:31.709Z</updated>
   <id>http://coderfe.cn/</id>
   
   <author>
@@ -16,11 +16,69 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>IE8 兼容性总结</title>
+    <link href="http://coderfe.cn/2016/08/08/IE8-compatibility/"/>
+    <id>http://coderfe.cn/2016/08/08/IE8-compatibility/</id>
+    <published>2016-08-08T19:55:52.000Z</published>
+    <updated>2016-08-08T12:24:31.709Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>这几周经历了一个项目，要兼容到 IE8 浏览器，在开发过程中踩了不少的坑，尤其是 flexbox 布局，Chrome 和 Firefox 完全兼容，但是 IE8 就没那么轻松了。既然坑踩了，那么就总结下来这些 IE8 常见的兼容性问题，以免以后再踩到以一毛一样的坑（应该不会了，IE8 的寿命也许不长了吧）！</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="rgba-颜色格式"><a href="#rgba-颜色格式" class="headerlink" title="rgba 颜色格式"></a>rgba 颜色格式</h2><ul>
+<li>IE8 不支持 <code>rgba(0, 0, 0, .5)</code> 这种颜色格式。</li>
+<li>解决方案：可以利用一张半透明的 <strong>png</strong> 图片来兼容 IE8。</li>
+</ul>
+<h2 id="flexbox"><a href="#flexbox" class="headerlink" title="flexbox"></a>flexbox</h2><ul>
+<li>根据 <a href="caniuse.com">caniuse</a> 给出的数据，IE8 是不支持 <code>flex</code> 布局属性的， 甚至 IE11 只支持一部分。</li>
+<li>解决方案：利用 <code>display: inline-block</code> / <code>display: table</code> / <code>display: inline</code> 来实现部分兼容。</li>
+<li><a href="https://kyusuf.com/post/almost-complete-guide-to-flexbox-without-flexbox" target="_blank" rel="external">Almost complete guide to flexbox (without flexbox)</a>，介绍了一些不用 <code>felx</code> 属性来完成 <code>flexbox</code> 布局的技术，很有参考价值，推荐。</li>
+<li><a href="http://www.flexboxpatterns.com/site-header" target="_blank" rel="external">Flexbox Patterns</a>，一些利用 <code>flex</code> 实现常用的布局的例子，推荐参考。</li>
+</ul>
+<h2 id="HTML5"><a href="#HTML5" class="headerlink" title="HTML5"></a>HTML5</h2><ul>
+<li>非常遗憾，HTML5 新增的标签在 IE8 里是不受支持滴，例如：<code>section</code> / <code>main</code> / <code>header</code> / <code>footer</code> 等。</li>
+<li>解决方案：<a href="https://github.com/aFarkas/html5shiv" target="_blank" rel="external">html5shiv</a>，这个脚本可以实现兼容 IE8 。</li>
+</ul>
+<h2 id="media-query"><a href="#media-query" class="headerlink" title="media query"></a>media query</h2><ul>
+<li>非常非常遗憾，IE8 也不支持 <code>media query</code> 。</li>
+<li>解决方案：<a href="https://github.com/scottjehl/Respond" target="_blank" rel="external">Respond.js</a></li>
+</ul>
+<h2 id="CSS3-新特性"><a href="#CSS3-新特性" class="headerlink" title="CSS3 新特性"></a>CSS3 新特性</h2><ul>
+<li>IE8 支持的 CSS3 新特性仅有 20% ，具体可以查看 <a href="http://caniuse.com/#search=css3" target="_blank" rel="external">caniuse</a> 。</li>
+<li>解决方案：<a href="https://github.com/lojjic/PIE" target="_blank" rel="external">css3pie</a>，目前 css3pie 可以支持的功能有：<ul>
+<li>border-radius</li>
+<li>box-shadow</li>
+<li>border-image</li>
+<li>multiple background images</li>
+<li>linear-gradient as background image</li>
+</ul>
+</li>
+</ul>
+<h2 id="以上"><a href="#以上" class="headerlink" title="以上"></a>以上</h2><p>以上就是我在实践项目中遇到的 IE8 兼容性问题以及我自己的解决方案。如果你有更好的解决方案或者 IE8 兼容性问题，欢迎讨论：<a href="https://www.gitbook.com/book/coderfe/notes/discussions" target="_blank" rel="external">https://www.gitbook.com/book/coderfe/notes/discussions</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;这几周经历了一个项目，要兼容到 IE8 浏览器，在开发过程中踩了不少的坑，尤其是 flexbox 布局，Chrome 和 Firefox 完全兼容，但是 IE8 就没那么轻松了。既然坑踩了，那么就总结下来这些 IE8 常见的兼容性问题，以免以后再踩到以一毛一样的坑（应该不会了，IE8 的寿命也许不长了吧）！&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+    
+      <category term="IE" scheme="http://coderfe.cn/tags/IE/"/>
+    
+      <category term="CSS" scheme="http://coderfe.cn/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CSS 渐变的角度问题</title>
     <link href="http://coderfe.cn/2016/07/28/css-gradient-angles/"/>
     <id>http://coderfe.cn/2016/07/28/css-gradient-angles/</id>
     <published>2016-07-28T20:05:15.000Z</published>
-    <updated>2016-07-28T13:49:42.408Z</updated>
+    <updated>2016-08-08T12:24:31.709Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>今天在看《CSS揭秘》这本书的时候，作者用渐变做出了一个切角的效果（把矩形的四个角切掉），她使用 background 属性来制作了这个效果，不得不惊叹作者对于 CSS 的高超运用。但是在我动手做的过程中发现，在 CSS 中渐变的角度似乎和我们平常理解的角度有些许差别，为此查阅了一些资料，果然有出入，所以在此分享一下！</p>
@@ -59,7 +117,7 @@
     <link href="http://coderfe.cn/2016/07/25/css-filter/"/>
     <id>http://coderfe.cn/2016/07/25/css-filter/</id>
     <published>2016-07-25T19:55:33.000Z</published>
-    <updated>2016-07-28T13:49:42.408Z</updated>
+    <updated>2016-08-08T12:24:31.709Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>昨天在 <a href="https://www.sitepoint.com/css-filter-effects-blur-grayscale-brightness-and-more-in-css/" target="_blank" rel="external">sitepoint</a> 看到一篇文章，是关于 CSS 的 <code>filter</code> 属性的，但在这之前我只知道 <code>filter: opacity(30%)</code> ，然而我是不知道 filter 还有诸如 <code>brightness</code> / <code>constrast</code> / <code>heu-rotate</code> / <code>spie</code> 等等这些，CSS 果然博大精深！</p>
@@ -86,9 +144,70 @@
 <li>阴影 <code>drop-shadow(5px 5px 10px #666)</code></li>
 </ul>
 <p>这些“滤镜”可以叠加使用。有时可能需要用一张图片做成不同效果，这时 <code>filter</code> 属性就可以派上用场，省去了P图的时间。</p>
+<h3 id="详细说明"><a href="#详细说明" class="headerlink" title="详细说明"></a>详细说明</h3><table>
+<thead>
+<tr>
+<th>filter</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>blur</td>
+<td>0</td>
+<td>不接受百分比，数值越大越模糊</td>
+</tr>
+<tr>
+<td>brightness</td>
+<td>1</td>
+<td>数值超过100%，图像更亮</td>
+</tr>
+<tr>
+<td>contrast</td>
+<td>1</td>
+<td>数值超过100%，对比度更低</td>
+</tr>
+<tr>
+<td>drop-shadow</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>grayscale</td>
+<td>0</td>
+<td>值为100%时为灰度图像，0% - 100%</td>
+</tr>
+<tr>
+<td>hue-rotate</td>
+<td>0deg</td>
+<td>无最大值</td>
+</tr>
+<tr>
+<td>invert</td>
+<td>0</td>
+<td>100%完全反转，0% - 100%</td>
+</tr>
+<tr>
+<td>opacity</td>
+<td>1</td>
+<td>0%完全透明，0% - 100%</td>
+</tr>
+<tr>
+<td>saturate</td>
+<td>1</td>
+<td>0%完全不饱和，超过100%饱和度</td>
+</tr>
+<tr>
+<td>sepia</td>
+<td>0</td>
+<td>100%为完全深褐色，0% - 100%</td>
+</tr>
+</tbody>
+</table>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><p><a href="https://www.sitepoint.com/css-filter-effects-blur-grayscale-brightness-and-more-in-css/" target="_blank" rel="external">CSS Filter Effects: Blur, Grayscale, Brightness and More in CSS!</a></p>
 <h3 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h3><blockquote>
-<p>2016-07-27 更改错别字</p>
+<p>2016-07-27 更改错别字<br>2016-08-08 增加详细说明</p>
 </blockquote>
 ]]></content>
     
@@ -110,7 +229,7 @@
     <link href="http://coderfe.cn/2016/07/20/browser-sync/"/>
     <id>http://coderfe.cn/2016/07/20/browser-sync/</id>
     <published>2016-07-20T21:39:25.000Z</published>
-    <updated>2016-07-28T13:49:42.408Z</updated>
+    <updated>2016-08-08T12:24:31.709Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>使用 <code>gulp</code> 和 <code>browser-sync</code> 做开发也已经有一段时间了，他们俩配合着用的话，简直就是提高开发效率的神器。但搞笑的是我今天才发现利用 <code>browser-sync</code> 可以同时在 PC 和 移动端预览效果，我承认我发现的有点晚😅。。。</p>
@@ -150,7 +269,7 @@
     <link href="http://coderfe.cn/2016/07/18/job-weekly-1/"/>
     <id>http://coderfe.cn/2016/07/18/job-weekly-1/</id>
     <published>2016-07-18T19:20:54.000Z</published>
-    <updated>2016-07-28T13:49:42.412Z</updated>
+    <updated>2016-08-08T12:24:31.709Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>毕业了差不多一个月了，终于找到了一份说的过去的工作，虽然跟自己想象中的工作还有那么一丢丢差距，但起码也能继续做自己喜欢的事情了。</p>
@@ -185,7 +304,7 @@
     <link href="http://coderfe.cn/2016/07/08/interview-07-07/"/>
     <id>http://coderfe.cn/2016/07/08/interview-07-07/</id>
     <published>2016-07-08T13:15:39.000Z</published>
-    <updated>2016-07-28T13:49:42.412Z</updated>
+    <updated>2016-08-08T12:24:31.709Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>7月份毕业之后一直在找一份前端方面的工作，昨天终于得到了一次面试的机会。昨天去面试，面试官给了我三道题目，太紧张了，磕磕绊绊的答了一下，不太满意，今天总结一下昨天的几道面试题。</p>
@@ -227,7 +346,7 @@
     <link href="http://coderfe.cn/2016/05/24/npm-package/"/>
     <id>http://coderfe.cn/2016/05/24/npm-package/</id>
     <published>2016-05-24T22:06:14.000Z</published>
-    <updated>2016-07-28T13:49:42.412Z</updated>
+    <updated>2016-08-08T12:24:31.709Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>npm是由nodejs提供的一个包管理工具，npm可以获取第三方nodejs工具，比如gulp-sass, gulp-autoprefixer等可以大大提高开发效率。Let’s learn it!</p>
@@ -266,7 +385,7 @@
     <link href="http://coderfe.cn/2016/05/07/performance-optimization/"/>
     <id>http://coderfe.cn/2016/05/07/performance-optimization/</id>
     <published>2016-05-07T20:08:30.000Z</published>
-    <updated>2016-07-28T13:49:42.412Z</updated>
+    <updated>2016-08-08T12:24:31.709Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>今天发现博客首页的加载速度比较感人，于是就用 Google 出品的 <a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank" rel="external">Pagespeed Insights</a> 检测了一下，发现了不少问题，而且这些问题都严重拖慢了加载时间。</p>
@@ -310,7 +429,7 @@
     <link href="http://coderfe.cn/2016/05/02/install-local-atom-packages/"/>
     <id>http://coderfe.cn/2016/05/02/install-local-atom-packages/</id>
     <published>2016-05-02T16:03:55.000Z</published>
-    <updated>2016-07-28T13:49:42.412Z</updated>
+    <updated>2016-08-08T12:24:31.709Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>Atom是一款优秀的编辑器，但是国内的网络环境太让人尴尬了，安装个插件都困难。这几天逛论坛时发现，可以把Github上的插件clone到本地再安装，做一下记录，免得又忘记了。</p>
@@ -345,7 +464,7 @@
     <link href="http://coderfe.cn/2016/04/25/travisCI-deploy-hexo-blog/"/>
     <id>http://coderfe.cn/2016/04/25/travisCI-deploy-hexo-blog/</id>
     <published>2016-04-25T15:11:14.000Z</published>
-    <updated>2016-07-28T13:49:42.412Z</updated>
+    <updated>2016-08-08T12:24:31.709Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><strong>Travis CI</strong>是在软件开发领域中的一个在线的，分布式的持续集成服务，用来构建及测试在GitHub托管的代码。这个软件的代码同时也是开源的，可以在GitHub上下载到，尽管开发者当前并不推荐在闭源项目中单独使用它。—— <a href="https://zh.wikipedia.org/wiki/Travis_CI" target="_blank" rel="external">Wiki</a></p>
@@ -421,7 +540,7 @@
     <link href="http://coderfe.cn/2016/04/23/restyle-website-with-stylish/"/>
     <id>http://coderfe.cn/2016/04/23/restyle-website-with-stylish/</id>
     <published>2016-04-23T22:28:51.000Z</published>
-    <updated>2016-07-28T13:49:42.412Z</updated>
+    <updated>2016-08-08T12:24:31.709Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>在PC端<strong>QQ空间</strong>看朋友动态、<strong>刷微博</strong>的时候你是否觉得有些东西太碍眼、太复杂了，对，我就是这样觉的，所以呢，下面就让<strong>Stylish</strong>还给你一个清爽优雅的界面。</p>
@@ -468,7 +587,7 @@
     <link href="http://coderfe.cn/2016/04/21/some-apps/"/>
     <id>http://coderfe.cn/2016/04/21/some-apps/</id>
     <published>2016-04-21T14:30:30.000Z</published>
-    <updated>2016-07-28T13:49:42.412Z</updated>
+    <updated>2016-08-08T12:24:31.709Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>移动端的Apps数不胜数，所以高质量的Apps经常会被淹没。这些都是通过自己亲身使用，感觉很顺手且颜值也高的应用，推荐给大家喽。</p>
@@ -543,7 +662,7 @@
     <link href="http://coderfe.cn/2016/04/08/Ajax-note/"/>
     <id>http://coderfe.cn/2016/04/08/Ajax-note/</id>
     <published>2016-04-08T17:26:39.000Z</published>
-    <updated>2016-07-28T13:49:42.408Z</updated>
+    <updated>2016-08-08T12:24:31.709Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>Ajax即<strong>Asynchronous Javascript and XML</strong>（异步的Javascript与XML技术），简单来说就是无需刷新整个页面就能更新用户界面，从而更快地响应用户行为的一套技术。</p>
@@ -598,7 +717,7 @@
     <link href="http://coderfe.cn/2016/04/07/hexo-github-blog/"/>
     <id>http://coderfe.cn/2016/04/07/hexo-github-blog/</id>
     <published>2016-04-07T20:00:00.000Z</published>
-    <updated>2016-07-28T13:49:42.408Z</updated>
+    <updated>2016-08-08T12:24:31.709Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>工欲善其事，必先利其器。在开发过程中用到的软件有<strong>Nodejs / Sublime Text3 / Git</strong>等，参考资料主要是<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">官方文档</a></p>
@@ -665,7 +784,7 @@
     <link href="http://coderfe.cn/2016/04/04/front-end-performance/"/>
     <id>http://coderfe.cn/2016/04/04/front-end-performance/</id>
     <published>2016-04-04T13:38:37.000Z</published>
-    <updated>2016-07-28T13:49:42.408Z</updated>
+    <updated>2016-08-08T12:24:31.709Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><strong>时间黄金法则:</strong>只有10%-20%的时间花在下载HTML文档上,其余80%-90%都花在下载页面组件上，以下规则大部分都是摘自“雅虎军规”。</p>
