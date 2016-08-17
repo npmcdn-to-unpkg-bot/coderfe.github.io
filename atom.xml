@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://coderfe.cn/"/>
-  <updated>2016-08-15T12:07:26.669Z</updated>
+  <updated>2016-08-17T14:37:18.868Z</updated>
   <id>http://coderfe.cn/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://coderfe.cn/2016/08/15/2016-08-15-react-comment-box/"/>
     <id>http://coderfe.cn/2016/08/15/2016-08-15-react-comment-box/</id>
     <published>2016-08-15T19:53:31.000Z</published>
-    <updated>2016-08-15T12:07:26.669Z</updated>
+    <updated>2016-08-17T14:37:18.868Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>React 是一个用来构建用户界面的 Javascript 库，虽然很早就听说过火热的 React 框架，但是一直没有时间学习，现在终于有时间来静下心来学习一下。上周跟着官网的的例子写了一个评论组件，理解的不是太透彻，在此记录下来，加深理解。</p>
@@ -64,7 +64,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">var CommentForm = React.createClass() &#123;</div><div class="line">  getInitialState: function() &#123;</div><div class="line">    return &#123;author: &apos;&apos;, text: &apos;&apos;&#125;;</div><div class="line">  &#125;,</div><div class="line">  handleAuthorChange: function(e) &#123;</div><div class="line">  	this.setState(&#123;author: e.target.value&#125;)</div><div class="line">  &#125;,</div><div class="line">  handleTextChange: function(e) &#123;</div><div class="line">  	this.setState(&#123;text: e.target.value&#125;)</div><div class="line">  &#125;,</div><div class="line">  handleSubmit: function(e) &#123;</div><div class="line">  	e.preventDefault();</div><div class="line">    var author = this.state.authot.trim();</div><div class="line">    var text = this.state.text.trim();</div><div class="line">    if (!author || !text) &#123;</div><div class="line">  	  return;</div><div class="line">true&#125;</div><div class="line">    this.props.onCommentSubmit(&#123;author: author, text: text&#125;);</div><div class="line">    this.setState(&#123;author: &apos;&apos;, text: &apos;&apos;&#125;);</div><div class="line">  &#125;,</div><div class="line">  render: function() &#123;</div><div class="line">  	return (</div><div class="line">  	  &lt;form className=&quot;commentForm&quot; onSubmit=&#123;this.handleSubmit&#125;&gt;</div><div class="line">      	&lt;input</div><div class="line">          type=&quot;text&quot;</div><div class="line">          placeholder=&quot;Your name...&quot;</div><div class="line">          value=&#123;this.state.author&#125;</div><div class="line">          onChange=&#123;this.handleAuthorChange&#125; /&gt;</div><div class="line">        &lt;input</div><div class="line">          type=&quot;text&quot;</div><div class="line">          placeholder=&quot;Your comment&quot;</div><div class="line">          value=&#123;this.state.text&#125;</div><div class="line">          onChange=&#123;this.handleTextChange&#125; /&gt;</div><div class="line">        &lt;input type=&quot;submit&quot; value=&quot;POST&quot; /&gt;</div><div class="line">      &lt;/form&gt;</div><div class="line">  	);</div><div class="line">  &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
 <p>此时，当新增一条评论时，我们需要立即展示出来即需要刷新 <strong>CommentBox</strong> ，所以修改 <strong>CommentBox</strong> 代码如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line">var CommentBox = React.createClass() &#123;</div><div class="line">  loadCommentsFromServer: function() &#123;</div><div class="line">  	$.ajax(&#123;</div><div class="line">  	  url: this.props.url,</div><div class="line">      type: &apos;GET&apos;,</div><div class="line">      dataType: &apos;json&apos;,</div><div class="line">      cache: false,</div><div class="line">      success: function(data) &#123;</div><div class="line">  		this.setState(&#123;data: data&#125;);</div><div class="line">true  &#125;.bind(this),</div><div class="line">      error: function(xhr, status, err) &#123;</div><div class="line">  		console.error(this.props.url, status, err.toString());</div><div class="line">true  &#125;.bind(this)</div><div class="line">  	&#125;);</div><div class="line">  &#125;,</div><div class="line">  handleCommentSubmit: function(comment) &#123;</div><div class="line">    $.ajax(&#123;</div><div class="line">      url: this.props.url,</div><div class="line">      dataType: &apos;json&apos;,</div><div class="line">      type: &apos;POST&apos;,</div><div class="line">      data: comment,</div><div class="line">      success: function(data) &#123;</div><div class="line">        this.setState(&#123;data: data&#125;);</div><div class="line">      &#125;.bind(this),</div><div class="line">      error: function(xhr, status, err) &#123;</div><div class="line">        console.error(this.props.url, status, err.toString());</div><div class="line">      &#125;.bind(this)</div><div class="line">    &#125;);</div><div class="line">  &#125;,</div><div class="line">  getInitialState: function() &#123;</div><div class="line">    return &#123;data: []&#125;;</div><div class="line">  &#125;,</div><div class="line">  componentDidMount: function() &#123;</div><div class="line">  	this.loadCommentsFromServer();</div><div class="line">    setInterval(this.loadCommentsFromServer, this.pollInterval)</div><div class="line">  &#125;,</div><div class="line">  render: function() &#123;</div><div class="line">    return (</div><div class="line">      &lt;div className=&quot;commentBox&quot;&gt;</div><div class="line">        &lt;h1&gt;Comments&lt;/h1&gt;</div><div class="line">        &lt;CommentList data=&#123;this.state.data&#125; /&gt;</div><div class="line">        &lt;CommentForm onCommentSubmit=&#123;this.handleCommentSubmit&#125; /&gt;</div><div class="line">      &lt;/div&gt;</div><div class="line">    );</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">ReactDOM.render(</div><div class="line">  &lt;CommentBox url=&quot;api/comments&quot; pollInterval=&#123;2000&#125; /&gt;,</div><div class="line">  document.getElementById(&apos;content&apos;)</div><div class="line">);</div></pre></td></tr></table></figure>
-<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p>嗯。。。终于完成了一个基本的<strong>评论框模块</strong>，它用 <strong>json</strong> 来存储数据，不仅能够展示评论，而且能够新增评论。这样，利用 React 的组件化思维来完成一个模块，体验确实很棒，逻辑也显的比较清楚。但这只是开始，要熟练使用 React 也需要一个不断学习的过程。加油！</p>
+<h2 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h2><p>嗯。。。终于完成了一个基本的<strong>评论框模块</strong>，它用 <strong>json</strong> 来存储数据，不仅能够展示评论，而且能够新增评论。这样，利用 React 的组件化思维来完成一个模块，体验确实很棒，逻辑也显的比较清楚。但这只是开始，要熟练使用 React 更需要一个不断学习的过程。加油！</p>
 ]]></content>
     
     <summary type="html">
@@ -85,7 +85,7 @@
     <link href="http://coderfe.cn/2016/08/11/translate-encrypt/"/>
     <id>http://coderfe.cn/2016/08/11/translate-encrypt/</id>
     <published>2016-08-11T23:13:35.000Z</published>
-    <updated>2016-08-15T12:07:26.673Z</updated>
+    <updated>2016-08-17T14:37:18.868Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>随着 HTTP2.0 的发展，HTTPS 也变得流行起来，本来想为我的这个博客添加 HTTPS ，但是受限于服务器的原因，不能安装 SSL 证书。这篇文章算是为以后启用 HTTPS 吹响号角吧！</p>
@@ -208,7 +208,7 @@
     <link href="http://coderfe.cn/2016/08/08/IE8-compatibility/"/>
     <id>http://coderfe.cn/2016/08/08/IE8-compatibility/</id>
     <published>2016-08-08T19:55:52.000Z</published>
-    <updated>2016-08-15T12:07:26.669Z</updated>
+    <updated>2016-08-17T14:37:18.868Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>这几周经历了一个项目，要兼容到 IE8 浏览器，在开发过程中踩了不少的坑，尤其是 flexbox 布局，Chrome 和 Firefox 完全兼容，但是 IE8 就没那么轻松了。既然坑踩了，那么就总结下来这些 IE8 常见的兼容性问题，以免以后再踩到以一毛一样的坑（应该不会了，IE8 的寿命也许不长了吧）！</p>
@@ -266,7 +266,7 @@
     <link href="http://coderfe.cn/2016/07/28/css-gradient-angles/"/>
     <id>http://coderfe.cn/2016/07/28/css-gradient-angles/</id>
     <published>2016-07-28T20:05:15.000Z</published>
-    <updated>2016-08-15T12:07:26.669Z</updated>
+    <updated>2016-08-17T14:37:18.868Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>今天在看《CSS揭秘》这本书的时候，作者用渐变做出了一个切角的效果（把矩形的四个角切掉），她使用 background 属性来制作了这个效果，不得不惊叹作者对于 CSS 的高超运用。但是在我动手做的过程中发现，在 CSS 中渐变的角度似乎和我们平常理解的角度有些许差别，为此查阅了一些资料，果然有出入，所以在此分享一下！</p>
@@ -305,7 +305,7 @@
     <link href="http://coderfe.cn/2016/07/25/css-filter/"/>
     <id>http://coderfe.cn/2016/07/25/css-filter/</id>
     <published>2016-07-25T19:55:33.000Z</published>
-    <updated>2016-08-15T12:07:26.669Z</updated>
+    <updated>2016-08-17T14:37:18.868Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>昨天在 <a href="https://www.sitepoint.com/css-filter-effects-blur-grayscale-brightness-and-more-in-css/" target="_blank" rel="external">sitepoint</a> 看到一篇文章，是关于 CSS 的 <code>filter</code> 属性的，但在这之前我只知道 <code>filter: opacity(30%)</code> ，然而我是不知道 filter 还有诸如 <code>brightness</code> / <code>constrast</code> / <code>heu-rotate</code> / <code>spie</code> 等等这些，CSS 果然博大精深！</p>
@@ -417,7 +417,7 @@
     <link href="http://coderfe.cn/2016/07/20/browser-sync/"/>
     <id>http://coderfe.cn/2016/07/20/browser-sync/</id>
     <published>2016-07-20T21:39:25.000Z</published>
-    <updated>2016-08-15T12:07:26.669Z</updated>
+    <updated>2016-08-17T14:37:18.868Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>使用 <code>gulp</code> 和 <code>browser-sync</code> 做开发也已经有一段时间了，他们俩配合着用的话，简直就是提高开发效率的神器。但搞笑的是我今天才发现利用 <code>browser-sync</code> 可以同时在 PC 和 移动端预览效果，我承认我发现的有点晚😅。。。</p>
@@ -457,7 +457,7 @@
     <link href="http://coderfe.cn/2016/07/18/job-weekly-1/"/>
     <id>http://coderfe.cn/2016/07/18/job-weekly-1/</id>
     <published>2016-07-18T19:20:54.000Z</published>
-    <updated>2016-08-15T12:07:26.673Z</updated>
+    <updated>2016-08-17T14:37:18.868Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>毕业了差不多一个月了，终于找到了一份说的过去的工作，虽然跟自己想象中的工作还有那么一丢丢差距，但起码也能继续做自己喜欢的事情了。</p>
@@ -492,7 +492,7 @@
     <link href="http://coderfe.cn/2016/07/08/interview-07-07/"/>
     <id>http://coderfe.cn/2016/07/08/interview-07-07/</id>
     <published>2016-07-08T13:15:39.000Z</published>
-    <updated>2016-08-15T12:07:26.669Z</updated>
+    <updated>2016-08-17T14:37:18.868Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>7月份毕业之后一直在找一份前端方面的工作，昨天终于得到了一次面试的机会。昨天去面试，面试官给了我三道题目，太紧张了，磕磕绊绊的答了一下，不太满意，今天总结一下昨天的几道面试题。</p>
@@ -534,7 +534,7 @@
     <link href="http://coderfe.cn/2016/05/24/npm-package/"/>
     <id>http://coderfe.cn/2016/05/24/npm-package/</id>
     <published>2016-05-24T22:06:14.000Z</published>
-    <updated>2016-08-15T12:07:26.673Z</updated>
+    <updated>2016-08-17T14:37:18.868Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>npm是由nodejs提供的一个包管理工具，npm可以获取第三方nodejs工具，比如gulp-sass, gulp-autoprefixer等可以大大提高开发效率。Let’s learn it!</p>
@@ -573,7 +573,7 @@
     <link href="http://coderfe.cn/2016/05/07/performance-optimization/"/>
     <id>http://coderfe.cn/2016/05/07/performance-optimization/</id>
     <published>2016-05-07T20:08:30.000Z</published>
-    <updated>2016-08-15T12:07:26.673Z</updated>
+    <updated>2016-08-17T14:37:18.868Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>今天发现博客首页的加载速度比较感人，于是就用 Google 出品的 <a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank" rel="external">Pagespeed Insights</a> 检测了一下，发现了不少问题，而且这些问题都严重拖慢了加载时间。</p>
@@ -617,7 +617,7 @@
     <link href="http://coderfe.cn/2016/05/02/install-local-atom-packages/"/>
     <id>http://coderfe.cn/2016/05/02/install-local-atom-packages/</id>
     <published>2016-05-02T16:03:55.000Z</published>
-    <updated>2016-08-15T12:07:26.669Z</updated>
+    <updated>2016-08-17T14:37:18.868Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>Atom是一款优秀的编辑器，但是国内的网络环境太让人尴尬了，安装个插件都困难。这几天逛论坛时发现，可以把Github上的插件clone到本地再安装，做一下记录，免得又忘记了。</p>
@@ -652,7 +652,7 @@
     <link href="http://coderfe.cn/2016/04/25/travisCI-deploy-hexo-blog/"/>
     <id>http://coderfe.cn/2016/04/25/travisCI-deploy-hexo-blog/</id>
     <published>2016-04-25T15:11:14.000Z</published>
-    <updated>2016-08-15T12:07:26.673Z</updated>
+    <updated>2016-08-17T14:37:18.868Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><strong>Travis CI</strong>是在软件开发领域中的一个在线的，分布式的持续集成服务，用来构建及测试在GitHub托管的代码。这个软件的代码同时也是开源的，可以在GitHub上下载到，尽管开发者当前并不推荐在闭源项目中单独使用它。—— <a href="https://zh.wikipedia.org/wiki/Travis_CI" target="_blank" rel="external">Wiki</a></p>
@@ -728,7 +728,7 @@
     <link href="http://coderfe.cn/2016/04/23/restyle-website-with-stylish/"/>
     <id>http://coderfe.cn/2016/04/23/restyle-website-with-stylish/</id>
     <published>2016-04-23T22:28:51.000Z</published>
-    <updated>2016-08-15T12:07:26.673Z</updated>
+    <updated>2016-08-17T14:37:18.868Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>在PC端<strong>QQ空间</strong>看朋友动态、<strong>刷微博</strong>的时候你是否觉得有些东西太碍眼、太复杂了，对，我就是这样觉的，所以呢，下面就让<strong>Stylish</strong>还给你一个清爽优雅的界面。</p>
@@ -775,7 +775,7 @@
     <link href="http://coderfe.cn/2016/04/21/some-apps/"/>
     <id>http://coderfe.cn/2016/04/21/some-apps/</id>
     <published>2016-04-21T14:30:30.000Z</published>
-    <updated>2016-08-15T12:07:26.673Z</updated>
+    <updated>2016-08-17T14:37:18.868Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>移动端的Apps数不胜数，所以高质量的Apps经常会被淹没。这些都是通过自己亲身使用，感觉很顺手且颜值也高的应用，推荐给大家喽。</p>
@@ -850,7 +850,7 @@
     <link href="http://coderfe.cn/2016/04/08/Ajax-note/"/>
     <id>http://coderfe.cn/2016/04/08/Ajax-note/</id>
     <published>2016-04-08T17:26:39.000Z</published>
-    <updated>2016-08-15T12:07:26.669Z</updated>
+    <updated>2016-08-17T14:37:18.868Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>Ajax即<strong>Asynchronous Javascript and XML</strong>（异步的Javascript与XML技术），简单来说就是无需刷新整个页面就能更新用户界面，从而更快地响应用户行为的一套技术。</p>
@@ -905,7 +905,7 @@
     <link href="http://coderfe.cn/2016/04/07/hexo-github-blog/"/>
     <id>http://coderfe.cn/2016/04/07/hexo-github-blog/</id>
     <published>2016-04-07T20:00:00.000Z</published>
-    <updated>2016-08-15T12:07:26.669Z</updated>
+    <updated>2016-08-17T14:37:18.868Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>工欲善其事，必先利其器。在开发过程中用到的软件有<strong>Nodejs / Sublime Text3 / Git</strong>等，参考资料主要是<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">官方文档</a></p>
@@ -972,7 +972,7 @@
     <link href="http://coderfe.cn/2016/04/04/front-end-performance/"/>
     <id>http://coderfe.cn/2016/04/04/front-end-performance/</id>
     <published>2016-04-04T13:38:37.000Z</published>
-    <updated>2016-08-15T12:07:26.669Z</updated>
+    <updated>2016-08-17T14:37:18.868Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p><strong>时间黄金法则:</strong>只有10%-20%的时间花在下载HTML文档上,其余80%-90%都花在下载页面组件上，以下规则大部分都是摘自“雅虎军规”。</p>
